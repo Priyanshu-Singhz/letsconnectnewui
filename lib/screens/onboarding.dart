@@ -76,10 +76,10 @@ class OnBoardingCard extends StatelessWidget {
         ),
         Positioned(
           left: 0,
-          bottom: 274,
+          bottom: 250,
           child: Image.asset(
             "assets/onboarding/lines.png",
-            scale: 4,
+            scale: 4.8,
           ),
         ),
         Positioned(
@@ -134,7 +134,7 @@ class ContainerCard extends StatelessWidget {
                 TextSpan(
                   text: model.labels[1],
                   style: TextStyle(
-                    color: Colors.black,
+                    color: Color.fromARGB(255, 3, 43, 76),
                     fontSize: 24,
                     fontWeight: FontWeight.w700,
                   ),

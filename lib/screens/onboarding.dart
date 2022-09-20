@@ -171,7 +171,7 @@ class ContainerCard extends StatelessWidget {
               Spacer(),
               ElevatedButton(
                 style: TextButton.styleFrom(
-                    foregroundColor: Colors.black,
+                    // foregroundColor: Colors.black,
                     backgroundColor: Color(0xffFACC15),
                     minimumSize: Size(148, 48)),
                 onPressed: () {
@@ -184,13 +184,17 @@ class ContainerCard extends StatelessWidget {
                 },
                 child: Row(
                   children: [
-                    Text('Next'),
+                    Text(
+                      'Next',
+                      style: TextStyle(color: Colors.black),
+                    ),
                     SizedBox(
                       width: 10,
                     ),
                     Icon(
                       Icons.arrow_forward,
                       size: 20,
+                      color: Colors.black,
                     ),
                   ],
                 ),

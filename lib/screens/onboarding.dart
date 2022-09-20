@@ -132,6 +132,14 @@ class ContainerCard extends StatelessWidget {
               ),
               children: [
                 TextSpan(
+                  children: [
+                    WidgetSpan(
+                      child: Image.asset(
+                        "assets/onboarding/line.png",
+                        scale: 4,
+                      ),
+                    )
+                  ],
                   text: model.labels[1],
                   style: TextStyle(
                     color: Color.fromARGB(255, 3, 43, 76),

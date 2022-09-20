@@ -175,6 +175,9 @@ class ContainerCard extends StatelessWidget {
                     backgroundColor: Color(0xffFACC15),
                     minimumSize: Size(148, 48)),
                 onPressed: () {
+                  if (currentIndex == 2) {
+                    return;
+                  }
                   pageController.animateToPage(currentIndex + 1,
                       duration: const Duration(milliseconds: 400),
                       curve: Curves.easeInOut);

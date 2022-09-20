@@ -133,12 +133,12 @@ class ContainerCard extends StatelessWidget {
               children: [
                 TextSpan(
                   children: [
-                    WidgetSpan(
-                      child: Image.asset(
-                        "assets/onboarding/line.png",
-                        scale: 4,
-                      ),
-                    )
+                    // WidgetSpan(
+                    //   child: Image.asset(
+                    //     "assets/onboarding/line.png",
+                    //     scale: 6,
+                    //   ),
+                    // )
                   ],
                   text: model.labels[1],
                   style: TextStyle(

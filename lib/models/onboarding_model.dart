@@ -16,6 +16,6 @@ List<OnBoardingModel> onBoardingList = [
   ),
   OnBoardingModel(
     imgUrl: "assets/onboarding/onboard3.png",
-    labels: ["Participate in events and get ", "recommendations ", ""],
+    labels: ["Participate in events"," and get ", "recommendations ", ""],
   ),
 ];

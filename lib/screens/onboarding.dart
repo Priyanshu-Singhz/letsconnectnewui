@@ -133,19 +133,26 @@ class ContainerCard extends StatelessWidget {
               children: [
                 TextSpan(
                   children: [
-                    // WidgetSpan(
-                    //   child: Image.asset(
-                    //     "assets/onboarding/line.png",
-                    //     scale: 6,
-                    //   ),
-                    // )
+                    WidgetSpan(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/onboarding/line.png"),
+                            fit: BoxFit.fitWidth,
+                            alignment: Alignment.bottomCenter,
+                          ),
+                        ),
+                        child: Text(
+                          model.labels[1],
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 3, 43, 76),
+                            fontSize: 24,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    )
                   ],
-                  text: model.labels[1],
-                  style: TextStyle(
-                    color: Color.fromARGB(255, 3, 43, 76),
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700,
-                  ),
                 ),
                 TextSpan(
                   text: model.labels[2],

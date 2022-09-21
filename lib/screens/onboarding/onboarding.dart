@@ -137,8 +137,10 @@ class ContainerCard extends StatelessWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            image: AssetImage("assets/onboarding/line.png"),
-                            fit: BoxFit.fitWidth,
+                            image: AssetImage(
+                              "assets/onboarding/line.png",
+                            ),
+                            fit: BoxFit.contain,
                             alignment: Alignment.bottomCenter,
                           ),
                         ),
@@ -155,13 +157,36 @@ class ContainerCard extends StatelessWidget {
                   ],
                 ),
                 TextSpan(
-                  text: model.labels[2],
+                  children: [
+                    WidgetSpan(
+                      child: Container(
+                        decoration: BoxDecoration(
+                          image: DecorationImage(
+                            image: AssetImage("assets/onboarding/line.png"),
+                            fit: BoxFit.fitWidth,
+                            alignment: Alignment.bottomCenter,
+                          ),
+                        ),
+                        child: Text(
+                          model.labels[2],
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 3, 43, 76),
+                            fontSize: 24,
+                            fontWeight: FontWeight.w700,
+                          ),
+                        ),
+                      ),
+                    )
+                  ],
+                ),
+                TextSpan(
+                  text: model.labels[3],
                   style: TextStyle(
                     color: Colors.white,
                     fontSize: 24,
                     fontWeight: FontWeight.w700,
                   ),
-                ),
+                )
               ],
             ),
           ),

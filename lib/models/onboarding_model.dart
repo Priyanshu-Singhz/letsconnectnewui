@@ -8,14 +8,14 @@ class OnBoardingModel {
 List<OnBoardingModel> onBoardingList = [
   OnBoardingModel(
     imgUrl: "assets/onboarding/onboard1.png",
-    labels: ["Find people that ", "get your vibe ", "and don't judge"],
+    labels: ["Find people that ", "get your", "vibe", " and don't judge"],
   ),
   OnBoardingModel(
     imgUrl: "assets/onboarding/onboard2.png",
-    labels: ["Meet the new people ", "that share your interest ", ""],
+    labels: ["Meet the new people that ", "share your interests", "" ,""],
   ),
   OnBoardingModel(
     imgUrl: "assets/onboarding/onboard3.png",
-    labels: ["Participate in events"," and get ", "recommendations ", ""],
+    labels: ["Participate in events and get ", "recommendations ", "", ""],
   ),
 ];

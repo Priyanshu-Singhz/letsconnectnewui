@@ -1,7 +1,8 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
-
+import 'package:get/get.dart';
 import 'package:letsconnectnewui/models/onboarding_model.dart';
+import 'package:letsconnectnewui/screens/loginscreen/loginscreen.dart';
 
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
@@ -216,7 +217,7 @@ class ContainerCard extends StatelessWidget {
                     minimumSize: Size(148, 48)),
                 onPressed: () {
                   if (currentIndex == 2) {
-                    return;
+                    Get.to(Loginscreen());
                   }
                   pageController.animateToPage(currentIndex + 1,
                       duration: const Duration(milliseconds: 400),

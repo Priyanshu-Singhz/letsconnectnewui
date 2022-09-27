@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:letsconnectnewui/screens/loginscreen/verifyotp.dart';
 
-class Loginscreen extends StatelessWidget {
-  const Loginscreen({Key? key}) : super(key: key);
+class VefifyOtp extends StatelessWidget {
+  const VefifyOtp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -58,7 +56,7 @@ class ContainerCard extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    "Get Started",
+                    "Verify OTP",
                     style: TextStyle(
                       color: Color.fromARGB(255, 3, 43, 76),
                       fontSize: 24,
@@ -71,22 +69,16 @@ class ContainerCard extends StatelessWidget {
             SizedBox(height: 10),
             Row(
               children: [
-                Text(
-                  "We'll send you a six digit one time verification ",
-                  style: TextStyle(
-                    fontSize: 14,
-                  ),
-                ),
-              ],
-            ),
-            Row(
-              children: [
-                Text(
-                  "code",
-                  style: TextStyle(
-                    fontSize: 14,
-                  ),
-                ),
+                Row(
+                  children: [
+                    Text("OTP was sent to "),
+                    Text(
+                      "+91 12345 67890",
+                      style: TextStyle(
+                          color: Colors.blue, fontWeight: FontWeight.bold),
+                    ),
+                  ],
+                )
               ],
             ),
             SizedBox(
@@ -95,14 +87,14 @@ class ContainerCard extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "Phone Number",
+                  "Enter OTP",
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
             TextField(
                 decoration: InputDecoration(
-                  hintText: 'Ex: 12345 67890',
+                  hintText: 'Ex: 1 2 3 4 5 6',
                 ),
                 keyboardType: TextInputType.number),
             Spacer(),
@@ -112,7 +104,7 @@ class ContainerCard extends StatelessWidget {
                   backgroundColor: Colors.lightBlueAccent,
                   minimumSize: Size(148, 48)),
               onPressed: () {
-                Get.to(VefifyOtp());
+                // Get.to(OtpScreen());
               },
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -121,20 +113,6 @@ class ContainerCard extends StatelessWidget {
                     'Send OTP',
                     style: TextStyle(color: Colors.white, fontSize: 20),
                   ),
-                ],
-              ),
-            ),
-            Container(
-              height: 32,
-              width: 125,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset("assets/loginpage/google.png"),
-                  Spacer(),
-                  Image.asset("assets/loginpage/facebook.png"),
-                  Spacer(),
-                  Image.asset("assets/loginpage/apple.png"),
                 ],
               ),
             ),

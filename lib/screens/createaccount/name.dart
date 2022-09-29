@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:letsconnectnewui/screens/createaccount/name.dart';
+import 'package:letsconnectnewui/screens/createaccount/age.dart';
 
-class VefifyOtp extends StatelessWidget {
-  const VefifyOtp({Key? key}) : super(key: key);
+class Name extends StatelessWidget {
+  const Name({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -43,7 +43,7 @@ class ContainerCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 32, horizontal: 24),
       width: MediaQuery.of(context).size.width,
-      height: 441,
+      height: 325,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -68,7 +68,7 @@ class ContainerCard extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    "Verify OTP",
+                    "Welcome !",
                     style: TextStyle(
                       color: Color.fromARGB(255, 3, 43, 76),
                       fontSize: 24,
@@ -81,16 +81,14 @@ class ContainerCard extends StatelessWidget {
             SizedBox(height: 10),
             Row(
               children: [
-                Row(
-                  children: [
-                    Text("OTP was sent to "),
-                    Text(
-                      "+91 12345 67890",
-                      style: TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.bold),
-                    ),
-                  ],
-                )
+                Text(
+                  "What should we call you ?",
+                  style: TextStyle(
+                    color: Color.fromARGB(255, 3, 43, 76),
+                    fontSize: 24,
+                    fontWeight: FontWeight.w700,
+                  ),
+                ),
               ],
             ),
             SizedBox(
@@ -99,14 +97,14 @@ class ContainerCard extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "Enter OTP",
+                  "Full Name",
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
             TextField(
                 decoration: InputDecoration(
-                  hintText: 'Ex: 1 2 3 4 5 6',
+                  hintText: 'Ex : Priyanshu Singh',
                 ),
                 keyboardType: TextInputType.number),
             SizedBox(
@@ -115,7 +113,7 @@ class ContainerCard extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "Resend OTP in 98s",
+                  "*Please use your real name",
                   style: TextStyle(
                     color: Colors.grey,
                     fontSize: 14,
@@ -152,7 +150,7 @@ class ContainerCard extends StatelessWidget {
                   shadowColor: MaterialStateProperty.all(Colors.transparent),
                 ),
                 onPressed: () {
-                  Get.to(Name());
+                  Get.to(Age());
                 },
                 child: Padding(
                   padding: const EdgeInsets.only(
@@ -160,7 +158,7 @@ class ContainerCard extends StatelessWidget {
                     bottom: 10,
                   ),
                   child: Text(
-                    "Verify OTP",
+                    "Next",
                     style: TextStyle(
                       fontSize: 18,
                       // fontWeight: FontWeight.w700,

@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:letsconnectnewui/screens/createaccount/name.dart';
+import 'package:grouped_buttons_ns/grouped_buttons_ns.dart';
 
-class VefifyOtp extends StatelessWidget {
-  const VefifyOtp({Key? key}) : super(key: key);
+import 'interests.dart';
+
+class ProfileImage extends StatelessWidget {
+  const ProfileImage({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -13,8 +15,9 @@ class VefifyOtp extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              bottom: 340,
+              bottom: 400,
               top: 10,
+              left: 10,
               child: Container(
                 decoration: BoxDecoration(color: Colors.lightBlue),
                 child: Image.asset(
@@ -43,7 +46,7 @@ class ContainerCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 32, horizontal: 24),
       width: MediaQuery.of(context).size.width,
-      height: 441,
+      height: 551,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -57,18 +60,9 @@ class ContainerCard extends StatelessWidget {
           children: [
             Row(
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    image: DecorationImage(
-                      image: AssetImage(
-                        "assets/onboarding/line.png",
-                      ),
-                      fit: BoxFit.contain,
-                      alignment: Alignment.bottomCenter,
-                    ),
-                  ),
+                Flexible(
                   child: Text(
-                    "Verify OTP",
+                    "Let's add a profile picture !",
                     style: TextStyle(
                       color: Color.fromARGB(255, 3, 43, 76),
                       fontSize: 24,
@@ -78,50 +72,27 @@ class ContainerCard extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 10),
+            SizedBox(
+              height: 15,
+            ),
             Row(
               children: [
-                Row(
-                  children: [
-                    Text("OTP was sent to "),
-                    Text(
-                      "+91 12345 67890",
-                      style: TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.bold),
+                Flexible(
+                  child: Text(
+                    "We won’t display it publicly. We believe you don’t look your age 😉",
+                    style: TextStyle(
+                      color: Color(0xff2D4379),
+                      fontSize: 16,
                     ),
-                  ],
-                )
-              ],
-            ),
-            SizedBox(
-              height: 40,
-            ),
-            Row(
-              children: [
-                Text(
-                  "Enter OTP",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
-                ),
-              ],
-            ),
-            TextField(
-                decoration: InputDecoration(
-                  hintText: 'Ex: 1 2 3 4 5 6',
-                ),
-                keyboardType: TextInputType.number),
-            SizedBox(
-              height: 10,
-            ),
-            Row(
-              children: [
-                Text(
-                  "Resend OTP in 98s",
-                  style: TextStyle(
-                    color: Colors.grey,
-                    fontSize: 14,
                   ),
                 ),
               ],
+            ),
+            SizedBox(
+              height: 30,
+            ),
+            Container(
+              child: Image.asset("assets/createaccount/image.png"),
             ),
             Spacer(),
             Container(
@@ -152,7 +123,7 @@ class ContainerCard extends StatelessWidget {
                   shadowColor: MaterialStateProperty.all(Colors.transparent),
                 ),
                 onPressed: () {
-                  Get.to(Name());
+                  Get.to(Interests());
                 },
                 child: Padding(
                   padding: const EdgeInsets.only(
@@ -160,7 +131,7 @@ class ContainerCard extends StatelessWidget {
                     bottom: 10,
                   ),
                   child: Text(
-                    "Verify OTP",
+                    "Next",
                     style: TextStyle(
                       fontSize: 18,
                       // fontWeight: FontWeight.w700,

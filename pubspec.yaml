@@ -36,6 +36,8 @@ dependencies:
   cupertino_icons: ^1.0.2
   get: ^4.6.5
   intl_phone_number_input: ^0.7.1
+  grouped_buttons_ns: ^1.0.0
+  multi_select_flutter: ^4.1.2
 
 dev_dependencies:
   flutter_test:
@@ -63,7 +65,10 @@ flutter:
   assets:
     - assets/onboarding/
     - assets/loginpage/
+    - assets/createaccount/
     - assets/logo.png
+    - assets/doodle.png
+
 
 
   # An image asset can refer to one or more resolution-specific "variants", see

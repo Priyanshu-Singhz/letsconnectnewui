@@ -93,6 +93,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.6.5"
+  grouped_buttons_ns:
+    dependency: "direct main"
+    description:
+      name: grouped_buttons_ns
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "1.0.0"
   intl_phone_number_input:
     dependency: "direct main"
     description:
@@ -163,6 +170,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.7.0"
+  multi_select_flutter:
+    dependency: "direct main"
+    description:
+      name: multi_select_flutter
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.1.2"
   path:
     dependency: transitive
     description:

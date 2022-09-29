@@ -7,19 +7,28 @@ class Loginscreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Container(
-          decoration: BoxDecoration(color: Colors.lightBlue),
-          child: Image.asset(
-            "assets/loginpage/doodles.png",
-          ),
+    return Scaffold(
+      bottomSheet: Container(
+        decoration: BoxDecoration(color: Colors.lightBlue),
+        child: Stack(
+          children: [
+            Positioned(
+              bottom: 340,
+              top: 10,
+              child: Container(
+                decoration: BoxDecoration(color: Colors.lightBlue),
+                child: Image.asset(
+                  "assets/doodle.png",
+                ),
+              ),
+            ),
+            Positioned(
+              bottom: 0,
+              child: ContainerCard(),
+            ),
+          ],
         ),
-        Positioned(
-          bottom: 0,
-          child: ContainerCard(),
-        ),
-      ],
+      ),
     );
   }
 }
@@ -43,6 +52,7 @@ class ContainerCard extends StatelessWidget {
         ),
       ),
       child: Material(
+        color: Colors.white,
         child: Column(
           children: [
             Row(
@@ -96,7 +106,10 @@ class ContainerCard extends StatelessWidget {
               children: [
                 Text(
                   "Phone Number",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                      color: Color(0xff2D4379),
+                      fontSize: 14,
+                      fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -105,28 +118,62 @@ class ContainerCard extends StatelessWidget {
                   hintText: 'Ex: 12345 67890',
                 ),
                 keyboardType: TextInputType.number),
-            Spacer(),
-            ElevatedButton(
-              style: TextButton.styleFrom(
-                  // foregroundColor: Colors.black,
-                  backgroundColor: Colors.lightBlueAccent,
-                  minimumSize: Size(148, 48)),
-              onPressed: () {
-                Get.to(VefifyOtp());
-              },
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Text(
-                    'Send OTP',
-                    style: TextStyle(color: Colors.white, fontSize: 20),
+            SizedBox(height: 40),
+            Container(
+                decoration: BoxDecoration(
+                  gradient: LinearGradient(
+                    begin: Alignment.bottomCenter,
+                    end: Alignment.center,
+                    stops: [0.0, 1.0],
+                    colors: [
+                      Colors.blue.shade500,
+                      Colors.blue.shade400,
+                    ],
                   ),
-                ],
+                  color: Colors.deepPurple.shade300,
+                  borderRadius: BorderRadius.circular(10),
+                ),
+                child: ElevatedButton(
+                    style: ButtonStyle(
+                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
+                        RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20.0),
+                        ),
+                      ),
+                      minimumSize: MaterialStateProperty.all(Size(400, 50)),
+                      backgroundColor:
+                          MaterialStateProperty.all(Colors.transparent),
+                      // elevation: MaterialStateProperty.all(3),
+                      shadowColor:
+                          MaterialStateProperty.all(Colors.transparent),
+                    ),
+                    onPressed: () {
+                      Get.to(VefifyOtp());
+                    },
+                    child: Padding(
+                        padding: const EdgeInsets.only(
+                          top: 10,
+                          bottom: 10,
+                        ),
+                        child: Text("Send OTP",
+                            style: TextStyle(
+                              fontSize: 18,
+                              // fontWeight: FontWeight.w700,
+                              color: Colors.white,
+                            ))))),
+            SizedBox(height: 45),
+            Text(
+              "OR SIGN IN WITH",
+              style: TextStyle(
+                color: Color.fromARGB(255, 3, 43, 76),
+                letterSpacing: 2,
+                fontSize: 14,
               ),
             ),
+            Spacer(),
             Container(
               height: 32,
-              width: 125,
+              width: 176,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [

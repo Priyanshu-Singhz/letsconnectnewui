@@ -1,8 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:get/get.dart';
-import 'package:grouped_buttons_ns/grouped_buttons_ns.dart';
-
-import 'interests.dart';
 
 class ProfileImage extends StatelessWidget {
   const ProfileImage({Key? key}) : super(key: key);
@@ -123,7 +119,7 @@ class ContainerCard extends StatelessWidget {
                   shadowColor: MaterialStateProperty.all(Colors.transparent),
                 ),
                 onPressed: () {
-                  Get.to(Interests());
+                  // Get.to(Interests());
                 },
                 child: Padding(
                   padding: const EdgeInsets.only(

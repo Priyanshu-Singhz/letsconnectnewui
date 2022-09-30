@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
+import 'package:letsconnectnewui/common/widgets/custom_button.dart';
+import 'package:letsconnectnewui/screens/createaccount/interest_view.dart';
 
 class ProfileImage extends StatelessWidget {
   const ProfileImage({Key? key}) : super(key: key);
@@ -88,54 +91,17 @@ class ContainerCard extends StatelessWidget {
               height: 30,
             ),
             Container(
-              child: Image.asset("assets/createaccount/image.png"),
+              child: Image.asset(
+                "assets/createaccount/image.png",
+                height: 200,
+              ),
             ),
             Spacer(),
-            Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.center,
-                  stops: [0.0, 1.0],
-                  colors: [
-                    Colors.blue.shade500,
-                    Colors.blue.shade400,
-                  ],
-                ),
-                color: Colors.deepPurple.shade300,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                  minimumSize: MaterialStateProperty.all(Size(400, 50)),
-                  backgroundColor:
-                      MaterialStateProperty.all(Colors.transparent),
-                  // elevation: MaterialStateProperty.all(3),
-                  shadowColor: MaterialStateProperty.all(Colors.transparent),
-                ),
-                onPressed: () {
-                  // Get.to(Interests());
-                },
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    top: 10,
-                    bottom: 10,
-                  ),
-                  child: Text(
-                    "Next",
-                    style: TextStyle(
-                      fontSize: 18,
-                      // fontWeight: FontWeight.w700,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
+            CustomButton(
+              label: 'Next',
+              onTap: () {
+                Get.to(() => InterestView());
+              },
             ),
           ],
         ),

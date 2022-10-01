@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grouped_buttons_ns/grouped_buttons_ns.dart';
+import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'package:letsconnectnewui/screens/createaccount/image.dart';
 
 class Gender extends StatelessWidget {
@@ -94,51 +95,11 @@ class ContainerCard extends StatelessWidget {
                 labels: <String>["18 - 21", "21 - 26", "26+"],
                 onSelected: (String selected) => print(selected)),
             Spacer(),
-            Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.center,
-                  stops: [0.0, 1.0],
-                  colors: [
-                    Colors.blue.shade500,
-                    Colors.blue.shade400,
-                  ],
-                ),
-                color: Colors.deepPurple.shade300,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                  minimumSize: MaterialStateProperty.all(Size(400, 50)),
-                  backgroundColor:
-                      MaterialStateProperty.all(Colors.transparent),
-                  // elevation: MaterialStateProperty.all(3),
-                  shadowColor: MaterialStateProperty.all(Colors.transparent),
-                ),
-                onPressed: () {
-                  Get.to(ProfileImage());
-                },
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    top: 10,
-                    bottom: 10,
-                  ),
-                  child: Text(
-                    "Next",
-                    style: TextStyle(
-                      fontSize: 18,
-                      // fontWeight: FontWeight.w700,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
+            CustomButton(
+              label: 'Next',
+              onTap: () {
+                Get.to(ProfileImage());
+              },
             ),
           ],
         ),

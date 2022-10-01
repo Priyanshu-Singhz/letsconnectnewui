@@ -24,8 +24,8 @@ class _InterestViewState extends State<InterestView> {
     'Writing',
     'Making videos',
     'Crafts',
-    'Design'
-        'Design',
+    'Design',
+    'Design',
     'Makeup',
     'Writing',
     'Making videos',
@@ -222,7 +222,7 @@ class _InterestContainerState extends State<InterestContainer> {
                 setState(() {});
               },
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 16, vertical: 8),
+                padding: EdgeInsets.symmetric(horizontal: 14, vertical: 8),
                 margin: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
                 child: Text(
                   widget.options[index],

@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/models/onboarding_model.dart';
 import 'package:letsconnectnewui/screens/loginscreen/loginscreen.dart';
 
@@ -227,14 +228,14 @@ class ContainerCard extends StatelessWidget {
                   children: [
                     Text(
                       'Next',
-                      style: TextStyle(color: Colors.black),
+                      style: MyTextStyle.mediumTheme,
                     ),
                     SizedBox(
                       width: 10,
                     ),
                     Icon(
                       Icons.arrow_forward,
-                      size: 20,
+                      size: 17,
                       color: Colors.black,
                     ),
                   ],

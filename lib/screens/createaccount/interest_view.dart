@@ -5,6 +5,7 @@ import 'package:letsconnectnewui/common/constants/colors.dart';
 
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
+import 'package:letsconnectnewui/screens/createaccount/welcomepage.dart';
 
 class InterestView extends StatefulWidget {
   const InterestView({Key? key}) : super(key: key);
@@ -91,7 +92,11 @@ class _InterestViewState extends State<InterestView> {
                   SizedBox(
                     height: 16,
                   ),
-                  CustomButton(label: 'Next'),
+                  CustomButton(
+                      label: 'Next',
+                      onTap: () {
+                        Get.to(WelcomePage());
+                      }),
                   SizedBox(
                     height: 20,
                   ),

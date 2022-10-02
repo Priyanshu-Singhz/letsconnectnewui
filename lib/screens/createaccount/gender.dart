@@ -15,13 +15,15 @@ class Gender extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              bottom: 400,
-              top: 10,
-              left: 10,
+              bottom: 531,
+              top: 0,
+              left: 0,
+              right: 10,
               child: Container(
-                decoration: BoxDecoration(color: Colors.lightBlue),
                 child: Image.asset(
-                  "assets/doodle.png",
+                  "assets/createaccount/doodle.png",
+                  scale: 4,
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -29,6 +31,7 @@ class Gender extends StatelessWidget {
               bottom: 0,
               child: ContainerCard(),
             ),
+            CustomBack(),
           ],
         ),
       ),
@@ -92,7 +95,7 @@ class ContainerCard extends StatelessWidget {
               height: 40,
             ),
             RadioButtonGroup(
-                labels: <String>["18 - 21", "21 - 26", "26+"],
+                labels: <String>["Male", "Female", "Other"],
                 onSelected: (String selected) => print(selected)),
             Spacer(),
             CustomButton(

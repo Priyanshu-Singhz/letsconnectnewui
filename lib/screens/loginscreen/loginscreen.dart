@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'package:letsconnectnewui/screens/loginscreen/verifyotp.dart';
 
 class Loginscreen extends StatelessWidget {
@@ -115,52 +116,33 @@ class ContainerCard extends StatelessWidget {
             ),
             TextField(
                 decoration: InputDecoration(
+                  prefixIcon: Container(
+                    height: 25,
+                    width: 67,
+                    child: Row(
+                      children: [
+                        Container(
+                          height: 25,
+                          width: 30,
+                          child: Image(
+                            image: AssetImage(
+                              "assets/loginpage/flag.png",
+                            ),
+                          ),
+                        ),
+                        Text("+91")
+                      ],
+                    ),
+                  ),
                   hintText: 'Ex: 12345 67890',
                 ),
                 keyboardType: TextInputType.number),
             SizedBox(height: 40),
-            Container(
-                decoration: BoxDecoration(
-                  gradient: LinearGradient(
-                    begin: Alignment.bottomCenter,
-                    end: Alignment.center,
-                    stops: [0.0, 1.0],
-                    colors: [
-                      Colors.blue.shade500,
-                      Colors.blue.shade400,
-                    ],
-                  ),
-                  color: Colors.deepPurple.shade300,
-                  borderRadius: BorderRadius.circular(10),
-                ),
-                child: ElevatedButton(
-                    style: ButtonStyle(
-                      shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                          borderRadius: BorderRadius.circular(20.0),
-                        ),
-                      ),
-                      minimumSize: MaterialStateProperty.all(Size(400, 50)),
-                      backgroundColor:
-                          MaterialStateProperty.all(Colors.transparent),
-                      // elevation: MaterialStateProperty.all(3),
-                      shadowColor:
-                          MaterialStateProperty.all(Colors.transparent),
-                    ),
-                    onPressed: () {
-                      Get.to(VefifyOtp());
-                    },
-                    child: Padding(
-                        padding: const EdgeInsets.only(
-                          top: 10,
-                          bottom: 10,
-                        ),
-                        child: Text("Send OTP",
-                            style: TextStyle(
-                              fontSize: 18,
-                              // fontWeight: FontWeight.w700,
-                              color: Colors.white,
-                            ))))),
+            CustomButton1(
+                label: "Send OTP",
+                onTap: () {
+                  Get.to(VefifyOtp());
+                }),
             SizedBox(height: 45),
             Text(
               "OR SIGN IN WITH",

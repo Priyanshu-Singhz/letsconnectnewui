@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grouped_buttons_ns/grouped_buttons_ns.dart';
+import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'package:letsconnectnewui/screens/createaccount/gender.dart';
 
 class Age extends StatelessWidget {
@@ -14,13 +15,15 @@ class Age extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              bottom: 400,
-              top: 10,
-              left: 10,
+              bottom: 531,
+              top: 0,
+              left: 0,
+              right: 10,
               child: Container(
-                decoration: BoxDecoration(color: Colors.lightBlue),
                 child: Image.asset(
-                  "assets/doodle.png",
+                  "assets/createaccount/doodle.png",
+                  scale: 4,
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -28,6 +31,7 @@ class Age extends StatelessWidget {
               bottom: 0,
               child: ContainerCard(),
             ),
+            CustomBack(),
           ],
         ),
       ),

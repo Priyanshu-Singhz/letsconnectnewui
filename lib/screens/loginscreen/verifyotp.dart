@@ -19,7 +19,7 @@ class VefifyOtp extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(color: Colors.lightBlue),
                 child: Image.asset(
-                  "assets/doodle.png",
+                  "assets/doodlee.png",
                 ),
               ),
             ),

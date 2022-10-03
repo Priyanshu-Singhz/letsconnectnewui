@@ -33,7 +33,7 @@ flutter:
     - assets/loginpage/
     - assets/createaccount/
     - assets/logo.png
-    - assets/doodle.png
+    - assets/doodlee.png
   
   fonts:
     - family: Satoshi

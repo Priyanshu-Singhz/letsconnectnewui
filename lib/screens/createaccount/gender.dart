@@ -21,7 +21,7 @@ class Gender extends StatelessWidget {
               right: 10,
               child: Container(
                 child: Image.asset(
-                  "assets/createaccount/doodle.png",
+                  "assets/createaccount/dood.png",
                   scale: 4,
                   color: Colors.white,
                 ),

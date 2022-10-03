@@ -26,9 +26,12 @@ class _SplashscreenState extends State<Splashscreen> {
       decoration: BoxDecoration(
         color: Colors.lightBlue,
       ),
-      child: Image(
-        image: AssetImage(
-          "assets/logo.png",
+      child: Padding(
+        padding: const EdgeInsets.all(120),
+        child: Image(
+          image: AssetImage(
+            "assets/logo.png",
+          ),
         ),
       ),
     );

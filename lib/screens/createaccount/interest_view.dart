@@ -25,13 +25,15 @@ class _InterestViewState extends State<InterestView> {
     'Writing',
     'Making videos',
     'Crafts',
-    'Design',
-    'Design',
-    'Makeup',
-    'Writing',
-    'Making videos',
-    'Crafts',
-    'Design'
+    'creativity1',
+    'creativity2',
+    'creativity3',
+    'creativity4',
+    'creativity5',
+    'creativity6',
+    'creativity7',
+    'creativity8',
+    'creativity9',
   ];
 
   List<String> selectedCreativityList = [];
@@ -236,6 +238,19 @@ class _InterestContainerState extends State<InterestContainer> {
                   ),
                 ),
                 decoration: BoxDecoration(
+                  boxShadow: [
+                    BoxShadow(
+                      color: Colors.grey,
+                      blurRadius: 1.0,
+                      spreadRadius: 0.0,
+                    ),
+                    BoxShadow(
+                      color: Colors.white,
+                      offset: const Offset(0.0, 0.0),
+                      blurRadius: 0.0,
+                      spreadRadius: 0.0,
+                    ),
+                  ],
                   gradient: isSelected ? AppColors.primaryGradient : null,
                   borderRadius: BorderRadius.circular(32),
                   border: isSelected

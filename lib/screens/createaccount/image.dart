@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'package:letsconnectnewui/screens/createaccount/interest_view.dart';
 
@@ -14,13 +15,15 @@ class ProfileImage extends StatelessWidget {
         child: Stack(
           children: [
             Positioned(
-              bottom: 400,
-              top: 10,
-              left: 10,
+              bottom: 531,
+              top: 0,
+              left: 0,
+              right: 10,
               child: Container(
-                decoration: BoxDecoration(color: Colors.lightBlue),
                 child: Image.asset(
-                  "assets/doodle.png",
+                  "assets/createaccount/dood.png",
+                  scale: 4,
+                  color: Colors.white,
                 ),
               ),
             ),
@@ -28,6 +31,7 @@ class ProfileImage extends StatelessWidget {
               bottom: 0,
               child: ContainerCard(),
             ),
+            CustomBack(),
           ],
         ),
       ),
@@ -88,12 +92,56 @@ class ContainerCard extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 30,
+              height: 40,
             ),
-            Container(
-              child: Image.asset(
-                "assets/createaccount/image.png",
-                height: 200,
+            InkWell(
+              onTap: () {
+                showModalBottomSheet(
+                  shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20)),
+                  context: context,
+                  builder: (context) {
+                    return Column(
+                      mainAxisSize: MainAxisSize.min,
+                      children: <Widget>[
+                        ListTile(
+                          leading: new Icon(
+                            Icons.camera_alt,
+                            color: Color(0xff3086EB),
+                          ),
+                          title: new Text(
+                            'Take Photo',
+                            style: MyTextStyle.regularTheme,
+                          ),
+                          onTap: () {},
+                        ),
+                        Container(
+                          padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
+                          child: Image.asset(
+                              "assets/createaccount/divideline.png"),
+                        ),
+                        ListTile(
+                          leading: new Icon(
+                            Icons.photo,
+                            color: Color(0xff3086EB),
+                          ),
+                          title: new Text(
+                            'Choose from gallary',
+                            style: MyTextStyle.regularTheme,
+                          ),
+                          onTap: () {},
+                        ),
+                      ],
+                    );
+                  },
+                );
+              },
+              child: Container(
+                child: Image.asset(
+                  "assets/createaccount/image.png",
+                  height: 216,
+                  width: 216,
+                ),
               ),
             ),
             Spacer(),

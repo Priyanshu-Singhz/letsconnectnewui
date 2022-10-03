@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/src/foundation/key.dart';
-import 'package:flutter/src/widgets/framework.dart';
+
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 
@@ -110,7 +109,11 @@ class RowData extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Icon(Icons.arrow_circle_right),
+        Icon(
+          Icons.check_circle_outline,
+          color: Colors.yellow,
+          size: 30,
+        ),
         SizedBox(width: 16),
         Flexible(child: Text(text, style: MyTextStyle.mediumTheme)),
       ],

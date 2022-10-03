@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'package:letsconnectnewui/screens/createaccount/name.dart';
 
 class VefifyOtp extends StatelessWidget {
@@ -18,7 +19,7 @@ class VefifyOtp extends StatelessWidget {
               child: Container(
                 decoration: BoxDecoration(color: Colors.lightBlue),
                 child: Image.asset(
-                  "assets/doodle.png",
+                  "assets/doodlee.png",
                 ),
               ),
             ),
@@ -26,6 +27,7 @@ class VefifyOtp extends StatelessWidget {
               bottom: 0,
               child: ContainerCard(),
             ),
+            CustomBack(),
           ],
         ),
       ),
@@ -124,51 +126,11 @@ class ContainerCard extends StatelessWidget {
               ],
             ),
             Spacer(),
-            Container(
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.center,
-                  stops: [0.0, 1.0],
-                  colors: [
-                    Colors.blue.shade500,
-                    Colors.blue.shade400,
-                  ],
-                ),
-                color: Colors.deepPurple.shade300,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                  minimumSize: MaterialStateProperty.all(Size(400, 50)),
-                  backgroundColor:
-                      MaterialStateProperty.all(Colors.transparent),
-                  // elevation: MaterialStateProperty.all(3),
-                  shadowColor: MaterialStateProperty.all(Colors.transparent),
-                ),
-                onPressed: () {
-                  Get.to(Name());
-                },
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    top: 10,
-                    bottom: 10,
-                  ),
-                  child: Text(
-                    "Verify OTP",
-                    style: TextStyle(
-                      fontSize: 18,
-                      // fontWeight: FontWeight.w700,
-                      color: Colors.white,
-                    ),
-                  ),
-                ),
-              ),
+            CustomButton1(
+              label: "Verify OTP",
+              onTap: () {
+                Get.to(Name());
+              },
             ),
           ],
         ),

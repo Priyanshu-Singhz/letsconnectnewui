@@ -39,7 +39,6 @@ class _OnBoardingScreenState extends State<OnBoardingScreen> {
             currentIndex = value;
           });
         },
-        physics: NeverScrollableScrollPhysics(),
         itemCount: onBoardingList.length,
         itemBuilder: (context, index) {
           return OnBoardingCard(

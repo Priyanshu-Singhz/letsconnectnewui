@@ -33,7 +33,7 @@ class _InterestViewState extends State<InterestView> {
     'creativity6',
     'creativity7',
     'creativity8',
-    'creativity9',
+    
   ];
 
   List<String> selectedCreativityList = [];

@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
+import 'package:letsconnectnewui/screens/home/notifications.dart';
 
 class WelcomePage extends StatelessWidget {
   const WelcomePage({Key? key}) : super(key: key);
@@ -95,7 +97,12 @@ class Header extends StatelessWidget {
           ),
         ),
         SizedBox(height: 32),
-        CustomButton(label: "I Agree"),
+        CustomButton(
+          label: "I Agree",
+          onTap: () {
+            Get.to(Notifications());
+          },
+        ),
       ],
     );
   }

@@ -17,6 +17,9 @@ dependencies:
   intl_phone_number_input: ^0.7.1
   grouped_buttons_ns: ^1.0.0
   multi_select_flutter: ^4.1.2
+  shimmer: ^2.0.0
+  cached_network_image: ^3.2.1
+  percent_indicator: ^4.2.2
 
 dev_dependencies:
   flutter_test:
@@ -34,7 +37,7 @@ flutter:
     - assets/createaccount/
     - assets/logo.png
     - assets/doodlee.png
-    - assets/home/notifications/
+    - assets/home/
   
   fonts:
     - family: Satoshi

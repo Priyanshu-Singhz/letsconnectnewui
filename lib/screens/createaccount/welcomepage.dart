@@ -3,6 +3,7 @@ import 'package:get/get.dart';
 
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
+import 'package:letsconnectnewui/screens/home/home.dart';
 import 'package:letsconnectnewui/screens/home/notifications.dart';
 
 class WelcomePage extends StatelessWidget {
@@ -100,7 +101,7 @@ class Header extends StatelessWidget {
         CustomButton(
           label: "I Agree",
           onTap: () {
-            Get.to(Notifications());
+            Get.to(HomePage());
           },
         ),
       ],

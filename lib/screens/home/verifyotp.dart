@@ -2,9 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'package:letsconnectnewui/screens/createaccount/name.dart';
+import 'package:letsconnectnewui/screens/home/success.dart';
 
-class VefifyOtp extends StatelessWidget {
-  const VefifyOtp({Key? key}) : super(key: key);
+class ConfirmOtp extends StatelessWidget {
+  const ConfirmOtp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -129,7 +130,7 @@ class ContainerCard extends StatelessWidget {
             CustomButton1(
               label: "Verify OTP",
               onTap: () {
-                Get.to(Name());
+                Get.to(Success());
               },
             ),
           ],

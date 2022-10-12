@@ -1,10 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
+import 'package:letsconnectnewui/screens/home/verifyotp.dart';
 import 'package:letsconnectnewui/screens/loginscreen/verifyotp.dart';
 
-class Loginscreen extends StatelessWidget {
-  const Loginscreen({Key? key}) : super(key: key);
+class UpdatePhone extends StatelessWidget {
+  const UpdatePhone({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -23,6 +24,7 @@ class Loginscreen extends StatelessWidget {
                 ),
               ),
             ),
+            CustomBack(),
             Positioned(
               bottom: 0,
               child: ContainerCard(),
@@ -69,7 +71,7 @@ class ContainerCard extends StatelessWidget {
                     ),
                   ),
                   child: Text(
-                    "Get Started",
+                    "Update Phone Number",
                     style: TextStyle(
                       color: Color.fromARGB(255, 3, 43, 76),
                       fontSize: 24,
@@ -83,7 +85,7 @@ class ContainerCard extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "We'll send you a six digit one time verification ",
+                  "We'll send you a 6 digit one time verification ",
                   style: TextStyle(
                     fontSize: 14,
                   ),
@@ -141,32 +143,9 @@ class ContainerCard extends StatelessWidget {
             CustomButton1(
                 label: "Send OTP",
                 onTap: () {
-                  Get.to(VefifyOtp());
+                  Get.to(ConfirmOtp());
                 }),
-            SizedBox(height: 45),
-            Text(
-              "OR SIGN IN WITH",
-              style: TextStyle(
-                color: Color.fromARGB(255, 3, 43, 76),
-                letterSpacing: 2,
-                fontSize: 14,
-              ),
-            ),
             Spacer(),
-            Container(
-              height: 32,
-              width: 176,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset("assets/loginpage/google.png"),
-                  Spacer(),
-                  Image.asset("assets/loginpage/facebook.png"),
-                  Spacer(),
-                  Image.asset("assets/loginpage/apple.png"),
-                ],
-              ),
-            ),
           ],
         ),
       ),

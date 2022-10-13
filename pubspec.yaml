@@ -36,12 +36,8 @@ flutter:
     - assets/createaccount/
     - assets/logo.png
     - assets/doodlee.png
-    - assets/notifications/pic1.png
-    - assets/notifications/pic2.png
-    - assets/notifications/pic3.png
-    - assets/notifications/pic4.png
-    - assets/notifications/pic5.png
-    - assets/notifications/pic6.png
+    - assets/notifications/
+    - assets/profile/attachement.png
    
     
   

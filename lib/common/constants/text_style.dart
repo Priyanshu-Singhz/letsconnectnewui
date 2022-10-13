@@ -10,6 +10,24 @@ class MyTextStyle {
         color: AppColors.fontColor,
         fontWeight: FontWeight.w700,
       );
+  static TextStyle get smallheaderTheme => TextStyle(
+        fontSize: 18,
+        fontFamily: fontFamily,
+        color: AppColors.fontColor,
+        fontWeight: FontWeight.w700,
+      );
+  static TextStyle get smalfontheaderTheme => TextStyle(
+        fontSize: 16,
+        fontFamily: fontFamily,
+        color: Color(0xff2D4379),
+        fontWeight: FontWeight.w700,
+      );
+  static TextStyle get xheaderTheme => TextStyle(
+        fontSize: 18,
+        fontFamily: fontFamily,
+        color: AppColors.fontColor,
+        fontWeight: FontWeight.w500,
+      );
   static TextStyle get mediumTheme => TextStyle(
         fontSize: 16,
         fontFamily: fontFamily,
@@ -19,7 +37,13 @@ class MyTextStyle {
   static TextStyle get mediumblueTheme => TextStyle(
         fontSize: 16,
         fontFamily: fontFamily,
-        color: Color(0x00A3FF),
+        color: Colors.blue,
+        fontWeight: FontWeight.w500,
+      );
+  static TextStyle get mediumwhiteTheme => TextStyle(
+        fontSize: 16,
+        fontFamily: fontFamily,
+        color: Colors.white,
         fontWeight: FontWeight.w500,
       );
   static TextStyle get mediumredTheme => TextStyle(

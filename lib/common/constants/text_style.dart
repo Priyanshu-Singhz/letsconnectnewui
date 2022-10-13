@@ -16,6 +16,12 @@ class MyTextStyle {
         color: AppColors.fontColor,
         fontWeight: FontWeight.w500,
       );
+  static TextStyle get mediumblueTheme => TextStyle(
+        fontSize: 16,
+        fontFamily: fontFamily,
+        color: Color(0x00A3FF),
+        fontWeight: FontWeight.w500,
+      );
   static TextStyle get mediumredTheme => TextStyle(
         fontSize: 16,
         fontFamily: fontFamily,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
+import 'package:letsconnectnewui/screens/home/blokusers.dart';
 import 'package:letsconnectnewui/screens/home/update_phone.dart';
 
 import 'package:percent_indicator/circular_percent_indicator.dart';
@@ -54,7 +55,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
             SizedBox(
               height: 24,
             ),
-            CustomTabs(text: "Blocked Users"),
+            CustomTabs(
+                text: "Blocked Users",
+                onTap: () {
+                  Get.to(BlkUsers());
+                }),
             SizedBox(
               height: 24,
             ),

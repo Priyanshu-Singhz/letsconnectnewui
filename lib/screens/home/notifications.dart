@@ -6,8 +6,6 @@ class Notifications extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int limit = 10;
-    int number = 0;
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,

@@ -6,8 +6,6 @@ class Notifications extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    int limit = 10;
-    int number = 0;
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -23,26 +21,26 @@ class Notifications extends StatelessWidget {
       body: SingleChildScrollView(
         child: Column(
           children: [
-            UnreadNotification(imag: "assets/home/notifications/pic1.png"),
-            UnreadNotification(imag: "assets/home/notifications/pic2.png"),
-            ReadNotification(imag: "assets/home/notifications/pic3.png"),
-            ReadNotification(imag: "assets/home/notifications/pic4.png"),
-            ReadNotification(imag: "assets/home/notifications/pic5.png"),
-            ReadNotification(imag: "assets/home/notifications/pic6.png"),
-            UnreadNotification(imag: "assets/home/notifications/pic1.png"),
-            UnreadNotification(imag: "assets/home/notifications/pic2.png"),
-            ReadNotification(imag: "assets/home/notifications/pic3.png"),
-            ReadNotification(imag: "assets/home/notifications/pic4.png"),
-            ReadNotification(imag: "assets/home/notifications/pic5.png"),
-            ReadNotification(imag: "assets/home/notifications/pic6.png"),
-            ReadNotification(imag: "assets/home/notifications/pic5.png"),
-            ReadNotification(imag: "assets/home/notifications/pic6.png"),
-            UnreadNotification(imag: "assets/home/notifications/pic1.png"),
-            UnreadNotification(imag: "assets/home/notifications/pic2.png"),
-            ReadNotification(imag: "assets/home/notifications/pic3.png"),
-            ReadNotification(imag: "assets/home/notifications/pic4.png"),
-            ReadNotification(imag: "assets/home/notifications/pic5.png"),
-            ReadNotification(imag: "assets/home/notifications/pic6.png"),
+            UnreadNotification(imag: "assets/notifications/pic1.png"),
+            UnreadNotification(imag: "assets/notifications/pic2.png"),
+            ReadNotification(imag: "assets/notifications/pic3.png"),
+            ReadNotification(imag: "assets/notifications/pic4.png"),
+            ReadNotification(imag: "assets/notifications/pic5.png"),
+            ReadNotification(imag: "assets/notifications/pic6.png"),
+            UnreadNotification(imag: "assets/notifications/pic1.png"),
+            UnreadNotification(imag: "assets/notifications/pic2.png"),
+            ReadNotification(imag: "assets/notifications/pic3.png"),
+            ReadNotification(imag: "assets/notifications/pic4.png"),
+            ReadNotification(imag: "assets/notifications/pic5.png"),
+            ReadNotification(imag: "assets/notifications/pic6.png"),
+            ReadNotification(imag: "assets/notifications/pic5.png"),
+            ReadNotification(imag: "assets/notifications/pic6.png"),
+            UnreadNotification(imag: "assets/notifications/pic1.png"),
+            UnreadNotification(imag: "assets/notifications/pic2.png"),
+            ReadNotification(imag: "assets/notifications/pic3.png"),
+            ReadNotification(imag: "assets/notifications/pic4.png"),
+            ReadNotification(imag: "assets/notifications/pic5.png"),
+            ReadNotification(imag: "assets/notifications/pic6.png"),
           ],
         ),
       ),

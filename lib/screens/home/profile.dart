@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
+import 'package:letsconnectnewui/screens/home/blokusers.dart';
+import 'package:letsconnectnewui/screens/home/feedback.dart';
 import 'package:letsconnectnewui/screens/home/update_phone.dart';
 
 import 'package:percent_indicator/circular_percent_indicator.dart';
@@ -54,7 +56,11 @@ class _ProfileScreenState extends State<ProfileScreen> {
             SizedBox(
               height: 24,
             ),
-            CustomTabs(text: "Blocked Users"),
+            CustomTabs(
+                text: "Blocked Users",
+                onTap: () {
+                  Get.to(BlkUsers());
+                }),
             SizedBox(
               height: 24,
             ),
@@ -70,7 +76,12 @@ class _ProfileScreenState extends State<ProfileScreen> {
             SizedBox(
               height: 24,
             ),
-            CustomTabs(text: "Share feedback"),
+            CustomTabs(
+              text: "Share feedback",
+              onTap: () {
+                Get.to(FeedbackScreen());
+              },
+            ),
             SizedBox(
               height: 24,
             ),
@@ -82,24 +93,36 @@ class _ProfileScreenState extends State<ProfileScreen> {
             SizedBox(
               height: 24,
             ),
-            CustomTabs(text: "Pause Acoount"),
+            CustomTabs(
+              text: "Pause Acoount",
+              onTap: () {
+                showDialog(
+                    context: context, builder: (context) => PauseAccount());
+              },
+            ),
             SizedBox(
               height: 24,
             ),
-            Row(
-              children: [
-                SizedBox(
-                  width: 24,
-                ),
-                Text("Delete Acoount", style: MyTextStyle.mediumredTheme),
-                Spacer(),
-                Icon(
-                  Icons.chevron_right,
-                ),
-                SizedBox(
-                  width: 33,
-                ),
-              ],
+            InkWell(
+              onTap: () {
+                showDialog(
+                    context: context, builder: (context) => CustomAlert());
+              },
+              child: Row(
+                children: [
+                  SizedBox(
+                    width: 24,
+                  ),
+                  Text("Delete Acoount", style: MyTextStyle.mediumredTheme),
+                  Spacer(),
+                  Icon(
+                    Icons.chevron_right,
+                  ),
+                  SizedBox(
+                    width: 33,
+                  ),
+                ],
+              ),
             ),
             SizedBox(
               height: 24,
@@ -149,7 +172,7 @@ class Profileimg extends StatelessWidget {
                     radius: 70, // Image radius
 
                     backgroundImage:
-                        AssetImage("assets/home/notifications/pic1.png"),
+                        AssetImage("assets/notifications/pic1.png"),
                   ),
                   progressColor: Colors.lightBlue,
                 ),
@@ -242,6 +265,144 @@ class CustomContainer extends StatelessWidget {
           ),
           Text("$text", style: MyTextStyle.regularTheme),
         ],
+      ),
+    );
+  }
+}
+
+class CustomAlert extends StatelessWidget {
+  const CustomAlert({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+      content: Container(
+        alignment: Alignment.topLeft,
+        width: 312,
+        height: 220,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              "Delete Account?",
+              style: MyTextStyle.mediumTheme,
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Text(
+              "Are you sure you really want to delete your account? This action cannot be reversed, account will be deleted permanently.",
+              style: MyTextStyle.regularTheme,
+            ),
+            SizedBox(
+              height: 24,
+            ),
+            Row(
+              children: [
+                Spacer(),
+                InkWell(
+                  onTap: () {
+                    Get.back();
+                  },
+                  child: Container(
+                    child: Text("Cancel", style: MyTextStyle.mediumblueTheme),
+                  ),
+                ),
+                SizedBox(
+                  width: 24,
+                ),
+                Container(
+                  alignment: Alignment.center,
+                  height: 48,
+                  width: 157,
+                  decoration: BoxDecoration(
+                      color: Colors.red,
+                      borderRadius: BorderRadius.circular(13)),
+                  child: Text(
+                    "Delete Account",
+                    style: MyTextStyle.mediumwhiteTheme,
+                  ),
+                ),
+                Spacer(),
+              ],
+            )
+          ],
+        ),
+      ),
+    );
+  }
+}
+
+class PauseAccount extends StatelessWidget {
+  const PauseAccount({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return AlertDialog(
+      shape: RoundedRectangleBorder(
+        borderRadius: BorderRadius.circular(12),
+      ),
+      content: Container(
+        alignment: Alignment.topLeft,
+        width: 312,
+        height: 275,
+        child: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          children: [
+            SizedBox(
+              height: 20,
+            ),
+            Text(
+              "Pause Account?",
+              style: MyTextStyle.mediumTheme,
+            ),
+            SizedBox(
+              height: 16,
+            ),
+            Text(
+              "By pausing your account, your profile will not be shown to other users and you will be logged out. You will retain your connections and chats. Your account and data will be resumed (i.e. your profile will be visible to other people) once you log in again.",
+              style: MyTextStyle.regularTheme,
+            ),
+            SizedBox(
+              height: 24,
+            ),
+            Row(
+              children: [
+                Spacer(),
+                InkWell(
+                  onTap: () {
+                    Get.back();
+                  },
+                  child: Container(
+                    child: Text("Cancel", style: MyTextStyle.mediumblueTheme),
+                  ),
+                ),
+                SizedBox(
+                  width: 24,
+                ),
+                Container(
+                  alignment: Alignment.center,
+                  height: 48,
+                  width: 157,
+                  decoration: BoxDecoration(
+                      color: Colors.blue,
+                      borderRadius: BorderRadius.circular(13)),
+                  child: Text(
+                    "Pause Account",
+                    style: MyTextStyle.mediumwhiteTheme,
+                  ),
+                ),
+                Spacer(),
+              ],
+            )
+          ],
+        ),
       ),
     );
   }

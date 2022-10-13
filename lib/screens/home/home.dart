@@ -16,8 +16,8 @@ class _HomePageState extends State<HomePage> {
     const Page2(),
     const Page3(),
     const Page4(),
-    ProfileScreen(),
     Notifications(),
+    ProfileScreen(),
   ];
 
   @override

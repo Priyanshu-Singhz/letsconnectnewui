@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'package:letsconnectnewui/screens/home/verifyotp.dart';
-import 'package:letsconnectnewui/screens/loginscreen/verifyotp.dart';
 
 class UpdatePhone extends StatelessWidget {
   const UpdatePhone({Key? key}) : super(key: key);

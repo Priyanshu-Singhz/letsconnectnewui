@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
+import 'package:letsconnectnewui/screens/home/editinterest.dart';
+import 'package:letsconnectnewui/screens/home/editlookingfor.dart';
 
 class EditProfile extends StatelessWidget {
   const EditProfile({Key? key}) : super(key: key);
@@ -159,15 +162,95 @@ class EditProfile extends StatelessWidget {
                 height: 24,
               ),
               CustomLabel(label: "Name"),
-              Customfield(hinttext: ""),
+              Customfield(hinttext: "Eg: Cody Fisher"),
+              SizedBox(
+                height: 40,
+              ),
+              CustomLabel(label: "Bio"),
+              TextField(
+                keyboardType: TextInputType.multiline,
+                maxLines: 4,
+                decoration: InputDecoration(
+                  hintText: "Please tell us more more about your experience",
+                ),
+              ),
+              SizedBox(
+                height: 5,
+              ),
+              Row(
+                children: [Spacer(), Text("0/500")],
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              CustomLabel(label: "Interests"),
+              SizedBox(
+                height: 8,
+              ),
+              Row(
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Get.to(EditInterest());
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Color(0xffEFF3F6),
+                          borderRadius: BorderRadius.circular(15)),
+                      height: 32,
+                      width: 48,
+                      child: Icon(Icons.add),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 16,
+              ),
+              CustomLabel(label: "Looking for"),
+              SizedBox(
+                height: 8,
+              ),
+              Row(
+                children: [
+                  InkWell(
+                    onTap: () {
+                      Get.to(EditLookingfor());
+                    },
+                    child: Container(
+                      decoration: BoxDecoration(
+                          color: Color(0xffEFF3F6),
+                          borderRadius: BorderRadius.circular(15)),
+                      height: 32,
+                      width: 48,
+                      child: Icon(Icons.add),
+                    ),
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 16,
+              ),
               CustomLabel(label: "Living In"),
               Customfield(hinttext: "Eg: New York"),
+              SizedBox(
+                height: 24,
+              ),
               CustomLabel(label: "Education"),
               Customfield(hinttext: "Eg: Bachelor of Engineering, Harvard"),
+              SizedBox(
+                height: 24,
+              ),
               CustomLabel(label: "Job Title & Company"),
               Customfield(hinttext: "Eg: Product Designer, Google"),
+              SizedBox(
+                height: 24,
+              ),
               CustomLabel(label: "Industry"),
               Customfield(hinttext: "Eg: Tech"),
+              SizedBox(
+                height: 24,
+              ),
               CustomLabel(label: "Total Work Experience"),
               Customfield(hinttext: "Eg: 5 Years & 4 Months"),
             ],

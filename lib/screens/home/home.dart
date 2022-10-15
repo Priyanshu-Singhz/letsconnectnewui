@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:letsconnectnewui/screens/home/moods.dart';
 import 'package:letsconnectnewui/screens/home/notifications.dart';
 import 'package:letsconnectnewui/screens/home/profile.dart';
 
@@ -12,12 +13,9 @@ class HomePage extends StatefulWidget {
 class _HomePageState extends State<HomePage> {
   int pageIndex = 3;
 
-
- 
- 
   final pages = [
     const Page2(),
-    const Page3(),
+    Moods(),
     const Page4(),
     Notifications(),
     ProfileScreen(),

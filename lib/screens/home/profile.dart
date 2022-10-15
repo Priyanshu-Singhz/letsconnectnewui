@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/screens/home/blokusers.dart';
+import 'package:letsconnectnewui/screens/home/editprofile.dart';
 import 'package:letsconnectnewui/screens/home/feedback.dart';
 import 'package:letsconnectnewui/screens/home/update_phone.dart';
 
@@ -32,8 +33,13 @@ class _ProfileScreenState extends State<ProfileScreen> {
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                Text("Edit Profile",
-                    style: TextStyle(color: Colors.blue, fontSize: 16)),
+                InkWell(
+                  onTap: () {
+                    Get.to(EditProfile());
+                  },
+                  child: Text("Edit Profile",
+                      style: TextStyle(color: Colors.blue, fontSize: 16)),
+                ),
                 Icon(
                   Icons.chevron_right,
                   color: Colors.blue,

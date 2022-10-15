@@ -13,10 +13,7 @@ class MyApp extends StatelessWidget {
     return GetMaterialApp(
       debugShowCheckedModeBanner: false,
       theme: appTheme,
-      
       home: Splashscreen(),
     );
   }
 }
-
-

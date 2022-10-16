@@ -19,9 +19,6 @@ class ChatHome extends StatelessWidget {
           ],
         ),
       ),
-
-
-      
     );
   }
 }

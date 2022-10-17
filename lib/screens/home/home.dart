@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:letsconnectnewui/screens/home/HomeScreenProfile.dart';
 import 'package:letsconnectnewui/screens/home/chathome.dart';
 import 'package:letsconnectnewui/screens/home/moods.dart';
 import 'package:letsconnectnewui/screens/home/notifications.dart';
@@ -15,7 +16,7 @@ class _HomePageState extends State<HomePage> {
   int pageIndex = 3;
 
   final pages = [
-    const Page2(),
+    HomeScreenProfile(),
     Moods(),
     ChatHome(),
     Notifications(),

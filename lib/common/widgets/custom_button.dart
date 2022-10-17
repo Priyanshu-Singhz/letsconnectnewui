@@ -166,3 +166,51 @@ class CustomBack extends StatelessWidget {
     );
   }
 }
+
+class CustomslightupBack extends StatelessWidget {
+  const CustomslightupBack({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      left: 16,
+      top: 40,
+      child: InkWell(
+        onTap: () {
+          Get.back();
+        },
+        child: Container(
+          decoration: BoxDecoration(
+              color: Colors.white, borderRadius: BorderRadius.circular(10)),
+          height: 40,
+          width: 40,
+          child: Icon(Icons.arrow_back),
+        ),
+      ),
+    );
+  }
+}
+
+class CustomMore extends StatelessWidget {
+  const CustomMore({Key? key}) : super(key: key);
+
+  @override
+  Widget build(BuildContext context) {
+    return Positioned(
+      left: 288,
+      top: 40,
+      child: InkWell(
+        onTap: () {
+          Get.back();
+        },
+        child: Container(
+          decoration: BoxDecoration(
+              color: Colors.white, borderRadius: BorderRadius.circular(10)),
+          height: 40,
+          width: 40,
+          child: Icon(Icons.more_vert),
+        ),
+      ),
+    );
+  }
+}

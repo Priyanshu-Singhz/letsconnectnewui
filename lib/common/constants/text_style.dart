@@ -58,4 +58,10 @@ class MyTextStyle {
         color: AppColors.fontColor,
         fontWeight: FontWeight.w400,
       );
+  static TextStyle get extraregularTheme => TextStyle(
+        fontSize: 12,
+        fontFamily: fontFamily,
+        color: AppColors.fontColor,
+        fontWeight: FontWeight.w400,
+      );
 }

@@ -5,8 +5,6 @@ import 'package:letsconnectnewui/common/constants/colors.dart';
 
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
-import 'package:letsconnectnewui/screens/createaccount/interest_view.dart';
-import 'package:letsconnectnewui/screens/createaccount/welcomepage.dart';
 
 class EditInterest extends StatefulWidget {
   const EditInterest({Key? key}) : super(key: key);

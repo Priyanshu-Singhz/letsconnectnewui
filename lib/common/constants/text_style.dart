@@ -52,6 +52,12 @@ class MyTextStyle {
         color: Colors.red,
         fontWeight: FontWeight.w500,
       );
+  static TextStyle get cardTheme => TextStyle(
+        fontSize: 12,
+        fontFamily: fontFamily,
+        color: AppColors.fontColor,
+        fontWeight: FontWeight.w500,
+      );
   static TextStyle get regularTheme => TextStyle(
         fontSize: 14,
         fontFamily: fontFamily,
@@ -60,6 +66,12 @@ class MyTextStyle {
       );
   static TextStyle get extraregularTheme => TextStyle(
         fontSize: 12,
+        fontFamily: fontFamily,
+        color: AppColors.fontColor,
+        fontWeight: FontWeight.w400,
+      );
+  static TextStyle get littlesmaller => TextStyle(
+        fontSize: 16,
         fontFamily: fontFamily,
         color: AppColors.fontColor,
         fontWeight: FontWeight.w400,

@@ -20,6 +20,7 @@ dependencies:
   
   percent_indicator: ^4.2.2
   flutter_swiper: ^1.1.6
+  scrollable_list_tabview: ^0.1.6
 
 dev_dependencies:
   flutter_test:
@@ -38,7 +39,7 @@ flutter:
     - assets/logo.png
     - assets/doodlee.png
     - assets/notifications/
-    - assets/profile/attachement.png
+    - assets/profile/
     - assets/homepage/
    
    

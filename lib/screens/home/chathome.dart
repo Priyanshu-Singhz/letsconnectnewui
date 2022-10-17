@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/screens/createaccount/interest_view.dart';
+import 'package:letsconnectnewui/screens/home/invitations.dart';
 
 class ChatHome extends StatefulWidget {
   const ChatHome({Key? key}) : super(key: key);
@@ -72,11 +74,16 @@ class _ChatHomeState extends State<ChatHome> {
                   SizedBox(
                     height: 64,
                   ),
-                  Row(
-                    children: [
-                      Text("Invitations", style: MyTextStyle.headerTheme),
-                      Icon(Icons.chevron_right)
-                    ],
+                  InkWell(
+                    onTap: () {
+                      Get.to(Invitations());
+                    },
+                    child: Row(
+                      children: [
+                        Text("Invitations", style: MyTextStyle.headerTheme),
+                        Icon(Icons.chevron_right)
+                      ],
+                    ),
                   ),
                   SizedBox(height: 16),
                   Scrol(),

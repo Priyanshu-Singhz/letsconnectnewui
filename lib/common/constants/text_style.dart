@@ -16,6 +16,12 @@ class MyTextStyle {
         color: AppColors.fontColor,
         fontWeight: FontWeight.w700,
       );
+  static TextStyle get smallheaderThemewhite => TextStyle(
+        fontSize: 18,
+        fontFamily: fontFamily,
+        color: Colors.white,
+        fontWeight: FontWeight.w700,
+      );
   static TextStyle get smalfontheaderTheme => TextStyle(
         fontSize: 16,
         fontFamily: fontFamily,

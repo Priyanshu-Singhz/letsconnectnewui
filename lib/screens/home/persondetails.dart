@@ -6,6 +6,8 @@ import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'dart:math' as math;
 
+import 'package:letsconnectnewui/screens/home/chatscreen.dart';
+
 class PersonDetail extends StatelessWidget {
   const PersonDetail({Key? key}) : super(key: key);
 
@@ -456,7 +458,12 @@ class CustomPopup extends StatelessWidget {
               ]),
             ),
             SizedBox(height: 32),
-            CustomButton(label: "Send the first message")
+            CustomButton(
+              label: "Send the first message",
+              onTap: () {
+                Get.to(ChatScreen());
+              },
+            )
           ],
         ),
       ),

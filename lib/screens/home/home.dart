@@ -61,14 +61,21 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    child: const Icon(
-                      Icons.home_rounded,
-                      color: Colors.white,
-                      size: 20,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ImageIcon(
+                        AssetImage(
+                          "assets/profile/home.png",
+                        ),
+                        color: Colors.white,
+                        size: 20,
+                      ),
                     ),
                   )
-                : const Icon(
-                    Icons.home_rounded,
+                : ImageIcon(
+                    AssetImage(
+                      "assets/profile/home.png",
+                    ),
                     color: Colors.grey,
                     size: 20,
                   ),
@@ -96,14 +103,21 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    child: const Icon(
-                      Icons.emoji_emotions,
-                      color: Colors.white,
-                      size: 20,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ImageIcon(
+                        AssetImage(
+                          "assets/profile/mood.png",
+                        ),
+                        color: Colors.white,
+                        size: 20,
+                      ),
                     ),
                   )
-                : const Icon(
-                    Icons.emoji_emotions,
+                : ImageIcon(
+                    AssetImage(
+                      "assets/profile/mood.png",
+                    ),
                     color: Colors.grey,
                     size: 20,
                   ),
@@ -131,16 +145,27 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    child: const Icon(
-                      Icons.chat_bubble,
-                      color: Colors.white,
-                      size: 20,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ImageIcon(
+                        AssetImage(
+                          "assets/profile/chats.png",
+                        ),
+                        color: Colors.white,
+                        size: 20,
+                      ),
                     ),
                   )
-                : const Icon(
-                    Icons.chat_bubble,
-                    color: Colors.grey,
-                    size: 20,
+                : Container(
+                    height: 20,
+                    width: 20,
+                    child: ImageIcon(
+                      AssetImage(
+                        "assets/profile/chats.png",
+                      ),
+                      color: Colors.grey,
+                      size: 20,
+                    ),
                   ),
           ),
           IconButton(
@@ -166,14 +191,21 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    child: const Icon(
-                      Icons.notifications,
-                      color: Colors.white,
-                      size: 20,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ImageIcon(
+                        AssetImage(
+                          "assets/profile/notification.png",
+                        ),
+                        color: Colors.white,
+                        size: 20,
+                      ),
                     ),
                   )
-                : const Icon(
-                    Icons.notifications,
+                : ImageIcon(
+                    AssetImage(
+                      "assets/profile/notification.png",
+                    ),
                     color: Colors.grey,
                     size: 20,
                   ),
@@ -201,82 +233,26 @@ class _HomePageState extends State<HomePage> {
                         ],
                       ),
                     ),
-                    child: const Icon(
-                      Icons.account_box,
-                      color: Colors.white,
-                      size: 20,
+                    child: Padding(
+                      padding: const EdgeInsets.all(8.0),
+                      child: ImageIcon(
+                        AssetImage(
+                          "assets/profile/profile.png",
+                        ),
+                        color: Colors.white,
+                        size: 20,
+                      ),
                     ),
                   )
-                : const Icon(
-                    Icons.account_box,
+                : ImageIcon(
+                    AssetImage(
+                      "assets/profile/profile.png",
+                    ),
                     color: Colors.grey,
                     size: 20,
                   ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class Page2 extends StatelessWidget {
-  const Page2({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: const Color(0xffC4DFCB),
-      child: Center(
-        child: Text(
-          "Page Number 2",
-          style: TextStyle(
-            color: Colors.green[900],
-            fontSize: 45,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class Page3 extends StatelessWidget {
-  const Page3({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: const Color(0xffC4DFCB),
-      child: Center(
-        child: Text(
-          "Page Number 3",
-          style: TextStyle(
-            color: Colors.green[900],
-            fontSize: 45,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
-      ),
-    );
-  }
-}
-
-class Page4 extends StatelessWidget {
-  const Page4({Key? key}) : super(key: key);
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      color: const Color(0xffC4DFCB),
-      child: Center(
-        child: Text(
-          "Page Number 4",
-          style: TextStyle(
-            color: Colors.green[900],
-            fontSize: 45,
-            fontWeight: FontWeight.w500,
-          ),
-        ),
       ),
     );
   }

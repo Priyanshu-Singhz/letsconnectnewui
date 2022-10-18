@@ -105,10 +105,10 @@ class ContainerCard extends StatelessWidget {
             ),
             // SizedBox(height: 8),
             TextField(
-                decoration: InputDecoration(
-                  hintText: 'Ex : Priyanshu Singh',
-                ),
-                keyboardType: TextInputType.number),
+              decoration: InputDecoration(
+                hintText: 'Ex : Priyanshu Singh',
+              ),
+            ),
             SizedBox(
               height: 10,
             ),

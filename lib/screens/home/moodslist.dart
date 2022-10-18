@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/screens/home/persondetails.dart';
 
-class HomeScreenProfile extends StatefulWidget {
-  const HomeScreenProfile({Key? key}) : super(key: key);
+class MoodList extends StatefulWidget {
+  const MoodList({
+    Key? key,
+  }) : super(key: key);
 
   @override
-  State<HomeScreenProfile> createState() => _HomeScreenProfileState();
+  State<MoodList> createState() => _MoodListState();
 }
 
-class _HomeScreenProfileState extends State<HomeScreenProfile> {
+class _MoodListState extends State<MoodList> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -253,28 +256,25 @@ class CustomCard extends StatelessWidget {
                                       ],
                                     ),
                                     Spacer(),
-                                    InkWell(
-                                      onTap: () {
-                                        showDialog(
-                                            context: context,
-                                            builder: (context) =>
-                                                CustomPopup());
-                                      },
-                                      child: Container(
-                                        height: 48,
-                                        width: 48,
-                                        decoration: BoxDecoration(
-                                          shape: BoxShape.circle,
-                                          gradient: LinearGradient(
-                                            begin: Alignment.topCenter,
-                                            end: Alignment.bottomCenter,
-                                            stops: [0.1, 1.3],
-                                            colors: [
-                                              Color(0xff53C9F6),
-                                              Colors.blue,
-                                            ],
-                                          ),
+                                    Container(
+                                      height: 48,
+                                      width: 48,
+                                      decoration: BoxDecoration(
+                                        shape: BoxShape.circle,
+                                        gradient: LinearGradient(
+                                          begin: Alignment.topCenter,
+                                          end: Alignment.bottomCenter,
+                                          stops: [0.1, 1.3],
+                                          colors: [
+                                            Color(0xff53C9F6),
+                                            Colors.blue,
+                                          ],
                                         ),
+                                      ),
+                                      child: InkWell(
+                                        onTap: () {
+                                          CustomPopup();
+                                        },
                                         child: Icon(Icons.person_add_alt_1,
                                             color: Colors.white),
                                       ),
@@ -325,13 +325,28 @@ class GradientTop extends StatelessWidget {
             padding: const EdgeInsets.fromLTRB(16, 64, 16, 64),
             child: Row(
               children: [
-                Container(
-                  height: 38,
-                  width: 143,
-                  child: Image(
-                    image: AssetImage("assets/profile/letconnect.png"),
+                Padding(
+                  padding: const EdgeInsets.only(bottom: 11),
+                  child: InkWell(
+                    onTap: () {
+                      Get.back();
+                    },
+                    child: Icon(
+                      Icons.chevron_left_outlined,
+                      color: Colors.white,
+                    ),
                   ),
                 ),
+                SizedBox(
+                  width: 10,
+                ),
+                Container(
+                    height: 38,
+                    width: 143,
+                    child: Text(
+                      Get.arguments,
+                      style: MyTextStyle.smallheaderThemewhite,
+                    )),
                 Spacer(),
                 Transform.rotate(
                     angle: 89.5,

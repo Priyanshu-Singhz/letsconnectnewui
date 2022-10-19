@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'package:letsconnectnewui/screens/home/profile.dart';
+import 'package:lottie/lottie.dart';
 
 class Success extends StatelessWidget {
   const Success({Key? key}) : super(key: key);
@@ -13,7 +14,14 @@ class Success extends StatelessWidget {
     return Scaffold(
       body: Column(
         children: [
-          SizedBox(height: 456),
+          SizedBox(height: 250),
+          Container(
+            height: 200,
+            width: 200,
+            child:
+                Lottie.asset('assets/profile/lets-connect-yellow-success.json'),
+          ),
+          SizedBox(height: 50),
           Row(
             children: [
               SizedBox(

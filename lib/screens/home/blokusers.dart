@@ -74,22 +74,24 @@ class _BlkUsersState extends State<BlkUsers> {
           style: MyTextStyle.smallheaderTheme,
         ),
       ),
-      body: ListView.builder(
-          itemCount: 18,
-          itemBuilder: (BuildContext context, int index) {
-            return InkWell(
-              onTap: () {
-                showDialog(
-                    context: context, builder: (context) => CustomAlert());
-              },
-              child: Container(
-                child: ListTile(
-                    trailing: Icon(Icons.block),
-                    leading: CircleAvatar(backgroundImage: imgList[index]),
-                    title: Text(names[index])),
-              ),
-            );
-          }),
+      body: SafeArea(
+        child: ListView.builder(
+            itemCount: 18,
+            itemBuilder: (BuildContext context, int index) {
+              return InkWell(
+                onTap: () {
+                  showDialog(
+                      context: context, builder: (context) => CustomAlert());
+                },
+                child: Container(
+                  child: ListTile(
+                      trailing: Icon(Icons.block),
+                      leading: CircleAvatar(backgroundImage: imgList[index]),
+                      title: Text(names[index])),
+                ),
+              );
+            }),
+      ),
     );
   }
 }

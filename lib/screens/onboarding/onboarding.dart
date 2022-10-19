@@ -236,7 +236,7 @@ class ContainerCard extends StatelessWidget {
                     Icon(
                       Icons.arrow_forward,
                       size: 17,
-                      color: Colors.black,
+                      color: AppColors.fontColor,
                     ),
                   ],
                 ),

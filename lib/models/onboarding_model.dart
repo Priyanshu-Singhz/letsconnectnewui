@@ -12,7 +12,7 @@ List<OnBoardingModel> onBoardingList = [
   ),
   OnBoardingModel(
     imgUrl: "assets/onboarding/onboard2.png",
-    labels: ["Meet the new people that ", "share your interests", "" ,""],
+    labels: ["Meet new people that ", "share your interests", "", ""],
   ),
   OnBoardingModel(
     imgUrl: "assets/onboarding/onboard3.png",

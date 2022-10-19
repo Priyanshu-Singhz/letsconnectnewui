@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:letsconnectnewui/common/constants/colors.dart';
 import 'package:letsconnectnewui/screens/onboarding/onboarding.dart';
 import 'package:lottie/lottie.dart';
 
@@ -16,7 +17,7 @@ class _SplashscreenState extends State<Splashscreen> {
   void initState() {
     super.initState();
     Timer(
-        Duration(milliseconds: 2300),
+        Duration(milliseconds: 2500),
         () => Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => OnBoardingScreen())));
   }
@@ -25,7 +26,7 @@ class _SplashscreenState extends State<Splashscreen> {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-        color: Colors.lightBlue,
+        gradient: AppColors.primaryGradient,
       ),
       child: Padding(
         padding: const EdgeInsets.all(70),

@@ -23,6 +23,7 @@ dependencies:
   scrollable_list_tabview: ^0.1.6
   swipe_cards: ^1.0.0
   scroll_snap_list: ^0.9.1
+  lottie: ^1.4.2
 
 dev_dependencies:
   flutter_test:

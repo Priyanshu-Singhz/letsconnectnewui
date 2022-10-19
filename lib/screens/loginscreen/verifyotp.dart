@@ -9,6 +9,7 @@ class VefifyOtp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      resizeToAvoidBottomInset: false,
       bottomSheet: Container(
         decoration: BoxDecoration(color: Colors.lightBlue),
         child: Stack(

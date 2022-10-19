@@ -1,6 +1,7 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import 'package:letsconnectnewui/common/constants/colors.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/models/onboarding_model.dart';
 import 'package:letsconnectnewui/screens/loginscreen/loginscreen.dart';
@@ -115,7 +116,7 @@ class ContainerCard extends StatelessWidget {
       width: MediaQuery.of(context).size.width,
       height: 274,
       decoration: BoxDecoration(
-        color: Colors.lightBlue,
+        gradient: AppColors.primaryGradient,
         borderRadius: BorderRadius.only(
           topLeft: Radius.circular(18),
           topRight: Radius.circular(18),
@@ -148,7 +149,7 @@ class ContainerCard extends StatelessWidget {
                         child: Text(
                           model.labels[1],
                           style: TextStyle(
-                            color: Color.fromARGB(255, 3, 43, 76),
+                            color: AppColors.fontColor,
                             fontSize: 24,
                             fontWeight: FontWeight.w700,
                           ),
@@ -171,7 +172,7 @@ class ContainerCard extends StatelessWidget {
                         child: Text(
                           model.labels[2],
                           style: TextStyle(
-                            color: Color.fromARGB(255, 3, 43, 76),
+                            color: AppColors.fontColor,
                             fontSize: 24,
                             fontWeight: FontWeight.w700,
                           ),

@@ -100,7 +100,7 @@ class _ProfileScreenState extends State<ProfileScreen> {
               height: 24,
             ),
             CustomTabs(
-              text: "Pause Acoount",
+              text: "Pause Account",
               onTap: () {
                 showDialog(
                     context: context, builder: (context) => PauseAccount());

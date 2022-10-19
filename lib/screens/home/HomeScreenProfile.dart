@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/screens/home/persondetails.dart';
 
@@ -54,16 +55,21 @@ class CustomCard extends StatelessWidget {
             width: 312,
             child: Stack(
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.transparent,
-                  ),
-                  height: 360,
-                  width: 360,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Image(
-                      image: AssetImage("assets/profile/hars.png"),
+                InkWell(
+                  onTap: () {
+                    Get.to(PersonDetail());
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                    ),
+                    height: 360,
+                    width: 360,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Image(
+                        image: AssetImage("assets/profile/hars.png"),
+                      ),
                     ),
                   ),
                 ),

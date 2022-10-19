@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:letsconnectnewui/screens/onboarding/onboarding.dart';
+import 'package:lottie/lottie.dart';
 
 class Splashscreen extends StatefulWidget {
   const Splashscreen({Key? key}) : super(key: key);
@@ -15,7 +16,7 @@ class _SplashscreenState extends State<Splashscreen> {
   void initState() {
     super.initState();
     Timer(
-        Duration(seconds: 1),
+        Duration(milliseconds: 2300),
         () => Navigator.pushReplacement(context,
             MaterialPageRoute(builder: (context) => OnBoardingScreen())));
   }
@@ -27,12 +28,15 @@ class _SplashscreenState extends State<Splashscreen> {
         color: Colors.lightBlue,
       ),
       child: Padding(
-        padding: const EdgeInsets.all(120),
-        child: Image(
-          image: AssetImage(
-            "assets/logo.png",
-          ),
-        ),
+        padding: const EdgeInsets.all(70),
+        child:
+            Lottie.asset('assets/profile/lets-connect-splash-animation.json'),
+        // child: Image(
+        //   image: AssetImage(
+        //     "assets/logo.png",
+        //   ),
+        //   color: Colors.blue,
+        // ),
       ),
     );
   }

@@ -13,15 +13,15 @@ class Loginscreen extends StatelessWidget {
         decoration: BoxDecoration(color: Colors.lightBlue),
         child: Stack(
           children: [
-            Positioned(
-              bottom: 340,
-              top: 10,
-              child: Container(
-                decoration: BoxDecoration(color: Colors.lightBlue),
-                child: Image.asset(
-                  "assets/doodlee.png",
-                ),
-              ),
+            Column(
+              children: [
+                Container(
+                    decoration: BoxDecoration(color: Colors.lightBlue),
+                    child: Image(
+                      image: AssetImage("assets/doodlee.png"),
+                      fit: BoxFit.fill,
+                    )),
+              ],
             ),
             Positioned(
               bottom: 0,

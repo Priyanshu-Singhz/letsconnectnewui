@@ -122,9 +122,6 @@ class ContainerCard extends StatelessWidget {
           topRight: Radius.circular(18),
         ),
       ),
-
-
-      
       child: Column(
         children: [
           Text.rich(

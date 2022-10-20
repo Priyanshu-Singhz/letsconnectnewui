@@ -19,13 +19,51 @@ class Loginscreen extends StatelessWidget {
                     decoration: BoxDecoration(color: Colors.lightBlue),
                     child: Image(
                       image: AssetImage("assets/doodlee.png"),
-                      fit: BoxFit.fill,
+                      fit: BoxFit.fitHeight,
                     )),
               ],
             ),
             Positioned(
               bottom: 0,
               child: ContainerCard(),
+            ),
+            Positioned(
+              top: 730,
+              child: Container(
+                height: 71,
+                width: MediaQuery.of(context).size.width,
+                decoration: BoxDecoration(
+                  color: Colors.white,
+                ),
+                child: Column(
+                  children: [
+                    Text(
+                      "OR SIGN IN WITH",
+                      style: TextStyle(
+                        color: Color.fromARGB(255, 3, 43, 76),
+                        letterSpacing: 2,
+                        fontSize: 14,
+                      ),
+                    ),
+                    Spacer(),
+                    Container(
+                      height: 32,
+                      width: 176,
+                      child: Row(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Image.asset("assets/loginpage/google.png"),
+                          Spacer(),
+                          Image.asset("assets/loginpage/facebook.png"),
+                          Spacer(),
+                          Image.asset("assets/loginpage/apple.png"),
+                        ],
+                      ),
+                    ),
+                    Spacer(),
+                  ],
+                ),
+              ),
             ),
           ],
         ),
@@ -44,7 +82,7 @@ class ContainerCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 32, horizontal: 24),
       width: MediaQuery.of(context).size.width,
-      height: 441,
+      height: 400,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -101,7 +139,7 @@ class ContainerCard extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 40,
+              height: 20,
             ),
             Row(
               children: [
@@ -115,6 +153,7 @@ class ContainerCard extends StatelessWidget {
               ],
             ),
             TextField(
+                maxLength: 10,
                 decoration: InputDecoration(
                   prefixIcon: Container(
                     height: 25,
@@ -137,36 +176,12 @@ class ContainerCard extends StatelessWidget {
                   hintText: 'Ex: 12345 67890',
                 ),
                 keyboardType: TextInputType.number),
-            SizedBox(height: 40),
+            SizedBox(height: 20),
             CustomButton1(
                 label: "Send OTP",
                 onTap: () {
                   Get.to(VefifyOtp());
                 }),
-            SizedBox(height: 45),
-            Text(
-              "OR SIGN IN WITH",
-              style: TextStyle(
-                color: Color.fromARGB(255, 3, 43, 76),
-                letterSpacing: 2,
-                fontSize: 14,
-              ),
-            ),
-            Spacer(),
-            Container(
-              height: 32,
-              width: 176,
-              child: Row(
-                mainAxisAlignment: MainAxisAlignment.center,
-                children: [
-                  Image.asset("assets/loginpage/google.png"),
-                  Spacer(),
-                  Image.asset("assets/loginpage/facebook.png"),
-                  Spacer(),
-                  Image.asset("assets/loginpage/apple.png"),
-                ],
-              ),
-            ),
           ],
         ),
       ),

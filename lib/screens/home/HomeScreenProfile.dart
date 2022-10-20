@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/screens/home/persondetails.dart';
+import 'package:shimmer/shimmer.dart';
 
 class HomeScreenProfile extends StatefulWidget {
   const HomeScreenProfile({Key? key}) : super(key: key);
@@ -16,22 +17,26 @@ class _HomeScreenProfileState extends State<HomeScreenProfile> {
     return Scaffold(
       body: Stack(
         children: [
-          Scaffold(
-            body: GradientTop(),
-          ),
-          Positioned(
-            top: 125,
-            left: 25,
-            child: Container(
-              height: 598,
-              width: 312,
-              child: PageView.builder(
-                scrollDirection: Axis.vertical,
-                itemBuilder: (context, index) {
-                  return CustomCard();
-                },
+          Stack(
+            children: [
+              Scaffold(
+                body: GradientTop(),
               ),
-            ),
+              Positioned(
+                top: 125,
+                left: 25,
+                child: Container(
+                  height: 598,
+                  width: 312,
+                  child: PageView.builder(
+                    scrollDirection: Axis.vertical,
+                    itemBuilder: (context, index) {
+                      return CustomCard();
+                    },
+                  ),
+                ),
+              ),
+            ],
           ),
         ],
       ),
@@ -67,8 +72,12 @@ class CustomCard extends StatelessWidget {
                     width: 360,
                     child: ClipRRect(
                       borderRadius: BorderRadius.circular(20),
-                      child: Image(
-                        image: AssetImage("assets/profile/hars.png"),
+                      child: Shimmer.fromColors(
+                        baseColor: Colors.grey.withOpacity(0.5),
+                        highlightColor: Colors.grey,
+                        child: Image(
+                          image: AssetImage("assets/profile/hars.png"),
+                        ),
                       ),
                     ),
                   ),

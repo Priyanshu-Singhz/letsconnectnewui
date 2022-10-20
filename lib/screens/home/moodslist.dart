@@ -1,13 +1,12 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/screens/home/persondetails.dart';
+import 'package:shimmer/shimmer.dart';
 
 class MoodList extends StatefulWidget {
-  const MoodList({
-    Key? key,
-  }) : super(key: key);
-
+  const MoodList({Key? key}) : super(key: key);
   @override
   State<MoodList> createState() => _MoodListState();
 }
@@ -15,24 +14,36 @@ class MoodList extends StatefulWidget {
 class _MoodListState extends State<MoodList> {
   @override
   Widget build(BuildContext context) {
+    final List<Widget> imageSliders = [
+      CustomCard(name: "Person A"),
+      CustomCard(name: "Person B"),
+      CustomCard(name: "Person C"),
+      CustomCard(name: "Person D"),
+      CustomCard(name: "Person E")
+    ];
+
     return Scaffold(
       body: Stack(
         children: [
-          Scaffold(
-            body: GradientTop(),
-          ),
-          Positioned(
-            top: 125,
-            left: 25,
-            child: Container(
-              height: 598,
-              width: 312,
-              child: PageView.builder(
-                scrollDirection: Axis.vertical,
-                itemBuilder: (context, index) {
-                  return CustomCard();
-                },
-              ),
+          GradientTop(),
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 25,
+                ),
+                Container(
+                  height: 710,
+                  child: CarouselSlider(
+                    options: CarouselOptions(
+                      height: 685,
+                      scrollDirection: Axis.vertical,
+                      enlargeCenterPage: true,
+                    ),
+                    items: imageSliders,
+                  ),
+                ),
+              ],
             ),
           ),
         ],
@@ -42,7 +53,9 @@ class _MoodListState extends State<MoodList> {
 }
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({Key? key}) : super(key: key);
+  final String name;
+
+  const CustomCard({Key? key, required this.name}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -57,16 +70,25 @@ class CustomCard extends StatelessWidget {
             width: 312,
             child: Stack(
               children: [
-                Container(
-                  decoration: BoxDecoration(
-                    color: Colors.transparent,
-                  ),
-                  height: 360,
-                  width: 360,
-                  child: ClipRRect(
-                    borderRadius: BorderRadius.circular(20),
-                    child: Image(
-                      image: AssetImage("assets/profile/hars.png"),
+                InkWell(
+                  onTap: () {
+                    Get.to(PersonDetail());
+                  },
+                  child: Container(
+                    decoration: BoxDecoration(
+                      color: Colors.transparent,
+                    ),
+                    height: 360,
+                    width: 360,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(20),
+                      child: Shimmer.fromColors(
+                        baseColor: Colors.grey.withOpacity(0.5),
+                        highlightColor: Colors.grey,
+                        child: Image(
+                          image: AssetImage("assets/profile/hars.png"),
+                        ),
+                      ),
                     ),
                   ),
                 ),
@@ -97,7 +119,7 @@ class CustomCard extends StatelessWidget {
                                 Row(
                                   children: [
                                     Text(
-                                      "Cody Fisher, 21",
+                                      "$name",
                                       style: MyTextStyle.headerTheme,
                                     ),
                                     Spacer(),
@@ -256,25 +278,28 @@ class CustomCard extends StatelessWidget {
                                       ],
                                     ),
                                     Spacer(),
-                                    Container(
-                                      height: 48,
-                                      width: 48,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                        gradient: LinearGradient(
-                                          begin: Alignment.topCenter,
-                                          end: Alignment.bottomCenter,
-                                          stops: [0.1, 1.3],
-                                          colors: [
-                                            Color(0xff53C9F6),
-                                            Colors.blue,
-                                          ],
+                                    InkWell(
+                                      onTap: () {
+                                        showDialog(
+                                            context: context,
+                                            builder: (context) =>
+                                                CustomPopup());
+                                      },
+                                      child: Container(
+                                        height: 48,
+                                        width: 48,
+                                        decoration: BoxDecoration(
+                                          shape: BoxShape.circle,
+                                          gradient: LinearGradient(
+                                            begin: Alignment.topCenter,
+                                            end: Alignment.bottomCenter,
+                                            stops: [0.1, 1.3],
+                                            colors: [
+                                              Color(0xff53C9F6),
+                                              Colors.blue,
+                                            ],
+                                          ),
                                         ),
-                                      ),
-                                      child: InkWell(
-                                        onTap: () {
-                                          CustomPopup();
-                                        },
                                         child: Icon(Icons.person_add_alt_1,
                                             color: Colors.white),
                                       ),

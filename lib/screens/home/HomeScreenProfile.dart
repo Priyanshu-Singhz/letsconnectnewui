@@ -1,3 +1,4 @@
+import 'package:carousel_slider/carousel_slider.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
@@ -6,7 +7,6 @@ import 'package:shimmer/shimmer.dart';
 
 class HomeScreenProfile extends StatefulWidget {
   const HomeScreenProfile({Key? key}) : super(key: key);
-
   @override
   State<HomeScreenProfile> createState() => _HomeScreenProfileState();
 }
@@ -14,29 +14,37 @@ class HomeScreenProfile extends StatefulWidget {
 class _HomeScreenProfileState extends State<HomeScreenProfile> {
   @override
   Widget build(BuildContext context) {
+    final List<Widget> imageSliders = [
+      CustomCard(name: "Person A"),
+      CustomCard(name: "Person B"),
+      CustomCard(name: "Person C"),
+      CustomCard(name: "Person D"),
+      CustomCard(name: "Person E")
+    ];
+
     return Scaffold(
       body: Stack(
         children: [
-          Stack(
-            children: [
-              Scaffold(
-                body: GradientTop(),
-              ),
-              Positioned(
-                top: 125,
-                left: 25,
-                child: Container(
-                  height: 598,
-                  width: 312,
-                  child: PageView.builder(
-                    scrollDirection: Axis.vertical,
-                    itemBuilder: (context, index) {
-                      return CustomCard();
-                    },
+          GradientTop(),
+          SingleChildScrollView(
+            child: Column(
+              children: [
+                SizedBox(
+                  height: 25,
+                ),
+                Container(
+                  height: 710,
+                  child: CarouselSlider(
+                    options: CarouselOptions(
+                      height: 685,
+                      scrollDirection: Axis.vertical,
+                      enlargeCenterPage: true,
+                    ),
+                    items: imageSliders,
                   ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         ],
       ),
@@ -45,7 +53,9 @@ class _HomeScreenProfileState extends State<HomeScreenProfile> {
 }
 
 class CustomCard extends StatelessWidget {
-  const CustomCard({Key? key}) : super(key: key);
+  final String name;
+
+  const CustomCard({Key? key, required this.name}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -109,7 +119,7 @@ class CustomCard extends StatelessWidget {
                                 Row(
                                   children: [
                                     Text(
-                                      "Cody Fisher, 21",
+                                      "$name",
                                       style: MyTextStyle.headerTheme,
                                     ),
                                     Spacer(),

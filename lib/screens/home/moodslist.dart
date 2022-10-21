@@ -33,7 +33,7 @@ class _MoodListState extends State<MoodList> {
                   height: 25,
                 ),
                 Container(
-                  height: 710,
+                  height: 775,
                   child: CarouselSlider(
                     options: CarouselOptions(
                       height: 685,

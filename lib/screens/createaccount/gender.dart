@@ -3,38 +3,44 @@ import 'package:get/get.dart';
 import 'package:grouped_buttons_ns/grouped_buttons_ns.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'package:letsconnectnewui/screens/createaccount/image.dart';
+import 'package:sizer/sizer.dart';
 
 class Gender extends StatelessWidget {
   const Gender({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomSheet: Container(
-        decoration: BoxDecoration(color: Colors.lightBlue),
-        child: Stack(
-          children: [
-            Positioned(
-              bottom: 531,
-              top: 0,
-              left: 0,
-              right: 10,
-              child: Container(
-                child: Image.asset(
-                  "assets/createaccount/dood.png",
-                  scale: 4,
-                  color: Colors.white,
+    return Sizer(
+      builder: (BuildContext context, Orientation orientation,
+          DeviceType deviceType) {
+        return Scaffold(
+          bottomSheet: Container(
+            decoration: BoxDecoration(color: Colors.lightBlue),
+            child: Stack(
+              children: [
+                Positioned(
+                  bottom: 65.h,
+                  top: 0,
+                  left: 0,
+                  right: 1.w,
+                  child: Container(
+                    child: Image.asset(
+                      "assets/createaccount/dood.png",
+                      scale: 4,
+                      color: Colors.white,
+                    ),
+                  ),
                 ),
-              ),
+                Positioned(
+                  bottom: 0,
+                  child: ContainerCard(),
+                ),
+                CustomBack(),
+              ],
             ),
-            Positioned(
-              bottom: 0,
-              child: ContainerCard(),
-            ),
-            CustomBack(),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }
@@ -49,7 +55,7 @@ class ContainerCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 32, horizontal: 24),
       width: MediaQuery.of(context).size.width,
-      height: 551,
+      height: 65.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -76,7 +82,7 @@ class ContainerCard extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 15,
+              height: 1.5.h,
             ),
             Row(
               children: [
@@ -92,7 +98,7 @@ class ContainerCard extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 40,
+              height: 4.h,
             ),
             RadioButtonGroup(
                 labels: <String>["Male", "Female", "Other"],

@@ -31,12 +31,6 @@ class _SplashscreenState extends State<Splashscreen> {
         padding: const EdgeInsets.all(70),
         child:
             Lottie.asset('assets/profile/lets-connect-splash-animation.json'),
-        // child: Image(
-        //   image: AssetImage(
-        //     "assets/logo.png",
-        //   ),
-        //   color: Colors.blue,
-        // ),
       ),
     );
   }

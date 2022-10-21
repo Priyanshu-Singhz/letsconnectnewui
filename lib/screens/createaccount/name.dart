@@ -2,34 +2,41 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'package:letsconnectnewui/screens/createaccount/age.dart';
+import 'package:sizer/sizer.dart';
 
 class Name extends StatelessWidget {
   const Name({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomSheet: Container(
-        decoration: BoxDecoration(color: Colors.lightBlue),
-        child: Stack(
-          children: [
-            Column(
+    return Sizer(
+      builder: (BuildContext context, Orientation orientation,
+          DeviceType deviceType) {
+        return Scaffold(
+          bottomSheet: Container(
+            decoration: BoxDecoration(color: Colors.lightBlue),
+            child: Stack(
               children: [
-                Container(
-                    decoration: BoxDecoration(color: Colors.lightBlue),
-                    child: Image(
-                      image: AssetImage("assets/doodlee.png"),
-                    )),
+                Column(
+                  children: [
+                    Container(
+                        height: 60.h,
+                        decoration: BoxDecoration(color: Colors.lightBlue),
+                        child: Image(
+                          image: AssetImage("assets/doodlee.png"),
+                        )),
+                  ],
+                ),
+                Positioned(
+                  bottom: 0,
+                  child: ContainerCard(),
+                ),
+                CustomBack(),
               ],
             ),
-            Positioned(
-              bottom: 0,
-              child: ContainerCard(),
-            ),
-            CustomBack(),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }
@@ -42,9 +49,9 @@ class ContainerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 32, horizontal: 24),
+      padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 5.w),
       width: MediaQuery.of(context).size.width,
-      height: 335,
+      height: 45.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -92,7 +99,7 @@ class ContainerCard extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 32,
+              height: 3.5.h,
             ),
             Row(
               children: [
@@ -109,7 +116,7 @@ class ContainerCard extends StatelessWidget {
               ),
             ),
             SizedBox(
-              height: 10,
+              height: 1.h,
             ),
             Row(
               children: [

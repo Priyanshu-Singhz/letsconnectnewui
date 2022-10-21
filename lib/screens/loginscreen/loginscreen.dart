@@ -20,6 +20,7 @@ class Loginscreen extends StatelessWidget {
                 Column(
                   children: [
                     Container(
+                        height: 60.h,
                         decoration: BoxDecoration(color: Colors.lightBlue),
                         child: Image(
                           image: AssetImage("assets/doodlee.png"),
@@ -32,10 +33,10 @@ class Loginscreen extends StatelessWidget {
                   child: ContainerCard(),
                 ),
                 Positioned(
-                  top: 730,
+                  top: 90.h,
                   child: Container(
-                    height: 71,
-                    width: MediaQuery.of(context).size.width,
+                    height: 9.h,
+                    width: 100.w,
                     decoration: BoxDecoration(
                       color: Colors.white,
                     ),
@@ -51,7 +52,7 @@ class Loginscreen extends StatelessWidget {
                         ),
                         Spacer(),
                         Container(
-                          height: 32,
+                          height: 4.h,
                           width: 176,
                           child: Row(
                             mainAxisAlignment: MainAxisAlignment.center,
@@ -88,7 +89,7 @@ class ContainerCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 32, horizontal: 24),
       width: MediaQuery.of(context).size.width,
-      height: 400,
+      height: 46.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -123,7 +124,7 @@ class ContainerCard extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 1.h),
             Row(
               children: [
                 Text(
@@ -145,7 +146,7 @@ class ContainerCard extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 20,
+              height: 2.h,
             ),
             Row(
               children: [
@@ -162,13 +163,13 @@ class ContainerCard extends StatelessWidget {
                 maxLength: 10,
                 decoration: InputDecoration(
                   prefixIcon: Container(
-                    height: 25,
-                    width: 67,
+                    height: 2.5.h,
+                    width: 20.w,
                     child: Row(
                       children: [
                         Container(
-                          height: 25,
-                          width: 30,
+                          height: 2.5.h,
+                          width: 10.w,
                           child: Image(
                             image: AssetImage(
                               "assets/loginpage/flag.png",
@@ -182,7 +183,7 @@ class ContainerCard extends StatelessWidget {
                   hintText: 'Ex: 12345 67890',
                 ),
                 keyboardType: TextInputType.number),
-            SizedBox(height: 20),
+            SizedBox(height: 2.h),
             CustomButton1(
                 label: "Send OTP",
                 onTap: () {

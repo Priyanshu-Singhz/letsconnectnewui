@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:intro_slider/intro_slider.dart';
 import 'package:letsconnectnewui/screens/onboarding/onboarding2.dart';
 import 'package:letsconnectnewui/screens/onboarding/onboarding3.dart';
 import 'package:letsconnectnewui/screens/onboarding/onborading1.dart';

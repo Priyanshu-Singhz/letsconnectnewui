@@ -72,6 +72,10 @@ class ContainerCard extends StatelessWidget {
                 TextSpan(
                   children: [
                     WidgetSpan(
+
+
+
+                      
                       child: Container(
                         decoration: BoxDecoration(
                           image: DecorationImage(

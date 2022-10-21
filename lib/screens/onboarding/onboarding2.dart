@@ -81,6 +81,9 @@ class ContainerCard extends StatelessWidget {
                               alignment: Alignment.bottomCenter,
                               scale: 1),
                         ),
+
+
+                        
                         child: Text(
                           "share",
                           style: TextStyle(

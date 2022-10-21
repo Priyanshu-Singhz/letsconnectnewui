@@ -2,15 +2,16 @@ import 'dart:async';
 
 import 'package:flutter/material.dart';
 import 'package:letsconnectnewui/screens/onboarding/onboardings.dart';
+import 'package:lottie/lottie.dart';
 
-class NormalSplash extends StatefulWidget {
-  const NormalSplash({Key? key}) : super(key: key);
+class Splashscreen extends StatefulWidget {
+  const Splashscreen({Key? key}) : super(key: key);
 
   @override
-  State<NormalSplash> createState() => _NormalSplashState();
+  State<Splashscreen> createState() => _SplashscreenState();
 }
 
-class _NormalSplashState extends State<NormalSplash> {
+class _SplashscreenState extends State<Splashscreen> {
   @override
   void initState() {
     super.initState();
@@ -28,12 +29,14 @@ class _NormalSplashState extends State<NormalSplash> {
       ),
       child: Padding(
         padding: const EdgeInsets.all(70),
-        child: Image(
-          image: AssetImage(
-            "assets/logo.png",
-          ),
-          color: Colors.blue,
-        ),
+        child:
+            Lottie.asset('assets/profile/lets-connect-splash-animation.json'),
+        // child: Image(
+        //   image: AssetImage(
+        //     "assets/logo.png",
+        //   ),
+        //   color: Colors.blue,
+        // ),
       ),
     );
   }

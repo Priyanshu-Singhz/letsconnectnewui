@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
-import 'package:letsconnectnewui/screens/onboarding/onboarding2.dart';
+import 'package:letsconnectnewui/screens/onboarding/onboarding3.dart';
 
-class OnBoardone extends StatelessWidget {
-  const OnBoardone({Key? key}) : super(key: key);
+class OnBoardTwo extends StatelessWidget {
+  const OnBoardTwo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +17,7 @@ class OnBoardone extends StatelessWidget {
               height: MediaQuery.of(context).size.height * 0.7,
               width: MediaQuery.of(context).size.width,
               child: Image.asset(
-                "assets/onboarding/onboard1.png",
+                "assets/onboarding/onboard2.png",
                 fit: BoxFit.cover,
               ),
             ),
@@ -62,7 +62,7 @@ class ContainerCard extends StatelessWidget {
         children: [
           Text.rich(
             TextSpan(
-              text: "Find People that ",
+              text: "Meet new people that ",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 24,
@@ -72,22 +72,20 @@ class ContainerCard extends StatelessWidget {
                 TextSpan(
                   children: [
                     WidgetSpan(
-
-
-
-                      
                       child: Container(
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            image: AssetImage(
-                              "assets/onboarding/linemedium.png",
-                            ),
-                            fit: BoxFit.contain,
-                            alignment: Alignment.bottomCenter,
-                          ),
+                              image: AssetImage(
+                                "assets/onboarding/linesmall.png",
+                              ),
+                              alignment: Alignment.bottomCenter,
+                              scale: 1),
                         ),
+
+
+                        
                         child: Text(
-                          "get your",
+                          "share",
                           style: TextStyle(
                             color: Color.fromARGB(255, 3, 43, 76),
                             fontSize: 24,
@@ -104,13 +102,13 @@ class ContainerCard extends StatelessWidget {
                       child: Container(
                         decoration: BoxDecoration(
                           image: DecorationImage(
-                            image:
-                                AssetImage("assets/onboarding/linesmall.png"),
+                            image: AssetImage("assets/onboarding/line.png"),
+                            fit: BoxFit.fitWidth,
                             alignment: Alignment.bottomCenter,
                           ),
                         ),
                         child: Text(
-                          "vibe",
+                          "your interests",
                           style: TextStyle(
                             color: Color.fromARGB(255, 3, 43, 76),
                             fontSize: 24,
@@ -121,14 +119,6 @@ class ContainerCard extends StatelessWidget {
                     )
                   ],
                 ),
-                TextSpan(
-                  text: " and don't judge",
-                  style: TextStyle(
-                    color: Colors.white,
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700,
-                  ),
-                )
               ],
             ),
           ),
@@ -137,7 +127,7 @@ class ContainerCard extends StatelessWidget {
             children: [
               Row(
                 children: List.generate(3, (index) {
-                  var currentIndex = 0;
+                  var currentIndex = 1;
                   return Container(
                     margin: EdgeInsets.only(left: 10),
                     height: 6,
@@ -158,7 +148,7 @@ class ContainerCard extends StatelessWidget {
                     backgroundColor: Color(0xffFACC15),
                     minimumSize: Size(148, 48)),
                 onPressed: () {
-                  Get.to(OnBoardTwo());
+                  Get.to(OnBoardThree());
                 },
                 child: Row(
                   children: [

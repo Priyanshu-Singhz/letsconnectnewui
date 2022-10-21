@@ -2,72 +2,78 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'package:letsconnectnewui/screens/loginscreen/verifyotp.dart';
+import 'package:sizer/sizer.dart';
 
 class Loginscreen extends StatelessWidget {
   const Loginscreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomSheet: Container(
-        decoration: BoxDecoration(color: Colors.lightBlue),
-        child: Stack(
-          children: [
-            Column(
+    return Sizer(
+      builder: (BuildContext context, Orientation orientation,
+          DeviceType deviceType) {
+        return Scaffold(
+          bottomSheet: Container(
+            decoration: BoxDecoration(color: Colors.lightBlue),
+            child: Stack(
               children: [
-                Container(
-                    decoration: BoxDecoration(color: Colors.lightBlue),
-                    child: Image(
-                      image: AssetImage("assets/doodlee.png"),
-                      fit: BoxFit.fitHeight,
-                    )),
-              ],
-            ),
-            Positioned(
-              bottom: 0,
-              child: ContainerCard(),
-            ),
-            Positioned(
-              top: 730,
-              child: Container(
-                height: 71,
-                width: MediaQuery.of(context).size.width,
-                decoration: BoxDecoration(
-                  color: Colors.white,
-                ),
-                child: Column(
+                Column(
                   children: [
-                    Text(
-                      "OR SIGN IN WITH",
-                      style: TextStyle(
-                        color: Color.fromARGB(255, 3, 43, 76),
-                        letterSpacing: 2,
-                        fontSize: 14,
-                      ),
-                    ),
-                    Spacer(),
                     Container(
-                      height: 32,
-                      width: 176,
-                      child: Row(
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          Image.asset("assets/loginpage/google.png"),
-                          Spacer(),
-                          Image.asset("assets/loginpage/facebook.png"),
-                          Spacer(),
-                          Image.asset("assets/loginpage/apple.png"),
-                        ],
-                      ),
-                    ),
-                    Spacer(),
+                        decoration: BoxDecoration(color: Colors.lightBlue),
+                        child: Image(
+                          image: AssetImage("assets/doodlee.png"),
+                          fit: BoxFit.fitHeight,
+                        )),
                   ],
                 ),
-              ),
+                Positioned(
+                  bottom: 0,
+                  child: ContainerCard(),
+                ),
+                Positioned(
+                  top: 730,
+                  child: Container(
+                    height: 71,
+                    width: MediaQuery.of(context).size.width,
+                    decoration: BoxDecoration(
+                      color: Colors.white,
+                    ),
+                    child: Column(
+                      children: [
+                        Text(
+                          "OR SIGN IN WITH",
+                          style: TextStyle(
+                            color: Color.fromARGB(255, 3, 43, 76),
+                            letterSpacing: 2,
+                            fontSize: 14,
+                          ),
+                        ),
+                        Spacer(),
+                        Container(
+                          height: 32,
+                          width: 176,
+                          child: Row(
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset("assets/loginpage/google.png"),
+                              Spacer(),
+                              Image.asset("assets/loginpage/facebook.png"),
+                              Spacer(),
+                              Image.asset("assets/loginpage/apple.png"),
+                            ],
+                          ),
+                        ),
+                        Spacer(),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
             ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }

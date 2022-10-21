@@ -6,6 +6,9 @@ import 'package:letsconnectnewui/screens/onboarding/onborading1.dart';
 class OnBoardingScreen extends StatefulWidget {
   const OnBoardingScreen({Key? key}) : super(key: key);
 
+
+
+
   @override
   State<OnBoardingScreen> createState() => _OnBoardingScreenState();
 }

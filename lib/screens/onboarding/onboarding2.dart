@@ -2,40 +2,46 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/screens/onboarding/onboarding3.dart';
+import 'package:sizer/sizer.dart';
 
 class OnBoardTwo extends StatelessWidget {
   const OnBoardTwo({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Container(
-        height: MediaQuery.of(context).size.height,
-        child: Stack(
-          children: [
-            SizedBox(
-              height: MediaQuery.of(context).size.height * 0.7,
-              width: MediaQuery.of(context).size.width,
-              child: Image.asset(
-                "assets/onboarding/onboard2.png",
-                fit: BoxFit.cover,
-              ),
+    return Sizer(
+      builder: (BuildContext context, Orientation orientation,
+          DeviceType deviceType) {
+        return Scaffold(
+          body: Container(
+            height: 100.h,
+            child: Stack(
+              children: [
+                SizedBox(
+                  height: 70.h,
+                  width: 100.w,
+                  child: Image.asset(
+                    "assets/onboarding/onboard2.png",
+                    fit: BoxFit.cover,
+                  ),
+                ),
+                Positioned(
+                  left: 0,
+                  bottom: 30.h,
+                  child: Image.asset(
+                    "assets/onboarding/lines.png",
+                    scale: 4.8,
+                  ),
+                ),
+                Positioned(
+                  bottom: 0,
+                  child: ContainerCard(),
+                ),
+              ],
             ),
-            Positioned(
-              left: 0,
-              bottom: 250,
-              child: Image.asset(
-                "assets/onboarding/lines.png",
-                scale: 4.8,
-              ),
-            ),
-            Positioned(
-              bottom: 0,
-              child: ContainerCard(),
-            ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }
@@ -48,9 +54,9 @@ class ContainerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 32, horizontal: 24),
+      padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
       width: MediaQuery.of(context).size.width,
-      height: 274,
+      height: 33.h,
       decoration: BoxDecoration(
         color: Colors.lightBlue,
         borderRadius: BorderRadius.only(
@@ -81,9 +87,6 @@ class ContainerCard extends StatelessWidget {
                               alignment: Alignment.bottomCenter,
                               scale: 1),
                         ),
-
-
-                        
                         child: Text(
                           "share",
                           style: TextStyle(
@@ -130,7 +133,7 @@ class ContainerCard extends StatelessWidget {
                   var currentIndex = 1;
                   return Container(
                     margin: EdgeInsets.only(left: 10),
-                    height: 6,
+                    height: 0.7.h,
                     width: currentIndex == index ? 24 : 12,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
@@ -170,7 +173,7 @@ class ContainerCard extends StatelessWidget {
             ],
           ),
           SizedBox(
-            height: 32,
+            height: 4.h,
           ),
         ],
       ),

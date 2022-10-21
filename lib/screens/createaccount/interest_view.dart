@@ -6,6 +6,7 @@ import 'package:letsconnectnewui/common/constants/colors.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'package:letsconnectnewui/screens/createaccount/welcomepage.dart';
+import 'package:sizer/sizer.dart';
 
 class InterestView extends StatefulWidget {
   const InterestView({Key? key}) : super(key: key);
@@ -33,81 +34,85 @@ class _InterestViewState extends State<InterestView> {
     'creativity6',
     'creativity7',
     'creativity8',
-    
   ];
 
   List<String> selectedCreativityList = [];
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: SafeArea(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24),
-          child: SingleChildScrollView(
-            child: SizedBox(
-              width: Get.width,
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  SizedBox(
-                    height: 20,
+    return Sizer(
+      builder: (BuildContext context, Orientation orientation,
+          DeviceType deviceType) {
+        return Scaffold(
+          body: SafeArea(
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 24),
+              child: SingleChildScrollView(
+                child: SizedBox(
+                  width: Get.width,
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      SizedBox(
+                        height: 2.5.h,
+                      ),
+                      Header(),
+                      SizedBox(
+                        height: 2.h,
+                      ),
+                      SearchBar(),
+                      SizedBox(
+                        height: 4.h,
+                      ),
+                      InterestContainer(
+                        heading: 'Creativity',
+                        options: creativityList,
+                        selectedList: selectedCreativityList,
+                      ),
+                      InterestContainer(
+                        heading: 'Films & TV Shows',
+                        options: creativityList,
+                        selectedList: [],
+                      ),
+                      InterestContainer(
+                        heading: 'Going Out',
+                        options: creativityList,
+                        selectedList: [],
+                      ),
+                      InterestContainer(
+                        heading: 'Music',
+                        options: creativityList,
+                        selectedList: [],
+                      ),
+                      InterestContainer(
+                        heading: 'Staying In',
+                        options: creativityList,
+                        selectedList: [],
+                      ),
+                      InterestContainer(
+                        heading: 'Wellbeing',
+                        options: creativityList,
+                        selectedList: [],
+                      ),
+                      SizedBox(
+                        height: 2.h,
+                      ),
+                      CustomButton(
+                          label: 'Next',
+                          onTap: () {
+                            Get.to(WelcomePage());
+                          }),
+                      SizedBox(
+                        height: 2.5.h,
+                      ),
+                    ],
                   ),
-                  Header(),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  SearchBar(),
-                  SizedBox(
-                    height: 32,
-                  ),
-                  InterestContainer(
-                    heading: 'Creativity',
-                    options: creativityList,
-                    selectedList: selectedCreativityList,
-                  ),
-                  InterestContainer(
-                    heading: 'Films & TV Shows',
-                    options: creativityList,
-                    selectedList: [],
-                  ),
-                  InterestContainer(
-                    heading: 'Going Out',
-                    options: creativityList,
-                    selectedList: [],
-                  ),
-                  InterestContainer(
-                    heading: 'Music',
-                    options: creativityList,
-                    selectedList: [],
-                  ),
-                  InterestContainer(
-                    heading: 'Staying In',
-                    options: creativityList,
-                    selectedList: [],
-                  ),
-                  InterestContainer(
-                    heading: 'Wellbeing',
-                    options: creativityList,
-                    selectedList: [],
-                  ),
-                  SizedBox(
-                    height: 16,
-                  ),
-                  CustomButton(
-                      label: 'Next',
-                      onTap: () {
-                        Get.to(WelcomePage());
-                      }),
-                  SizedBox(
-                    height: 20,
-                  ),
-                ],
+                ),
               ),
             ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }
@@ -124,7 +129,7 @@ class SearchBar extends StatelessWidget {
           color: Color(0xffABB4C9),
           size: 20,
         ),
-        contentPadding: EdgeInsets.symmetric(vertical: 10, horizontal: 10),
+        contentPadding: EdgeInsets.symmetric(vertical: 1.h, horizontal: 10.w),
         hintText: 'Search Interest',
         filled: true,
         fillColor: Color(0xffABB4C9).withOpacity(0.2),
@@ -152,7 +157,7 @@ class Header extends StatelessWidget {
           style: MyTextStyle.headerTheme,
         ),
         SizedBox(
-          height: 8,
+          height: 1.h,
         ),
         Text.rich(
           TextSpan(
@@ -211,7 +216,7 @@ class _InterestContainerState extends State<InterestContainer> {
           ),
         ),
         SizedBox(
-          height: 16,
+          height: 2.h,
         ),
         Wrap(
           children:
@@ -229,8 +234,10 @@ class _InterestContainerState extends State<InterestContainer> {
                 setState(() {});
               },
               child: Container(
-                padding: EdgeInsets.symmetric(horizontal: 14, vertical: 8),
-                margin: EdgeInsets.symmetric(horizontal: 4, vertical: 8),
+                padding:
+                    EdgeInsets.symmetric(horizontal: 1.8.h, vertical: 2.2.w),
+                margin:
+                    EdgeInsets.symmetric(horizontal: 0.5.h, vertical: 2.2.w),
                 child: Text(
                   widget.options[index],
                   style: MyTextStyle.regularTheme.copyWith(

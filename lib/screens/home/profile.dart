@@ -7,6 +7,7 @@ import 'package:letsconnectnewui/screens/home/feedback.dart';
 import 'package:letsconnectnewui/screens/home/update_phone.dart';
 
 import 'package:percent_indicator/circular_percent_indicator.dart';
+import 'package:sizer/sizer.dart';
 
 class ProfileScreen extends StatefulWidget {
   const ProfileScreen({Key? key}) : super(key: key);
@@ -18,140 +19,145 @@ class ProfileScreen extends StatefulWidget {
 class _ProfileScreenState extends State<ProfileScreen> {
   @override
   Widget build(BuildContext context) {
-    return Material(
-      child: SingleChildScrollView(
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            SizedBox(
-              height: 68,
-            ),
-            Profileimg(),
-            // Text("Leslie Alaxender", style: MyTextStyle.headerTheme),
-            Text("Priyanshu Singh", style: MyTextStyle.headerTheme),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
+    return Sizer(
+      builder: (BuildContext context, Orientation orientation,
+          DeviceType deviceType) {
+        return Material(
+          child: SingleChildScrollView(
+            child: Column(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
               children: [
+                SizedBox(
+                  height: 68,
+                ),
+                Profileimg(),
+                // Text("Leslie Alaxender", style: MyTextStyle.headerTheme),
+                Text("Priyanshu Singh", style: MyTextStyle.headerTheme),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: [
+                    InkWell(
+                      onTap: () {
+                        Get.to(EditProfile());
+                      },
+                      child: Text("Edit Profile",
+                          style: TextStyle(color: Colors.blue, fontSize: 16)),
+                    ),
+                    Icon(
+                      Icons.chevron_right,
+                      color: Colors.blue,
+                    ),
+                  ],
+                ),
+                SizedBox(
+                  height: 32,
+                ),
+                CustomContainer(text: "PREFERENCES"),
+                SizedBox(
+                  height: 24,
+                ),
+                CustomTabs(
+                  text: "Update Phone Number",
+                  onTap: () {
+                    Get.to(UpdatePhone());
+                  },
+                ),
+                SizedBox(
+                  height: 24,
+                ),
+                CustomTabs(
+                    text: "Blocked Users",
+                    onTap: () {
+                      Get.to(BlkUsers());
+                    }),
+                SizedBox(
+                  height: 24,
+                ),
+                CustomContainer(text: "ABOUT US"),
+                SizedBox(
+                  height: 24,
+                ),
+                CustomTabs(text: "Privacy Policy"),
+                SizedBox(
+                  height: 24,
+                ),
+                CustomTabs(text: "Terms and Conditions"),
+                SizedBox(
+                  height: 24,
+                ),
+                CustomTabs(
+                  text: "Share feedback",
+                  onTap: () {
+                    Get.to(FeedbackScreen());
+                  },
+                ),
+                SizedBox(
+                  height: 24,
+                ),
+                CustomContainer(text: "ACCOUNT"),
+                SizedBox(
+                  height: 24,
+                ),
+                CustomTabs(text: "Log Out"),
+                SizedBox(
+                  height: 24,
+                ),
+                CustomTabs(
+                  text: "Pause Account",
+                  onTap: () {
+                    showDialog(
+                        context: context, builder: (context) => PauseAccount());
+                  },
+                ),
+                SizedBox(
+                  height: 24,
+                ),
                 InkWell(
                   onTap: () {
-                    Get.to(EditProfile());
+                    showDialog(
+                        context: context, builder: (context) => CustomAlert());
                   },
-                  child: Text("Edit Profile",
-                      style: TextStyle(color: Colors.blue, fontSize: 16)),
+                  child: Row(
+                    children: [
+                      SizedBox(
+                        width: 24,
+                      ),
+                      Text("Delete Acoount", style: MyTextStyle.mediumredTheme),
+                      Spacer(),
+                      Icon(
+                        Icons.chevron_right,
+                      ),
+                      SizedBox(
+                        width: 33,
+                      ),
+                    ],
+                  ),
                 ),
-                Icon(
-                  Icons.chevron_right,
-                  color: Colors.blue,
+                SizedBox(
+                  height: 24,
+                ),
+                Container(
+                  height: 86,
+                  width: 64,
+                  child: Image(
+                    image: AssetImage("assets/logo.png"),
+                    color: Colors.blue,
+                  ),
+                ),
+                SizedBox(
+                  height: 16,
+                ),
+                Text("Ver: 0.0.57 - Production - Android",
+                    style: MyTextStyle.regularTheme),
+                SizedBox(
+                  height: 32,
                 ),
               ],
             ),
-            SizedBox(
-              height: 32,
-            ),
-            CustomContainer(text: "PREFERENCES"),
-            SizedBox(
-              height: 24,
-            ),
-            CustomTabs(
-              text: "Update Phone Number",
-              onTap: () {
-                Get.to(UpdatePhone());
-              },
-            ),
-            SizedBox(
-              height: 24,
-            ),
-            CustomTabs(
-                text: "Blocked Users",
-                onTap: () {
-                  Get.to(BlkUsers());
-                }),
-            SizedBox(
-              height: 24,
-            ),
-            CustomContainer(text: "ABOUT US"),
-            SizedBox(
-              height: 24,
-            ),
-            CustomTabs(text: "Privacy Policy"),
-            SizedBox(
-              height: 24,
-            ),
-            CustomTabs(text: "Terms and Conditions"),
-            SizedBox(
-              height: 24,
-            ),
-            CustomTabs(
-              text: "Share feedback",
-              onTap: () {
-                Get.to(FeedbackScreen());
-              },
-            ),
-            SizedBox(
-              height: 24,
-            ),
-            CustomContainer(text: "ACCOUNT"),
-            SizedBox(
-              height: 24,
-            ),
-            CustomTabs(text: "Log Out"),
-            SizedBox(
-              height: 24,
-            ),
-            CustomTabs(
-              text: "Pause Account",
-              onTap: () {
-                showDialog(
-                    context: context, builder: (context) => PauseAccount());
-              },
-            ),
-            SizedBox(
-              height: 24,
-            ),
-            InkWell(
-              onTap: () {
-                showDialog(
-                    context: context, builder: (context) => CustomAlert());
-              },
-              child: Row(
-                children: [
-                  SizedBox(
-                    width: 24,
-                  ),
-                  Text("Delete Acoount", style: MyTextStyle.mediumredTheme),
-                  Spacer(),
-                  Icon(
-                    Icons.chevron_right,
-                  ),
-                  SizedBox(
-                    width: 33,
-                  ),
-                ],
-              ),
-            ),
-            SizedBox(
-              height: 24,
-            ),
-            Container(
-              height: 86,
-              width: 64,
-              child: Image(
-                image: AssetImage("assets/logo.png"),
-                color: Colors.blue,
-              ),
-            ),
-            SizedBox(
-              height: 16,
-            ),
-            Text("Ver: 0.0.57 - Production - Android",
-                style: MyTextStyle.regularTheme),
-            SizedBox(
-              height: 32,
-            ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }
@@ -235,7 +241,7 @@ class CustomTabs extends StatelessWidget {
       child: Row(
         children: [
           SizedBox(
-            width: 24,
+            width: 7.w,
           ),
           Text("$text", style: MyTextStyle.mediumTheme),
           Spacer(),
@@ -243,7 +249,7 @@ class CustomTabs extends StatelessWidget {
             Icons.chevron_right,
           ),
           SizedBox(
-            width: 33,
+            width: 8.w,
           ),
         ],
       ),
@@ -260,7 +266,7 @@ class CustomContainer extends StatelessWidget {
     return Container(
       alignment: Alignment.centerLeft,
       height: 40,
-      width: 360,
+      width: 100.w,
       decoration: BoxDecoration(
         color: Colors.grey[300],
       ),

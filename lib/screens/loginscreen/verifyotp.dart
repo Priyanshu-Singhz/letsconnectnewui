@@ -2,36 +2,43 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'package:letsconnectnewui/screens/createaccount/name.dart';
+import 'package:sizer/sizer.dart';
 
 class VefifyOtp extends StatelessWidget {
   const VefifyOtp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      // resizeToAvoidBottomInset: false,   //If you do not want the verify button to come upwards
-      bottomSheet: Container(
-        decoration: BoxDecoration(color: Colors.lightBlue),
-        child: Stack(
-          children: [
-            Column(
+    return Sizer(
+      builder: (BuildContext context, Orientation orientation,
+          DeviceType deviceType) {
+        return Scaffold(
+          // resizeToAvoidBottomInset: false,   //If you do not want the verify button to come upwards
+          bottomSheet: Container(
+            decoration: BoxDecoration(color: Colors.lightBlue),
+            child: Stack(
               children: [
-                Container(
-                    decoration: BoxDecoration(color: Colors.lightBlue),
-                    child: Image(
-                      image: AssetImage("assets/doodlee.png"),
-                      fit: BoxFit.fitHeight,
-                    )),
+                Column(
+                  children: [
+                    Container(
+                        height: 60.h,
+                        decoration: BoxDecoration(color: Colors.lightBlue),
+                        child: Image(
+                          image: AssetImage("assets/doodlee.png"),
+                          fit: BoxFit.fitHeight,
+                        )),
+                  ],
+                ),
+                Positioned(
+                  bottom: 0,
+                  child: ContainerCard(),
+                ),
+                CustomBack(),
               ],
             ),
-            Positioned(
-              bottom: 0,
-              child: ContainerCard(),
-            ),
-            CustomBack(),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }
@@ -44,9 +51,9 @@ class ContainerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 32, horizontal: 24),
+      padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
       width: MediaQuery.of(context).size.width,
-      height: 441,
+      height: 50.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -81,7 +88,7 @@ class ContainerCard extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 1.h),
             Row(
               children: [
                 Row(
@@ -97,7 +104,7 @@ class ContainerCard extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 40,
+              height: 5.h,
             ),
             Row(
               children: [
@@ -113,7 +120,7 @@ class ContainerCard extends StatelessWidget {
                 ),
                 keyboardType: TextInputType.number),
             SizedBox(
-              height: 10,
+              height: 1.h,
             ),
             Row(
               children: [

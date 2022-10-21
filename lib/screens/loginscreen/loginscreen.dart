@@ -32,8 +32,9 @@ class Loginscreen extends StatelessWidget {
                   bottom: 0,
                   child: ContainerCard(),
                 ),
+                Spacer(),
                 Positioned(
-                  top: 90.h,
+                  top: 87.h,
                   child: Container(
                     height: 9.h,
                     width: 100.w,
@@ -89,7 +90,7 @@ class ContainerCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 32, horizontal: 24),
       width: MediaQuery.of(context).size.width,
-      height: 46.h,
+      height: 53.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(

@@ -51,7 +51,7 @@ class ContainerCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 5.w),
       width: MediaQuery.of(context).size.width,
-      height: 45.h,
+      height: 50.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -98,9 +98,8 @@ class ContainerCard extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(
-              height: 3.5.h,
-            ),
+            Spacer(),
+
             Row(
               children: [
                 Text(
@@ -135,7 +134,8 @@ class ContainerCard extends StatelessWidget {
               onTap: () {
                 Get.to(Age());
               },
-            )
+            ),
+            Spacer(),
           ],
         ),
       ),

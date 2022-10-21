@@ -91,33 +91,33 @@ class _ChatHomeState extends State<ChatHome> {
                             ],
                           ),
                         ),
-                        SizedBox(height: 16),
+                        SizedBox(height: 2.h),
                         Scrol(),
-                        SizedBox(height: 16),
+                        SizedBox(height: 2.h),
                       ],
                     ),
                   ),
                   Container(
-                    height: 1,
-                    width: 360,
+                    height: 0.1.h,
+                    width: 100.w,
                     decoration: BoxDecoration(
                       color: Colors.grey,
                     ),
                   ),
-                  SizedBox(height: 24),
+                  SizedBox(height: 2.h),
                   Column(
                     children: [
                       Row(
                         children: [
-                          SizedBox(width: 24),
+                          SizedBox(width: 7.w),
                           Text("Chats", style: MyTextStyle.headerTheme),
                         ],
                       ),
-                      SizedBox(height: 16),
-                      Container(height: 40, width: 312, child: SearchBar()),
+                      SizedBox(height: 2.h),
+                      Container(height: 7.h, width: 88.w, child: SearchBar()),
                       Container(
-                        height: 432,
-                        width: 336,
+                        height: 80.h,
+                        width: 93.w,
                         child: ListView.builder(
                           itemCount: 10,
                           itemBuilder: (BuildContext context, int index) {
@@ -141,11 +141,11 @@ class _ChatHomeState extends State<ChatHome> {
                                                 style: MyTextStyle.mediumTheme,
                                               ),
                                               SizedBox(
-                                                width: 105,
+                                                width: 35.w,
                                               ),
                                               Container(
-                                                  height: 16,
-                                                  width: 16,
+                                                  height: 2.h,
+                                                  width: 4.w,
                                                   decoration: BoxDecoration(
                                                     color: Colors.blue,
                                                     borderRadius:
@@ -169,7 +169,7 @@ class _ChatHomeState extends State<ChatHome> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             children: [
-                                              SizedBox(width: 18),
+                                              SizedBox(width: 4.8.w),
                                               Icon(
                                                 Icons.done_all,
                                                 color: Colors.blue,
@@ -191,7 +191,7 @@ class _ChatHomeState extends State<ChatHome> {
                                     ],
                                   ),
                                   SizedBox(
-                                    height: 10,
+                                    height: 1.h,
                                   ),
                                   Row(
                                     children: [
@@ -203,8 +203,8 @@ class _ChatHomeState extends State<ChatHome> {
                                       Column(
                                         children: [
                                           Container(
-                                            height: 24,
-                                            width: 237,
+                                            height: 3.h,
+                                            width: 65.w,
                                             child: Text(
                                               names[index + 3],
                                               style: MyTextStyle.mediumTheme,
@@ -216,7 +216,7 @@ class _ChatHomeState extends State<ChatHome> {
                                             mainAxisAlignment:
                                                 MainAxisAlignment.start,
                                             children: [
-                                              SizedBox(width: 18),
+                                              SizedBox(width: 4.5.w),
                                               Icon(
                                                 Icons.done_all,
                                                 color: Colors.blue,
@@ -226,7 +226,7 @@ class _ChatHomeState extends State<ChatHome> {
                                                   style: MyTextStyle
                                                       .extraregularTheme),
                                               SizedBox(
-                                                width: 20,
+                                                width: 2.4.w,
                                               ),
                                               Text("11:21 PM",
                                                   style: MyTextStyle
@@ -238,7 +238,7 @@ class _ChatHomeState extends State<ChatHome> {
                                     ],
                                   ),
                                   SizedBox(
-                                    height: 10,
+                                    height: 1.h,
                                   ),
                                 ],
                               ),
@@ -264,8 +264,8 @@ class Scrol extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 68,
-      width: 348,
+      height: 10.h,
+      width: 95.h,
       child: ListView(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
@@ -280,14 +280,14 @@ class Scrol extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 45,
+                top: 7.h,
                 child: Center(
                     child: Text("Soham", style: MyTextStyle.regularTheme)),
               ),
             ],
           ),
           SizedBox(
-            width: 12,
+            width: 4.w,
           ),
           Stack(
             children: [
@@ -299,14 +299,14 @@ class Scrol extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 45,
-                left: 5,
+                top: 7.h,
+                left: 1.w,
                 child: Text("Mitchell", style: MyTextStyle.regularTheme),
               ),
             ],
           ),
           SizedBox(
-            width: 12,
+            width: 4.w,
           ),
           Stack(
             children: [
@@ -318,14 +318,14 @@ class Scrol extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 45,
-                left: 5,
+                top: 7.h,
+                left: 1.w,
                 child: Text("Rom", style: MyTextStyle.regularTheme),
               ),
             ],
           ),
           SizedBox(
-            width: 12,
+            width: 4.w,
           ),
           Stack(
             children: [
@@ -337,14 +337,14 @@ class Scrol extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 45,
-                left: 5,
+                top: 7.h,
+                left: 1.w,
                 child: Text("Arthur", style: MyTextStyle.regularTheme),
               ),
             ],
           ),
           SizedBox(
-            width: 12,
+            width: 4.w,
           ),
           Stack(
             children: [
@@ -356,14 +356,14 @@ class Scrol extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 45,
-                left: 5,
+                top: 7.h,
+                left: 1.w,
                 child: Text("Silly", style: MyTextStyle.regularTheme),
               ),
             ],
           ),
           SizedBox(
-            width: 12,
+            width: 4.w,
           ),
           Stack(
             children: [
@@ -375,14 +375,14 @@ class Scrol extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 45,
-                left: 5,
+                top: 7.h,
+                left: 1.w,
                 child: Text("Soham", style: MyTextStyle.regularTheme),
               ),
             ],
           ),
           SizedBox(
-            width: 12,
+            width: 4.w,
           ),
           Stack(
             children: [
@@ -394,14 +394,14 @@ class Scrol extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 45,
-                left: 5,
+                top: 7.h,
+                left: 1.w,
                 child: Text("Mitchell", style: MyTextStyle.regularTheme),
               ),
             ],
           ),
           SizedBox(
-            width: 12,
+            width: 4.w,
           ),
           Stack(
             children: [
@@ -413,14 +413,14 @@ class Scrol extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 45,
-                left: 5,
+                top: 7.h,
+                left: 1.w,
                 child: Text("Rom", style: MyTextStyle.regularTheme),
               ),
             ],
           ),
           SizedBox(
-            width: 12,
+            width: 4.w,
           ),
           Stack(
             children: [
@@ -432,14 +432,14 @@ class Scrol extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 45,
-                left: 5,
+                top: 7.h,
+                left: 1.w,
                 child: Text("Arthur", style: MyTextStyle.regularTheme),
               ),
             ],
           ),
           SizedBox(
-            width: 12,
+            width: 4.w,
           ),
           Stack(
             children: [
@@ -451,14 +451,14 @@ class Scrol extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 45,
-                left: 5,
+                top: 7.h,
+                left: 1.w,
                 child: Text("Silly", style: MyTextStyle.regularTheme),
               ),
             ],
           ),
           SizedBox(
-            width: 12,
+            width: 4.w,
           ),
         ],
       ),

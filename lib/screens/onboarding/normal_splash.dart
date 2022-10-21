@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:letsconnectnewui/screens/onboarding/onboarding.dart';
+import 'package:letsconnectnewui/screens/onboarding/onboardings.dart';
 
 class NormalSplash extends StatefulWidget {
   const NormalSplash({Key? key}) : super(key: key);

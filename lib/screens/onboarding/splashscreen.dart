@@ -1,7 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
-import 'package:letsconnectnewui/screens/onboarding/onboarding.dart';
+import 'package:letsconnectnewui/screens/onboarding/onboardings.dart';
 import 'package:lottie/lottie.dart';
 
 class Splashscreen extends StatefulWidget {

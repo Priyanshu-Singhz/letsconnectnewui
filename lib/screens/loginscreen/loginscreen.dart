@@ -20,7 +20,8 @@ class Loginscreen extends StatelessWidget {
                 Column(
                   children: [
                     Container(
-                        height: 60.h,
+                        height: 55.h,
+                        width: 100.h,
                         decoration: BoxDecoration(color: Colors.lightBlue),
                         child: Image(
                           image: AssetImage("assets/doodlee.png"),
@@ -90,7 +91,7 @@ class ContainerCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 32, horizontal: 24),
       width: MediaQuery.of(context).size.width,
-      height: 53.h,
+      height: 60.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -190,6 +191,7 @@ class ContainerCard extends StatelessWidget {
                 onTap: () {
                   Get.to(VefifyOtp());
                 }),
+            Spacer(),
           ],
         ),
       ),

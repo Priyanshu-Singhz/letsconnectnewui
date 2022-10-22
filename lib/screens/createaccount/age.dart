@@ -22,7 +22,6 @@ class Age extends StatelessWidget {
                   bottom: 65.h,
                   top: 2.h,
                   left: 0,
-                  right: 1.w,
                   child: Container(
                     child: Image(
                       image: AssetImage("assets/createaccount/dood.png"),
@@ -102,6 +101,8 @@ class ContainerCard extends StatelessWidget {
                 onSelected: (String selected) => print(selected)),
             Spacer(),
             Container(
+              height: 6.h,
+              width: 90.w,
               decoration: BoxDecoration(
                 gradient: LinearGradient(
                   begin: Alignment.bottomCenter,
@@ -117,32 +118,19 @@ class ContainerCard extends StatelessWidget {
               ),
               child: ElevatedButton(
                 style: ButtonStyle(
-                  shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                    RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(20.0),
-                    ),
-                  ),
-                  minimumSize: MaterialStateProperty.all(Size(90.w, 50)),
                   backgroundColor:
                       MaterialStateProperty.all(Colors.transparent),
-                  // elevation: MaterialStateProperty.all(3),
                   shadowColor: MaterialStateProperty.all(Colors.transparent),
                 ),
                 onPressed: () {
                   Get.to(Gender());
                 },
-                child: Padding(
-                  padding: const EdgeInsets.only(
-                    top: 1,
-                    bottom: 10,
-                  ),
-                  child: Text(
-                    "Next",
-                    style: TextStyle(
-                      fontSize: 18,
-                      // fontWeight: FontWeight.w700,
-                      color: Colors.white,
-                    ),
+                child: Text(
+                  "Next",
+                  style: TextStyle(
+                    fontSize: 18,
+                    // fontWeight: FontWeight.w700,
+                    color: Colors.white,
                   ),
                 ),
               ),

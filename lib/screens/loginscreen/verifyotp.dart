@@ -22,10 +22,11 @@ class VefifyOtp extends StatelessWidget {
                   children: [
                     Container(
                         height: 60.h,
+                        width: 100.w,
                         decoration: BoxDecoration(color: Colors.lightBlue),
                         child: Image(
                           image: AssetImage("assets/doodlee.png"),
-                          fit: BoxFit.fitHeight,
+                          fit: BoxFit.fill,
                         )),
                   ],
                 ),

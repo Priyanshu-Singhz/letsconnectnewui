@@ -20,14 +20,13 @@ class Gender extends StatelessWidget {
               children: [
                 Positioned(
                   bottom: 65.h,
-                  top: 0,
+                  top: 2.h,
                   left: 0,
                   right: 1.w,
                   child: Container(
-                    child: Image.asset(
-                      "assets/createaccount/dood.png",
-                      scale: 4,
-                      color: Colors.white,
+                    child: Image(
+                      image: AssetImage("assets/createaccount/dood.png"),
+                      fit: BoxFit.fill,
                     ),
                   ),
                 ),

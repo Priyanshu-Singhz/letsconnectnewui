@@ -20,11 +20,14 @@ class Name extends StatelessWidget {
                 Column(
                   children: [
                     Container(
-                        height: 60.h,
-                        decoration: BoxDecoration(color: Colors.lightBlue),
-                        child: Image(
-                          image: AssetImage("assets/doodlee.png"),
-                        )),
+                      width: 100.w,
+                      height: 60.h,
+                      decoration: BoxDecoration(color: Colors.lightBlue),
+                      child: Image(
+                        image: AssetImage("assets/doodlee.png"),
+                        fit: BoxFit.fill,
+                      ),
+                    ),
                   ],
                 ),
                 Positioned(

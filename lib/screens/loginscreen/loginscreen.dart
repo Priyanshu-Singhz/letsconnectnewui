@@ -25,7 +25,7 @@ class Loginscreen extends StatelessWidget {
                         decoration: BoxDecoration(color: Colors.lightBlue),
                         child: Image(
                           image: AssetImage("assets/doodlee.png"),
-                          fit: BoxFit.fitHeight,
+                          fit: BoxFit.fill,
                         )),
                   ],
                 ),

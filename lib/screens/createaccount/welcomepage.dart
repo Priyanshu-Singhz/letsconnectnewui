@@ -15,101 +15,96 @@ class WelcomePage extends StatelessWidget {
       builder: (BuildContext context, Orientation orientation,
           DeviceType deviceType) {
         return Scaffold(
-          body: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 6.w),
-            child: Column(
-              children: [
-                SizedBox(height: 7.h),
-                Header(),
-              ],
+          body: Container(
+            height: 100.h,
+            width: 100.h,
+            child: Padding(
+              padding: EdgeInsets.symmetric(horizontal: 6.w),
+              child: Column(
+                mainAxisAlignment: MainAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  SizedBox(height: 7.h),
+                  Text(
+                    'Welcome to',
+                    style: MyTextStyle.headerTheme,
+                  ),
+                  Container(
+                    decoration: BoxDecoration(
+                      image: DecorationImage(
+                        image: AssetImage("assets/onboarding/line.png"),
+                        fit: BoxFit.fitWidth,
+                        alignment: Alignment.bottomCenter,
+                      ),
+                    ),
+                    child: Text(
+                      "Let's Connect",
+                      style: MyTextStyle.headerTheme,
+                    ),
+                  ),
+                  SizedBox(
+                    height: 1.8.h,
+                  ),
+                  Text(
+                    'A few simple rules you should follow.',
+                    style: MyTextStyle.regularTheme,
+                  ),
+                  SizedBox(
+                    height: 6.h,
+                  ),
+                  RowData(text: "Respect others and treat them well."),
+                  SizedBox(height: 4.h),
+                  RowData(text: "Be the real you, everyone loves it."),
+                  SizedBox(height: 4.h),
+                  RowData(
+                      text:
+                          "Stay secure, don’t share personal information quickly."),
+                  SizedBox(height: 4.h),
+                  RowData(text: "Be kind and gentle."),
+                  SizedBox(height: 4.h),
+                  RowData(text: "Be Active."),
+                  Spacer(),
+                  Text.rich(
+                    TextSpan(
+                      text: 'By continuing you agree to our',
+                      style: MyTextStyle.mediumTheme,
+                      children: [
+                        TextSpan(
+                          text: ' Terms of Service',
+                          style: MyTextStyle.mediumTheme.copyWith(
+                            fontWeight: FontWeight.bold,
+                          ),
+                          children: [
+                            TextSpan(
+                                text: ' and',
+                                style: MyTextStyle.mediumTheme,
+                                children: [
+                                  TextSpan(
+                                    text: " Privacy Policy",
+                                    style: MyTextStyle.mediumTheme.copyWith(
+                                      fontWeight: FontWeight.bold,
+                                    ),
+                                  )
+                                ])
+                          ],
+                        ),
+                      ],
+                    ),
+                  ),
+                  SizedBox(height: 1.h),
+                  CustomButton(
+                    label: "I Agree",
+                    onTap: () {
+                      Get.to(HomePage());
+                    },
+                  ),
+                  Spacer(),
+                ],
+              ),
             ),
           ),
         );
       },
-    );
-  }
-}
-
-class Header extends StatelessWidget {
-  const Header({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
-      children: [
-        Text(
-          'Welcome to',
-          style: MyTextStyle.headerTheme,
-        ),
-        Container(
-          decoration: BoxDecoration(
-            image: DecorationImage(
-              image: AssetImage("assets/onboarding/line.png"),
-              fit: BoxFit.fitWidth,
-              alignment: Alignment.bottomCenter,
-            ),
-          ),
-          child: Text(
-            "Let's Connect",
-            style: MyTextStyle.headerTheme,
-          ),
-        ),
-        SizedBox(
-          height: 1.8.h,
-        ),
-        Text(
-          'A few simple rules you should follow.',
-          style: MyTextStyle.regularTheme,
-        ),
-        SizedBox(
-          height: 6.h,
-        ),
-        RowData(text: "Respect others and treat them well."),
-        SizedBox(height: 4.h),
-        RowData(text: "Be the real you, everyone loves it."),
-        SizedBox(height: 4.h),
-        RowData(text: "Stay secure, don’t share personal information quickly."),
-        SizedBox(height: 4.h),
-        RowData(text: "Be kind and gentle."),
-        SizedBox(height: 4.h),
-        RowData(text: "Be Active."),
-        SizedBox(height: 15.h),
-        Text.rich(
-          TextSpan(
-            text: 'By continuing you agree to our',
-            style: MyTextStyle.mediumTheme,
-            children: [
-              TextSpan(
-                text: ' Terms of Service',
-                style: MyTextStyle.mediumTheme.copyWith(
-                  fontWeight: FontWeight.bold,
-                ),
-                children: [
-                  TextSpan(
-                      text: ' and',
-                      style: MyTextStyle.mediumTheme,
-                      children: [
-                        TextSpan(
-                          text: " Privacy Policy",
-                          style: MyTextStyle.mediumTheme.copyWith(
-                            fontWeight: FontWeight.bold,
-                          ),
-                        )
-                      ])
-                ],
-              ),
-            ],
-          ),
-        ),
-        SizedBox(height: 4.h),
-        CustomButton(
-          label: "I Agree",
-          onTap: () {
-            Get.to(HomePage());
-          },
-        ),
-      ],
     );
   }
 }

@@ -100,40 +100,11 @@ class ContainerCard extends StatelessWidget {
                 labels: <String>["18 - 21", "21 - 26", "26+"],
                 onSelected: (String selected) => print(selected)),
             Spacer(),
-            Container(
-              height: 6.h,
-              width: 90.w,
-              decoration: BoxDecoration(
-                gradient: LinearGradient(
-                  begin: Alignment.bottomCenter,
-                  end: Alignment.center,
-                  stops: [0.0, 1.0],
-                  colors: [
-                    Colors.blue.shade500,
-                    Colors.blue.shade400,
-                  ],
-                ),
-                color: Colors.deepPurple.shade300,
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: ElevatedButton(
-                style: ButtonStyle(
-                  backgroundColor:
-                      MaterialStateProperty.all(Colors.transparent),
-                  shadowColor: MaterialStateProperty.all(Colors.transparent),
-                ),
-                onPressed: () {
-                  Get.to(Gender());
-                },
-                child: Text(
-                  "Next",
-                  style: TextStyle(
-                    fontSize: 18,
-                    // fontWeight: FontWeight.w700,
-                    color: Colors.white,
-                  ),
-                ),
-              ),
+            CustomButton(
+              label: 'Next',
+              onTap: () {
+                Get.to(Gender());
+              },
             ),
           ],
         ),

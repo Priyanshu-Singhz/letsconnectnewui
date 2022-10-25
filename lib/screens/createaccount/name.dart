@@ -133,6 +133,7 @@ class ContainerCard extends StatelessWidget {
             ),
             Spacer(),
             CustomButton1(
+              $height: 7.5.h,
               label: "Next",
               onTap: () {
                 Get.to(Age());

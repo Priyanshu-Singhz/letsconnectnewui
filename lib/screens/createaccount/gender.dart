@@ -97,7 +97,7 @@ class ContainerCard extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 4.h,
+              height: 2.h,
             ),
             RadioButtonGroup(
                 labels: <String>["Male", "Female", "Other"],

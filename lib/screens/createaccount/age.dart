@@ -23,6 +23,7 @@ class Age extends StatelessWidget {
                   top: 2.h,
                   left: 0,
                   child: Container(
+                    width: 100.w,
                     child: Image(
                       image: AssetImage("assets/createaccount/dood.png"),
                       fit: BoxFit.fill,

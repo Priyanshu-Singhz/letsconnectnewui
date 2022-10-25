@@ -85,13 +85,14 @@ class CustomCard extends StatelessWidget {
                     ),
                     height: 50.h,
                     width: 100.w,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Shimmer.fromColors(
-                        baseColor: Colors.grey.withOpacity(0.5),
-                        highlightColor: Colors.grey,
+                    child: Shimmer.fromColors(
+                      baseColor: Colors.grey,
+                      highlightColor: Colors.grey,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
                         child: Image(
                           image: AssetImage("assets/profile/hars.png"),
+                          fit: BoxFit.fill,
                         ),
                       ),
                     ),
@@ -100,6 +101,8 @@ class CustomCard extends StatelessWidget {
                 Positioned(
                   top: 40.h,
                   child: Container(
+                    width: 85.w,
+                    height: 38.h,
                     decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
@@ -112,8 +115,6 @@ class CustomCard extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    height: 35.h,
-                    width: 85.w,
                     child: Padding(
                       padding: const EdgeInsets.fromLTRB(16, 0, 16, 22),
                       child: Column(
@@ -145,8 +146,8 @@ class CustomCard extends StatelessWidget {
                                         color: Colors.yellow[600],
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            12, 6, 12, 6),
+                                        padding: EdgeInsets.fromLTRB(
+                                            1.h, 1.w, 1.h, 1.w),
                                         child: Center(
                                           child: Text("Blogging",
                                               style: MyTextStyle.cardTheme),
@@ -160,8 +161,8 @@ class CustomCard extends StatelessWidget {
                                         color: Colors.yellow[600],
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            12, 6, 12, 6),
+                                        padding: EdgeInsets.fromLTRB(
+                                            1.h, 1.w, 1.h, 1.w),
                                         child: Center(
                                           child: Text("Photography",
                                               style: MyTextStyle.cardTheme),
@@ -175,8 +176,8 @@ class CustomCard extends StatelessWidget {
                                         color: Colors.yellow[600],
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            12, 6, 12, 6),
+                                        padding: EdgeInsets.fromLTRB(
+                                            1.h, 1.w, 1.h, 1.w),
                                         child: Center(
                                           child: Text("Vlogging",
                                               style: MyTextStyle.cardTheme),
@@ -269,9 +270,8 @@ class CustomCard extends StatelessWidget {
                                                 color: Colors.white,
                                               ),
                                               child: Padding(
-                                                padding:
-                                                    const EdgeInsets.fromLTRB(
-                                                        12, 4, 12, 4),
+                                                padding: EdgeInsets.fromLTRB(
+                                                    1.h, 1.w, 1.h, 1.w),
                                                 child: Center(
                                                   child: Text("Coffee",
                                                       style: MyTextStyle
@@ -292,8 +292,8 @@ class CustomCard extends StatelessWidget {
                                                 CustomPopup());
                                       },
                                       child: Container(
-                                        height: 48,
-                                        width: 48,
+                                        height: 7.h,
+                                        width: 10.w,
                                         decoration: BoxDecoration(
                                           shape: BoxShape.circle,
                                           gradient: LinearGradient(

@@ -264,13 +264,13 @@ class Scrol extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      height: 10.h,
+      height: 12.6.h,
       width: 95.h,
       child: ListView(
         shrinkWrap: true,
         scrollDirection: Axis.horizontal,
         children: [
-          Stack(
+          Column(
             children: [
               Container(
                 child: CircleAvatar(
@@ -279,17 +279,13 @@ class Scrol extends StatelessWidget {
                   backgroundImage: AssetImage("assets/notifications/pic1.png"),
                 ),
               ),
-              Positioned(
-                top: 7.h,
-                child: Center(
-                    child: Text("Soham", style: MyTextStyle.regularTheme)),
-              ),
+              Center(child: Text("Soham", style: MyTextStyle.regularTheme)),
             ],
           ),
           SizedBox(
             width: 4.w,
           ),
-          Stack(
+          Column(
             children: [
               Container(
                 child: CircleAvatar(
@@ -298,17 +294,13 @@ class Scrol extends StatelessWidget {
                   backgroundImage: AssetImage("assets/notifications/pic2.png"),
                 ),
               ),
-              Positioned(
-                top: 7.h,
-                left: 1.w,
-                child: Text("Mitchell", style: MyTextStyle.regularTheme),
-              ),
+              Text("Mitchell", style: MyTextStyle.regularTheme),
             ],
           ),
           SizedBox(
             width: 4.w,
           ),
-          Stack(
+          Column(
             children: [
               Container(
                 child: CircleAvatar(
@@ -317,17 +309,13 @@ class Scrol extends StatelessWidget {
                   backgroundImage: AssetImage("assets/notifications/pic3.png"),
                 ),
               ),
-              Positioned(
-                top: 7.h,
-                left: 1.w,
-                child: Text("Rom", style: MyTextStyle.regularTheme),
-              ),
+              Text("Rom", style: MyTextStyle.regularTheme),
             ],
           ),
           SizedBox(
             width: 4.w,
           ),
-          Stack(
+          Column(
             children: [
               Container(
                 child: CircleAvatar(
@@ -336,17 +324,13 @@ class Scrol extends StatelessWidget {
                   backgroundImage: AssetImage("assets/notifications/pic4.png"),
                 ),
               ),
-              Positioned(
-                top: 7.h,
-                left: 1.w,
-                child: Text("Arthur", style: MyTextStyle.regularTheme),
-              ),
+              Text("Arthur", style: MyTextStyle.regularTheme),
             ],
           ),
           SizedBox(
             width: 4.w,
           ),
-          Stack(
+          Column(
             children: [
               Container(
                 child: CircleAvatar(
@@ -355,17 +339,13 @@ class Scrol extends StatelessWidget {
                   backgroundImage: AssetImage("assets/notifications/pic1.png"),
                 ),
               ),
-              Positioned(
-                top: 7.h,
-                left: 1.w,
-                child: Text("Silly", style: MyTextStyle.regularTheme),
-              ),
+              Text("Silly", style: MyTextStyle.regularTheme),
             ],
           ),
           SizedBox(
             width: 4.w,
           ),
-          Stack(
+          Column(
             children: [
               Container(
                 child: CircleAvatar(
@@ -374,17 +354,13 @@ class Scrol extends StatelessWidget {
                   backgroundImage: AssetImage("assets/notifications/pic1.png"),
                 ),
               ),
-              Positioned(
-                top: 7.h,
-                left: 1.w,
-                child: Text("Soham", style: MyTextStyle.regularTheme),
-              ),
+              Text("Soham", style: MyTextStyle.regularTheme),
             ],
           ),
           SizedBox(
             width: 4.w,
           ),
-          Stack(
+          Column(
             children: [
               Container(
                 child: CircleAvatar(
@@ -393,17 +369,13 @@ class Scrol extends StatelessWidget {
                   backgroundImage: AssetImage("assets/notifications/pic2.png"),
                 ),
               ),
-              Positioned(
-                top: 7.h,
-                left: 1.w,
-                child: Text("Mitchell", style: MyTextStyle.regularTheme),
-              ),
+              Text("Mitchell", style: MyTextStyle.regularTheme),
             ],
           ),
           SizedBox(
             width: 4.w,
           ),
-          Stack(
+          Column(
             children: [
               Container(
                 child: CircleAvatar(
@@ -412,17 +384,13 @@ class Scrol extends StatelessWidget {
                   backgroundImage: AssetImage("assets/notifications/pic3.png"),
                 ),
               ),
-              Positioned(
-                top: 7.h,
-                left: 1.w,
-                child: Text("Rom", style: MyTextStyle.regularTheme),
-              ),
+              Text("Rom", style: MyTextStyle.regularTheme),
             ],
           ),
           SizedBox(
             width: 4.w,
           ),
-          Stack(
+          Column(
             children: [
               Container(
                 child: CircleAvatar(
@@ -431,17 +399,13 @@ class Scrol extends StatelessWidget {
                   backgroundImage: AssetImage("assets/notifications/pic4.png"),
                 ),
               ),
-              Positioned(
-                top: 7.h,
-                left: 1.w,
-                child: Text("Arthur", style: MyTextStyle.regularTheme),
-              ),
+              Text("Arthur", style: MyTextStyle.regularTheme),
             ],
           ),
           SizedBox(
             width: 4.w,
           ),
-          Stack(
+          Column(
             children: [
               Container(
                 child: CircleAvatar(
@@ -450,11 +414,7 @@ class Scrol extends StatelessWidget {
                   backgroundImage: AssetImage("assets/notifications/pic1.png"),
                 ),
               ),
-              Positioned(
-                top: 7.h,
-                left: 1.w,
-                child: Text("Silly", style: MyTextStyle.regularTheme),
-              ),
+              Text("Silly", style: MyTextStyle.regularTheme),
             ],
           ),
           SizedBox(

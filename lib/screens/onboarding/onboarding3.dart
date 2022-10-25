@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/screens/loginscreen/loginscreen.dart';
-import 'package:letsconnectnewui/screens/onboarding/onboarding2.dart';
 import 'package:sizer/sizer.dart';
 
 class OnBoardThree extends StatelessWidget {
@@ -56,7 +55,6 @@ class ContainerCard extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
-
       width: MediaQuery.of(context).size.width,
       height: 33.h,
       decoration: BoxDecoration(
@@ -113,8 +111,7 @@ class ContainerCard extends StatelessWidget {
                   var currentIndex = 2;
                   return Container(
                     margin: EdgeInsets.only(left: 10),
-                                     height: 0.7.h,
-
+                    height: 0.7.h,
                     width: currentIndex == index ? 24 : 12,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),

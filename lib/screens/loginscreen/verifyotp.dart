@@ -1,3 +1,4 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
@@ -78,13 +79,14 @@ class ContainerCard extends StatelessWidget {
                       alignment: Alignment.bottomCenter,
                     ),
                   ),
-                  child: Text(
+                  child: AutoSizeText(
                     "Verify OTP",
                     style: TextStyle(
                       color: Color.fromARGB(255, 3, 43, 76),
                       fontSize: 24,
                       fontWeight: FontWeight.w700,
                     ),
+                    maxLines: 1,
                   ),
                 ),
               ],
@@ -94,9 +96,13 @@ class ContainerCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Text("OTP was sent to "),
-                    Text(
+                    AutoSizeText(
+                      "OTP was sent to ",
+                      maxLines: 1,
+                    ),
+                    AutoSizeText(
                       "+91 12345 67890",
+                      maxLines: 1,
                       style: TextStyle(
                           color: Colors.blue, fontWeight: FontWeight.bold),
                     ),
@@ -104,13 +110,12 @@ class ContainerCard extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
-              height: 5.h,
-            ),
+            Spacer(),
             Row(
               children: [
-                Text(
+                AutoSizeText(
                   "Enter OTP",
+                  maxLines: 1,
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                 ),
               ],
@@ -125,8 +130,9 @@ class ContainerCard extends StatelessWidget {
             ),
             Row(
               children: [
-                Text(
+                AutoSizeText(
                   "Resend OTP in 98s",
+                  maxLines: 1,
                   style: TextStyle(
                     color: Colors.grey,
                     fontSize: 14,

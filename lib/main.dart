@@ -4,10 +4,6 @@ import 'package:letsconnectnewui/common/constants/theme.dart';
 import 'package:letsconnectnewui/screens/onboarding/lottiesplashscreen.dart';
 import 'package:sizer/sizer.dart';
 
-
-
-
-
 void main() => runApp(MyApp());
 
 class MyApp extends StatelessWidget {

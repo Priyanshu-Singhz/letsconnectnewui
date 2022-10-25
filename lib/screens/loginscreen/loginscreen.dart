@@ -1,12 +1,18 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'package:letsconnectnewui/screens/loginscreen/verifyotp.dart';
 import 'package:sizer/sizer.dart';
 
-class Loginscreen extends StatelessWidget {
+class Loginscreen extends StatefulWidget {
   const Loginscreen({Key? key}) : super(key: key);
 
+  @override
+  State<Loginscreen> createState() => _LoginscreenState();
+}
+
+class _LoginscreenState extends State<Loginscreen> {
   @override
   Widget build(BuildContext context) {
     return Sizer(
@@ -89,7 +95,7 @@ class ContainerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 32, horizontal: 24),
+      padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 7.w),
       width: MediaQuery.of(context).size.width,
       height: 65.h,
       decoration: BoxDecoration(
@@ -115,7 +121,8 @@ class ContainerCard extends StatelessWidget {
                       alignment: Alignment.bottomCenter,
                     ),
                   ),
-                  child: Text(
+                  child: AutoSizeText(
+                    maxLines: 1,
                     "Get Started",
                     style: TextStyle(
                       color: Color.fromARGB(255, 3, 43, 76),
@@ -129,7 +136,7 @@ class ContainerCard extends StatelessWidget {
             SizedBox(height: 1.h),
             Row(
               children: [
-                Text(
+                AutoSizeText(
                   "We'll send you a six digit one time verification ",
                   style: TextStyle(
                     fontSize: 14,
@@ -139,7 +146,7 @@ class ContainerCard extends StatelessWidget {
             ),
             Row(
               children: [
-                Text(
+                AutoSizeText(
                   "code",
                   style: TextStyle(
                     fontSize: 14,
@@ -152,7 +159,7 @@ class ContainerCard extends StatelessWidget {
             ),
             Row(
               children: [
-                Text(
+                AutoSizeText(
                   "Phone Number",
                   style: TextStyle(
                       color: Color(0xff2D4379),
@@ -185,8 +192,9 @@ class ContainerCard extends StatelessWidget {
                   hintText: 'Ex: 12345 67890',
                 ),
                 keyboardType: TextInputType.number),
-            SizedBox(height: 2.h),
+            Spacer(),
             CustomButton1(
+                $height: 7.5.h,
                 label: "Send OTP",
                 onTap: () {
                   Get.to(VefifyOtp());

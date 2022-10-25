@@ -66,50 +66,48 @@ class CustomButton extends StatelessWidget {
 class CustomButton1 extends StatelessWidget {
   final Function()? onTap;
   final String label;
+
+  final $height;
   const CustomButton1({
     Key? key,
     this.onTap,
     required this.label,
+    this.$height,
   }) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Sizer(
-      builder: (BuildContext context, Orientation orientation,
-          DeviceType deviceType) {
-        return InkWell(
-          onTap: onTap,
-          child: Container(
-            alignment: Alignment.center,
-            height: 48,
-            width: 100.w,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(8),
-              gradient: LinearGradient(
-                begin: Alignment.bottomCenter,
-                end: Alignment.center,
-                stops: [0.0, 1.0],
-                colors: [
-                  Colors.blue.shade500,
-                  Colors.blue.shade400,
-                ],
-              ),
-            ),
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text(
-                  label,
-                  style: TextStyle(
-                      color: Colors.white,
-                      fontWeight: FontWeight.w700,
-                      fontSize: 16),
-                ),
-              ],
-            ),
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        alignment: Alignment.center,
+        height: $height,
+        width: MediaQuery.of(context).size.width,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(8),
+          gradient: LinearGradient(
+            begin: Alignment.bottomCenter,
+            end: Alignment.center,
+            stops: [0.0, 1.0],
+            colors: [
+              Colors.blue.shade500,
+              Colors.blue.shade400,
+            ],
           ),
-        );
-      },
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text(
+              label,
+              style: TextStyle(
+                  color: Colors.white,
+                  fontWeight: FontWeight.w700,
+                  fontSize: 16),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }

@@ -30,6 +30,7 @@ dependencies:
   sizer: ^2.0.15
   intro_slider: ^4.2.0
   auto_size_text: ^3.0.0
+  
 
 dev_dependencies:
   flutter_test:

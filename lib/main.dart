@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/constants/theme.dart';
 import 'package:letsconnectnewui/screens/onboarding/lottiesplashscreen.dart';
-import 'package:sizer/sizer.dart';
 
 void main() => runApp(MyApp());
 
@@ -12,17 +11,13 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     //Set the fit size (Find your UI design, lPook at the dimensions of the device screen and fill it in,unit in dp)
-    return Sizer(
-      builder: (BuildContext context, Orientation orientation,
-          DeviceType deviceType) {
-        return GetMaterialApp(
-          debugShowCheckedModeBanner: false,
-          title: 'First Method',
-          // You can use the library anywhere in the app even in theme
-          theme: appTheme,
-          home: Splashscreen(),
-        );
-      },
+
+    return GetMaterialApp(
+      debugShowCheckedModeBanner: false,
+      title: 'First Method',
+      // You can use the library anywhere in the app even in theme
+      theme: appTheme,
+      home: Splashscreen(),
     );
   }
 }

@@ -5,9 +5,14 @@ import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'package:letsconnectnewui/screens/loginscreen/verifyotp.dart';
 import 'package:sizer/sizer.dart';
 
-class Loginscreen extends StatelessWidget {
+class Loginscreen extends StatefulWidget {
   const Loginscreen({Key? key}) : super(key: key);
 
+  @override
+  State<Loginscreen> createState() => _LoginscreenState();
+}
+
+class _LoginscreenState extends State<Loginscreen> {
   @override
   Widget build(BuildContext context) {
     return Sizer(
@@ -187,9 +192,7 @@ class ContainerCard extends StatelessWidget {
                   hintText: 'Ex: 12345 67890',
                 ),
                 keyboardType: TextInputType.number),
-            SizedBox(
-              height: 2.h,
-            ),
+            Spacer(),
             CustomButton1(
                 $height: 7.5.h,
                 label: "Send OTP",

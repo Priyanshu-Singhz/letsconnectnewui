@@ -102,7 +102,6 @@ class ContainerCard extends StatelessWidget {
               ],
             ),
             Spacer(),
-
             Row(
               children: [
                 Text(
@@ -139,7 +138,6 @@ class ContainerCard extends StatelessWidget {
                 Get.to(Age());
               },
             ),
-            Spacer(),
           ],
         ),
       ),

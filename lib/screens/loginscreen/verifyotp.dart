@@ -5,9 +5,14 @@ import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'package:letsconnectnewui/screens/createaccount/name.dart';
 import 'package:sizer/sizer.dart';
 
-class VefifyOtp extends StatelessWidget {
+class VefifyOtp extends StatefulWidget {
   const VefifyOtp({Key? key}) : super(key: key);
 
+  @override
+  State<VefifyOtp> createState() => _VefifyOtpState();
+}
+
+class _VefifyOtpState extends State<VefifyOtp> {
   @override
   Widget build(BuildContext context) {
     return Sizer(

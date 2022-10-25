@@ -91,7 +91,7 @@ class WelcomePage extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(height: 1.h),
+                  Spacer(),
                   CustomButton(
                     label: "I Agree",
                     onTap: () {

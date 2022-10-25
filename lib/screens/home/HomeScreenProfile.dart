@@ -85,11 +85,15 @@ class CustomCard extends StatelessWidget {
                     ),
                     height: 50.h,
                     width: 100.w,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Image(
-                        image: AssetImage("assets/profile/hars.png"),
-                        fit: BoxFit.fill,
+                    child: Shimmer.fromColors(
+                      baseColor: Colors.grey,
+                      highlightColor: Colors.grey,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
+                        child: Image(
+                          image: AssetImage("assets/profile/hars.png"),
+                          fit: BoxFit.fill,
+                        ),
                       ),
                     ),
                   ),

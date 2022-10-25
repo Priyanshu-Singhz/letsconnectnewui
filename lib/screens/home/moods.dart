@@ -14,7 +14,7 @@ class Moods extends StatelessWidget {
           DeviceType deviceType) {
         return Scaffold(
           body: Padding(
-            padding: EdgeInsets.all(3.5.h),
+            padding: EdgeInsets.all(3.h),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.start,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -60,15 +60,15 @@ class Moods extends StatelessWidget {
                   ),
                 ),
                 SizedBox(
-                  height: 3.5.h,
+                  height: 3.h,
                 ),
                 Column(
                   children: [
                     Row(
                       children: [
                         Container(
-                          height: 27.h,
-                          width: 44.w,
+                          height: 26.h,
+                          width: 43.w,
                           child: InkWell(
                             onTap: () {
                               Get.to(MoodList(), arguments: "Food Buddy");
@@ -81,8 +81,8 @@ class Moods extends StatelessWidget {
                         ),
                         Spacer(),
                         Container(
-                          height: 27.h,
-                          width: 44.w,
+                          height: 26.h,
+                          width: 43.w,
                           child: InkWell(
                             onTap: () {
                               Get.to(MoodList(), arguments: "Coffee Meet");
@@ -101,8 +101,8 @@ class Moods extends StatelessWidget {
                     Row(
                       children: [
                         Container(
-                          height: 27.h,
-                          width: 44.w,
+                          height: 26.h,
+                          width: 43.w,
                           child: InkWell(
                             onTap: () {
                               Get.to(MoodList(), arguments: "Reading Buddy");
@@ -114,8 +114,8 @@ class Moods extends StatelessWidget {
                         ),
                         Spacer(),
                         Container(
-                          height: 27.h,
-                          width: 44.w,
+                          height: 26.h,
+                          width: 43.w,
                           child: Image(
                             image: AssetImage("assets/homepage/travel.png"),
                           ),
@@ -128,8 +128,8 @@ class Moods extends StatelessWidget {
                     Row(
                       children: [
                         Container(
-                          height: 27.h,
-                          width: 44.w,
+                          height: 26.h,
+                          width: 43.w,
                           child: InkWell(
                             onTap: () {
                               Get.to(MoodList(), arguments: "Travel Partner");
@@ -148,8 +148,8 @@ class Moods extends StatelessWidget {
                         ),
                         Spacer(),
                         Container(
-                          height: 27.h,
-                          width: 44.w,
+                          height: 26.h,
+                          width: 43.w,
                           child: InkWell(
                             onTap: () {
                               Get.to(MoodList(), arguments: "Find My Partner");

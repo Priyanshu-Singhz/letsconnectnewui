@@ -91,7 +91,7 @@ class ContainerCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 32, horizontal: 24),
       width: MediaQuery.of(context).size.width,
-      height: 60.h,
+      height: 65.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(

@@ -15,7 +15,7 @@ class MyApp extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    //Set the fit size (Find your UI design, look at the dimensions of the device screen and fill it in,unit in dp)
+    //Set the fit size (Find your UI design, lPook at the dimensions of the device screen and fill it in,unit in dp)
     return Sizer(
       builder: (BuildContext context, Orientation orientation,
           DeviceType deviceType) {

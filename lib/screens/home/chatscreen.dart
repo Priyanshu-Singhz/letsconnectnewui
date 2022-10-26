@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import "dart:math" as math;
 
+import 'package:sizer/sizer.dart';
+
 class ChatScreen extends StatefulWidget {
   const ChatScreen({Key? key}) : super(key: key);
 
@@ -12,115 +14,121 @@ class ChatScreen extends StatefulWidget {
 class _ChatScreenState extends State<ChatScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Color(0xffF4F7FF),
-      appBar: AppBar(
-        leading: const BackButton(
-          color: Colors.black,
-        ),
-        backgroundColor: Colors.white,
-        title: Row(
-          mainAxisAlignment: MainAxisAlignment.start,
-          crossAxisAlignment: CrossAxisAlignment.center,
-          children: [
-            Container(
-              height: 40,
-              width: 40,
-              child: CircleAvatar(
-                backgroundImage: AssetImage("assets/notifications/pic1.png"),
-              ),
+    return Sizer(
+      builder: (BuildContext context, Orientation orientation,
+          DeviceType deviceType) {
+        return Scaffold(
+          backgroundColor: Color(0xffF4F7FF),
+          appBar: AppBar(
+            leading: const BackButton(
+              color: Colors.black,
             ),
-            SizedBox(
-              width: 10,
-            ),
-            Text("Harsh Maheshwari", style: MyTextStyle.smallheaderTheme),
-            Spacer(),
-            Icon(Icons.more_vert, color: Colors.black),
-          ],
-        ),
-      ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            Container(
-              height: 630,
-              width: 360,
-              child: ListView(
-                children: [
-                  SizedBox(
-                    height: 16,
+            backgroundColor: Colors.white,
+            title: Row(
+              mainAxisAlignment: MainAxisAlignment.start,
+              crossAxisAlignment: CrossAxisAlignment.center,
+              children: [
+                Container(
+                  height: 40,
+                  width: 40,
+                  child: CircleAvatar(
+                    backgroundImage:
+                        AssetImage("assets/notifications/pic1.png"),
                   ),
-                  CustomReceivedMessageUI(
-                      receivedMsgTxt:
-                          "Hi Cody, how are you? I saw on Jungle that we have Dragonfly in common. 😄"),
-                  CustomSendMessageUI(
-                      sendMsgTxt:
-                          "Haha truly! Nice to meet you Harsh! What about a cup of coffee today evening? ☕️ "),
-                  CustomReceivedMessageUI(
-                      receivedMsgTxt: "Sure, let’s do it! 😊"),
-                  CustomSendMessageUI(
-                      sendMsgTxt:
-                          "Great I will write later the exact time and place. See you soon!"),
-                ],
-              ),
-            ),
-            Container(
-              height: 72,
-              width: 360,
-              decoration: BoxDecoration(
-                color: Colors.white,
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Row(
-                  crossAxisAlignment: CrossAxisAlignment.end,
-                  children: [
-                    Container(
-                        width: 296,
-                        height: 56,
-                        decoration: BoxDecoration(
-                          border: Border.all(color: Color(0xffABB4C9)),
-                          borderRadius: BorderRadius.circular(5),
-                          color: Color(0xffEFF3F6),
-                        ),
-                        child: TextField(
-                          decoration: InputDecoration(
-                            hintText: "    Type Your Message",
-                            border: InputBorder.none,
-                            focusedBorder: InputBorder.none,
-                            enabledBorder: InputBorder.none,
-                            errorBorder: InputBorder.none,
-                            disabledBorder: InputBorder.none,
-                          ),
-                        )),
-                    Spacer(),
-                    Container(
-                      height: 40,
-                      width: 40,
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(5),
-                        gradient: LinearGradient(
-                          begin: Alignment.bottomCenter,
-                          end: Alignment.center,
-                          stops: [0.0, 1.0],
-                          colors: [
-                            Colors.blue.shade600,
-                            Colors.blue.shade400,
-                          ],
-                        ),
-                      ),
-                      child: Icon(
-                        Icons.camera_alt,
-                        color: Colors.white,
-                      ),
-                    ),
-                  ],
                 ),
-              ),
+                SizedBox(
+                  width: 10,
+                ),
+                Text("Harsh Maheshwari", style: MyTextStyle.smallheaderTheme),
+                Spacer(),
+                Icon(Icons.more_vert, color: Colors.black),
+              ],
             ),
-          ],
-        ),
-      ),
+          ),
+          body: SingleChildScrollView(
+            child: Column(
+              children: [
+                Container(
+                  height: 75.h,
+                  width: 100.w,
+                  child: ListView(
+                    children: [
+                      SizedBox(
+                        height: 16,
+                      ),
+                      CustomReceivedMessageUI(
+                          receivedMsgTxt:
+                              "Hi Cody, how are you? I saw on Jungle that we have Dragonfly in common. 😄"),
+                      CustomSendMessageUI(
+                          sendMsgTxt:
+                              "Haha truly! Nice to meet you Harsh! What about a cup of coffee today evening? ☕️ "),
+                      CustomReceivedMessageUI(
+                          receivedMsgTxt: "Sure, let’s do it! 😊"),
+                      CustomSendMessageUI(
+                          sendMsgTxt:
+                              "Great I will write later the exact time and place. See you soon!"),
+                    ],
+                  ),
+                ),
+                Container(
+                  height: 72,
+                  width: 360,
+                  decoration: BoxDecoration(
+                    color: Colors.white,
+                  ),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.end,
+                      children: [
+                        Container(
+                            width: 296,
+                            height: 56,
+                            decoration: BoxDecoration(
+                              border: Border.all(color: Color(0xffABB4C9)),
+                              borderRadius: BorderRadius.circular(5),
+                              color: Color(0xffEFF3F6),
+                            ),
+                            child: TextField(
+                              decoration: InputDecoration(
+                                hintText: "    Type Your Message",
+                                border: InputBorder.none,
+                                focusedBorder: InputBorder.none,
+                                enabledBorder: InputBorder.none,
+                                errorBorder: InputBorder.none,
+                                disabledBorder: InputBorder.none,
+                              ),
+                            )),
+                        Spacer(),
+                        Container(
+                          height: 40,
+                          width: 40,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(5),
+                            gradient: LinearGradient(
+                              begin: Alignment.bottomCenter,
+                              end: Alignment.center,
+                              stops: [0.0, 1.0],
+                              colors: [
+                                Colors.blue.shade600,
+                                Colors.blue.shade400,
+                              ],
+                            ),
+                          ),
+                          child: Icon(
+                            Icons.camera_alt,
+                            color: Colors.white,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                ),
+              ],
+            ),
+          ),
+        );
+      },
     );
   }
 }

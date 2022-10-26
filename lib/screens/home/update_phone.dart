@@ -1,36 +1,50 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'package:letsconnectnewui/screens/home/verifyotp.dart';
+import 'package:sizer/sizer.dart';
 
-class UpdatePhone extends StatelessWidget {
+class UpdatePhone extends StatefulWidget {
   const UpdatePhone({Key? key}) : super(key: key);
 
   @override
+  State<UpdatePhone> createState() => _UpdatePhoneState();
+}
+
+class _UpdatePhoneState extends State<UpdatePhone> {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomSheet: Container(
-        decoration: BoxDecoration(color: Colors.lightBlue),
-        child: Stack(
-          children: [
-            Positioned(
-              bottom: 340,
-              top: 10,
-              child: Container(
-                decoration: BoxDecoration(color: Colors.lightBlue),
-                child: Image.asset(
-                  "assets/doodlee.png",
+    return Sizer(
+      builder: (BuildContext context, Orientation orientation,
+          DeviceType deviceType) {
+        return Scaffold(
+          bottomSheet: Container(
+            decoration: BoxDecoration(color: Colors.lightBlue),
+            child: Stack(
+              children: [
+                Column(
+                  children: [
+                    Container(
+                        height: 55.h,
+                        width: 100.h,
+                        decoration: BoxDecoration(color: Colors.lightBlue),
+                        child: Image(
+                          image: AssetImage("assets/doodlee.png"),
+                          fit: BoxFit.fill,
+                        )),
+                  ],
                 ),
-              ),
+                Positioned(
+                  bottom: 0,
+                  child: ContainerCard(),
+                ),
+                Spacer(),
+              ],
             ),
-            CustomBack(),
-            Positioned(
-              bottom: 0,
-              child: ContainerCard(),
-            ),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }
@@ -43,9 +57,9 @@ class ContainerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 32, horizontal: 24),
+      padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 7.w),
       width: MediaQuery.of(context).size.width,
-      height: 441,
+      height: 50.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -69,8 +83,9 @@ class ContainerCard extends StatelessWidget {
                       alignment: Alignment.bottomCenter,
                     ),
                   ),
-                  child: Text(
-                    "Update Phone Number",
+                  child: AutoSizeText(
+                    maxLines: 1,
+                    "Get Started",
                     style: TextStyle(
                       color: Color.fromARGB(255, 3, 43, 76),
                       fontSize: 24,
@@ -80,11 +95,11 @@ class ContainerCard extends StatelessWidget {
                 ),
               ],
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 1.h),
             Row(
               children: [
-                Text(
-                  "We'll send you a 6 digit one time verification ",
+                AutoSizeText(
+                  "We'll send you a six digit one time verification ",
                   style: TextStyle(
                     fontSize: 14,
                   ),
@@ -93,7 +108,7 @@ class ContainerCard extends StatelessWidget {
             ),
             Row(
               children: [
-                Text(
+                AutoSizeText(
                   "code",
                   style: TextStyle(
                     fontSize: 14,
@@ -102,11 +117,11 @@ class ContainerCard extends StatelessWidget {
               ],
             ),
             SizedBox(
-              height: 40,
+              height: 2.h,
             ),
             Row(
               children: [
-                Text(
+                AutoSizeText(
                   "Phone Number",
                   style: TextStyle(
                       color: Color(0xff2D4379),
@@ -116,15 +131,16 @@ class ContainerCard extends StatelessWidget {
               ],
             ),
             TextField(
+                maxLength: 10,
                 decoration: InputDecoration(
                   prefixIcon: Container(
-                    height: 25,
-                    width: 67,
+                    height: 2.5.h,
+                    width: 20.w,
                     child: Row(
                       children: [
                         Container(
-                          height: 25,
-                          width: 30,
+                          height: 2.5.h,
+                          width: 10.w,
                           child: Image(
                             image: AssetImage(
                               "assets/loginpage/flag.png",
@@ -138,8 +154,9 @@ class ContainerCard extends StatelessWidget {
                   hintText: 'Ex: 12345 67890',
                 ),
                 keyboardType: TextInputType.number),
-            SizedBox(height: 40),
+            Spacer(),
             CustomButton1(
+                $height: 7.5.h,
                 label: "Send OTP",
                 onTap: () {
                   Get.to(ConfirmOtp());

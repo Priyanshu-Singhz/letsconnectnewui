@@ -50,11 +50,16 @@ class _VefifyOtpState extends State<VefifyOtp> {
   }
 }
 
-class ContainerCard extends StatelessWidget {
+class ContainerCard extends StatefulWidget {
   const ContainerCard({
     Key? key,
   }) : super(key: key);
 
+  @override
+  State<ContainerCard> createState() => _ContainerCardState();
+}
+
+class _ContainerCardState extends State<ContainerCard> {
   @override
   Widget build(BuildContext context) {
     return Container(

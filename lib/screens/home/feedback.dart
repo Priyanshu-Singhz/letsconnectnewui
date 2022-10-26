@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:letsconnectnewui/common/constants/colors.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
+import 'package:sizer/sizer.dart';
 
 class FeedbackScreen extends StatefulWidget {
   const FeedbackScreen({Key? key}) : super(key: key);
@@ -13,106 +14,116 @@ class FeedbackScreen extends StatefulWidget {
 class _FeedbackScreenState extends State<FeedbackScreen> {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      resizeToAvoidBottomInset: false,
-      appBar: AppBar(
-        leading: const BackButton(
-          color: Colors.black, // <-- SEE HERE
-        ),
-        backgroundColor: Colors.white,
-        title: Text(
-          "Share Feedback",
-          style: MyTextStyle.smallheaderTheme,
-        ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(24.0),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              children: [
-                Text("Choose Feedback Category",
-                    style: MyTextStyle.xheaderTheme),
-              ],
+    return Sizer(
+      builder: (BuildContext context, Orientation orientation,
+          DeviceType deviceType) {
+        return Scaffold(
+          resizeToAvoidBottomInset: false,
+          appBar: AppBar(
+            leading: const BackButton(
+              color: Colors.black, // <-- SEE HERE
             ),
-            SizedBox(
-              height: 16,
+            backgroundColor: Colors.white,
+            title: Text(
+              "Share Feedback",
+              style: MyTextStyle.smallheaderTheme,
             ),
-            InterestContainer(),
-            SizedBox(
-              height: 32,
-            ),
-            Row(
-              children: [
-                Text("Your Feedback", style: MyTextStyle.xheaderTheme),
-              ],
-            ),
-            SizedBox(
-              height: 16,
-            ),
-            Container(
-              height: 176,
-              width: 312,
-              decoration: BoxDecoration(
-                border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(16),
-                child: TextField(
-                  keyboardType: TextInputType.multiline,
-                  maxLines: 4,
-                  decoration: InputDecoration(
-                    hintText: "Please tell us more more about your experience",
-                    border: InputBorder.none,
-                    focusedBorder: InputBorder.none,
-                    enabledBorder: InputBorder.none,
-                    errorBorder: InputBorder.none,
-                    disabledBorder: InputBorder.none,
-                  ),
-                ),
-              ),
-            ),
-            SizedBox(
-              height: 5,
-            ),
-            Row(
-              children: [Spacer(), Text("0/500")],
-            ),
-            SizedBox(
-              height: 56,
-            ),
-            Container(
-              height: 48,
-              width: 312,
-              decoration: BoxDecoration(
-                color: Colors.grey[100],
-                border: Border.all(color: Colors.grey),
-                borderRadius: BorderRadius.circular(10),
-              ),
-              child: Row(
-                crossAxisAlignment: CrossAxisAlignment.center,
-                mainAxisAlignment: MainAxisAlignment.center,
+          ),
+          body: Padding(
+            padding: const EdgeInsets.all(24.0),
+            child: SingleChildScrollView(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  ImageIcon(
-                    AssetImage("assets/profile/attachement.png"),
-                    color: Color(0xff2D4379),
-                    size: 20,
+                  Row(
+                    children: [
+                      Text("Choose Feedback Category",
+                          style: MyTextStyle.xheaderTheme),
+                    ],
                   ),
                   SizedBox(
-                    width: 10,
+                    height: 16,
                   ),
-                  Text("Add Attachments",
-                      style: MyTextStyle.smalfontheaderTheme),
+                  InterestContainer(),
+                  SizedBox(
+                    height: 32,
+                  ),
+                  Row(
+                    children: [
+                      Text("Your Feedback", style: MyTextStyle.xheaderTheme),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  Container(
+                    height: 176,
+                    width: 312,
+                    decoration: BoxDecoration(
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Padding(
+                      padding: const EdgeInsets.all(16),
+                      child: TextField(
+                        keyboardType: TextInputType.multiline,
+                        maxLines: 4,
+                        decoration: InputDecoration(
+                          hintText:
+                              "Please tell us more more about your experience",
+                          border: InputBorder.none,
+                          focusedBorder: InputBorder.none,
+                          enabledBorder: InputBorder.none,
+                          errorBorder: InputBorder.none,
+                          disabledBorder: InputBorder.none,
+                        ),
+                      ),
+                    ),
+                  ),
+                  SizedBox(
+                    height: 5,
+                  ),
+                  Row(
+                    children: [Spacer(), Text("0/500")],
+                  ),
+                  SizedBox(
+                    height: 56,
+                  ),
+                  Container(
+                    height: 48,
+                    width: 312,
+                    decoration: BoxDecoration(
+                      color: Colors.grey[100],
+                      border: Border.all(color: Colors.grey),
+                      borderRadius: BorderRadius.circular(10),
+                    ),
+                    child: Row(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        ImageIcon(
+                          AssetImage("assets/profile/attachement.png"),
+                          color: Color(0xff2D4379),
+                          size: 20,
+                        ),
+                        SizedBox(
+                          width: 10,
+                        ),
+                        Text("Add Attachments",
+                            style: MyTextStyle.smalfontheaderTheme),
+                      ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 16,
+                  ),
+                  CustomButton(label: 'Next', onTap: () {}),
                 ],
               ),
             ),
-            Spacer(),
-            CustomButton(label: 'Next', onTap: () {}),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }

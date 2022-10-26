@@ -1,36 +1,51 @@
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'package:letsconnectnewui/screens/home/success.dart';
+import 'package:sizer/sizer.dart';
 
-class ConfirmOtp extends StatelessWidget {
+class ConfirmOtp extends StatefulWidget {
   const ConfirmOtp({Key? key}) : super(key: key);
 
   @override
+  State<ConfirmOtp> createState() => _ConfirmOtpState();
+}
+
+class _ConfirmOtpState extends State<ConfirmOtp> {
+  @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      bottomSheet: Container(
-        decoration: BoxDecoration(color: Colors.lightBlue),
-        child: Stack(
-          children: [
-            Positioned(
-              bottom: 340,
-              top: 10,
-              child: Container(
-                decoration: BoxDecoration(color: Colors.lightBlue),
-                child: Image.asset(
-                  "assets/doodlee.png",
+    return Sizer(
+      builder: (BuildContext context, Orientation orientation,
+          DeviceType deviceType) {
+        return Scaffold(
+          // resizeToAvoidBottomInset: false,   //If you do not want the verify button to come upwards
+          bottomSheet: Container(
+            decoration: BoxDecoration(color: Colors.lightBlue),
+            child: Stack(
+              children: [
+                Column(
+                  children: [
+                    Container(
+                        height: 60.h,
+                        width: 100.w,
+                        decoration: BoxDecoration(color: Colors.lightBlue),
+                        child: Image(
+                          image: AssetImage("assets/doodlee.png"),
+                          fit: BoxFit.fill,
+                        )),
+                  ],
                 ),
-              ),
+                Positioned(
+                  bottom: 0,
+                  child: ContainerCard(),
+                ),
+                CustomBack(),
+              ],
             ),
-            Positioned(
-              bottom: 0,
-              child: ContainerCard(),
-            ),
-            CustomBack(),
-          ],
-        ),
-      ),
+          ),
+        );
+      },
     );
   }
 }
@@ -43,9 +58,9 @@ class ContainerCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 32, horizontal: 24),
+      padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
       width: MediaQuery.of(context).size.width,
-      height: 441,
+      height: 55.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -69,25 +84,30 @@ class ContainerCard extends StatelessWidget {
                       alignment: Alignment.bottomCenter,
                     ),
                   ),
-                  child: Text(
+                  child: AutoSizeText(
                     "Verify OTP",
                     style: TextStyle(
                       color: Color.fromARGB(255, 3, 43, 76),
                       fontSize: 24,
                       fontWeight: FontWeight.w700,
                     ),
+                    maxLines: 1,
                   ),
                 ),
               ],
             ),
-            SizedBox(height: 10),
+            SizedBox(height: 1.h),
             Row(
               children: [
                 Row(
                   children: [
-                    Text("OTP was sent to "),
-                    Text(
+                    AutoSizeText(
+                      "OTP was sent to ",
+                      maxLines: 1,
+                    ),
+                    AutoSizeText(
                       "+91 12345 67890",
+                      maxLines: 1,
                       style: TextStyle(
                           color: Colors.blue, fontWeight: FontWeight.bold),
                     ),
@@ -95,13 +115,12 @@ class ContainerCard extends StatelessWidget {
                 )
               ],
             ),
-            SizedBox(
-              height: 40,
-            ),
+            Spacer(),
             Row(
               children: [
-                Text(
+                AutoSizeText(
                   "Enter OTP",
+                  maxLines: 1,
                   style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
                 ),
               ],
@@ -112,12 +131,13 @@ class ContainerCard extends StatelessWidget {
                 ),
                 keyboardType: TextInputType.number),
             SizedBox(
-              height: 10,
+              height: 1.h,
             ),
             Row(
               children: [
-                Text(
+                AutoSizeText(
                   "Resend OTP in 98s",
+                  maxLines: 1,
                   style: TextStyle(
                     color: Colors.grey,
                     fontSize: 14,
@@ -127,6 +147,7 @@ class ContainerCard extends StatelessWidget {
             ),
             Spacer(),
             CustomButton1(
+              $height: 7.5.h,
               label: "Verify OTP",
               onTap: () {
                 Get.to(Success());

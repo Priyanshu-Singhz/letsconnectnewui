@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/screens/home/persondetails.dart';
 import 'package:shimmer/shimmer.dart';
+import 'package:sizer/sizer.dart';
 
 class MoodList extends StatefulWidget {
   const MoodList({Key? key}) : super(key: key);
@@ -22,32 +23,36 @@ class _MoodListState extends State<MoodList> {
       CustomCard(name: "Person E")
     ];
 
-    return Scaffold(
-      body: Stack(
-        children: [
-          GradientTop(),
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                SizedBox(
-                  height: 25,
-                ),
-                Container(
-                  height: 710,
-                  child: CarouselSlider(
-                    options: CarouselOptions(
-                      height: 685,
-                      scrollDirection: Axis.vertical,
-                      enlargeCenterPage: true,
+    return Sizer(
+      builder: (BuildContext context, Orientation orientation,
+          DeviceType deviceType) {
+        return Scaffold(
+          body: Stack(
+            children: [
+              GradientTop(),
+              SingleChildScrollView(
+                child: Column(
+                  children: [
+                    SizedBox(
+                      height: 4.h,
                     ),
-                    items: imageSliders,
-                  ),
+                    Container(
+                      height: 96.h,
+                      child: CarouselSlider(
+                        options: CarouselOptions(
+                          scrollDirection: Axis.vertical,
+                          enlargeCenterPage: true,
+                        ),
+                        items: imageSliders,
+                      ),
+                    ),
+                  ],
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
-        ],
-      ),
+        );
+      },
     );
   }
 }
@@ -66,8 +71,8 @@ class CustomCard extends StatelessWidget {
             decoration: BoxDecoration(
               color: Colors.transparent,
             ),
-            height: 548,
-            width: 312,
+            height: 76.h,
+            width: 85.w,
             child: Stack(
               children: [
                 InkWell(
@@ -78,23 +83,26 @@ class CustomCard extends StatelessWidget {
                     decoration: BoxDecoration(
                       color: Colors.transparent,
                     ),
-                    height: 360,
-                    width: 360,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(20),
-                      child: Shimmer.fromColors(
-                        baseColor: Colors.grey.withOpacity(0.5),
-                        highlightColor: Colors.grey,
+                    height: 50.h,
+                    width: 100.w,
+                    child: Shimmer.fromColors(
+                      baseColor: Colors.grey,
+                      highlightColor: Colors.grey,
+                      child: ClipRRect(
+                        borderRadius: BorderRadius.circular(20),
                         child: Image(
                           image: AssetImage("assets/profile/hars.png"),
+                          fit: BoxFit.fill,
                         ),
                       ),
                     ),
                   ),
                 ),
                 Positioned(
-                  top: 277,
+                  top: 40.h,
                   child: Container(
+                    width: 85.w,
+                    height: 38.h,
                     decoration: BoxDecoration(
                       boxShadow: [
                         BoxShadow(
@@ -107,12 +115,11 @@ class CustomCard extends StatelessWidget {
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(15),
                     ),
-                    height: 270,
-                    width: 312,
                     child: Padding(
-                      padding: const EdgeInsets.fromLTRB(16, 24, 16, 22),
+                      padding: const EdgeInsets.fromLTRB(16, 0, 16, 22),
                       child: Column(
                         children: [
+                          Spacer(),
                           Container(
                             child: Column(
                               children: [
@@ -129,7 +136,7 @@ class CustomCard extends StatelessWidget {
                                   ],
                                 ),
                                 SizedBox(
-                                  height: 16,
+                                  height: 2.h,
                                 ),
                                 Row(
                                   children: [
@@ -139,38 +146,38 @@ class CustomCard extends StatelessWidget {
                                         color: Colors.yellow[600],
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            12, 6, 12, 6),
+                                        padding: EdgeInsets.fromLTRB(
+                                            1.h, 1.w, 1.h, 1.w),
                                         child: Center(
                                           child: Text("Blogging",
                                               style: MyTextStyle.cardTheme),
                                         ),
                                       ),
                                     ),
-                                    SizedBox(width: 4),
+                                    SizedBox(width: 2.w),
                                     Container(
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(15),
                                         color: Colors.yellow[600],
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            12, 6, 12, 6),
+                                        padding: EdgeInsets.fromLTRB(
+                                            1.h, 1.w, 1.h, 1.w),
                                         child: Center(
                                           child: Text("Photography",
                                               style: MyTextStyle.cardTheme),
                                         ),
                                       ),
                                     ),
-                                    SizedBox(width: 4),
+                                    SizedBox(width: 2.w),
                                     Container(
                                       decoration: BoxDecoration(
                                         borderRadius: BorderRadius.circular(15),
                                         color: Colors.yellow[600],
                                       ),
                                       child: Padding(
-                                        padding: const EdgeInsets.fromLTRB(
-                                            12, 6, 12, 6),
+                                        padding: EdgeInsets.fromLTRB(
+                                            1.h, 1.w, 1.h, 1.w),
                                         child: Center(
                                           child: Text("Vlogging",
                                               style: MyTextStyle.cardTheme),
@@ -180,10 +187,10 @@ class CustomCard extends StatelessWidget {
                                   ],
                                 ),
                                 SizedBox(
-                                  height: 16,
+                                  height: 2.h,
                                 ),
                                 Container(
-                                  height: 62,
+                                  height: 9.h,
                                   child: Flexible(
                                     child: Text(
                                         "Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the standa...",
@@ -191,7 +198,7 @@ class CustomCard extends StatelessWidget {
                                   ),
                                 ),
                                 SizedBox(
-                                  height: 17,
+                                  height: 2.h,
                                 ),
                                 Row(
                                   crossAxisAlignment: CrossAxisAlignment.end,
@@ -208,11 +215,11 @@ class CustomCard extends StatelessWidget {
                                                 style: MyTextStyle.cardTheme),
                                           ],
                                         ),
-                                        SizedBox(height: 8),
+                                        SizedBox(height: 1.h),
                                         Row(
                                           children: [
                                             Container(
-                                              height: 26,
+                                              height: 3.2.h,
                                               decoration: BoxDecoration(
                                                 border: Border.all(
                                                     color: Colors.grey),
@@ -231,9 +238,9 @@ class CustomCard extends StatelessWidget {
                                                 ),
                                               ),
                                             ),
-                                            SizedBox(width: 4),
+                                            SizedBox(width: 1.w),
                                             Container(
-                                              height: 26,
+                                              height: 3.2.h,
                                               decoration: BoxDecoration(
                                                 borderRadius:
                                                     BorderRadius.circular(15),
@@ -252,9 +259,9 @@ class CustomCard extends StatelessWidget {
                                                 ),
                                               ),
                                             ),
-                                            SizedBox(width: 4),
+                                            SizedBox(width: 1.w),
                                             Container(
-                                              height: 26,
+                                              height: 3.2.h,
                                               decoration: BoxDecoration(
                                                 borderRadius:
                                                     BorderRadius.circular(15),
@@ -263,9 +270,8 @@ class CustomCard extends StatelessWidget {
                                                 color: Colors.white,
                                               ),
                                               child: Padding(
-                                                padding:
-                                                    const EdgeInsets.fromLTRB(
-                                                        12, 4, 12, 4),
+                                                padding: EdgeInsets.fromLTRB(
+                                                    1.h, 1.w, 1.h, 1.w),
                                                 child: Center(
                                                   child: Text("Coffee",
                                                       style: MyTextStyle
@@ -286,8 +292,8 @@ class CustomCard extends StatelessWidget {
                                                 CustomPopup());
                                       },
                                       child: Container(
-                                        height: 48,
-                                        width: 48,
+                                        height: 7.h,
+                                        width: 10.w,
                                         decoration: BoxDecoration(
                                           shape: BoxShape.circle,
                                           gradient: LinearGradient(

@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import "dart:math" as math;
-
 import 'package:sizer/sizer.dart';
 
 class ChatScreen extends StatefulWidget {

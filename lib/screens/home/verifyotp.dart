@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'package:letsconnectnewui/screens/home/success.dart';
+import 'package:letsconnectnewui/screens/loginscreen/loginscreen.dart';
 import 'package:sizer/sizer.dart';
 
 class ConfirmOtp extends StatefulWidget {
@@ -40,7 +41,11 @@ class _ConfirmOtpState extends State<ConfirmOtp> {
                   bottom: 0,
                   child: ContainerCard(),
                 ),
-                CustomBack(),
+                CustomBack(
+                  $onTap: () {
+                    Get.to(Loginscreen());
+                  },
+                ),
               ],
             ),
           ),

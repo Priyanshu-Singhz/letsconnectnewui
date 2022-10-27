@@ -71,7 +71,7 @@ class ContainerCard extends StatelessWidget {
               text: "Find People that ",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 24,
+                fontSize: 20.sp,
                 fontWeight: FontWeight.w700,
               ),
               children: [
@@ -92,7 +92,7 @@ class ContainerCard extends StatelessWidget {
                           "get your",
                           style: TextStyle(
                             color: Color.fromARGB(255, 3, 43, 76),
-                            fontSize: 24,
+                            fontSize: 20.sp,
                             fontWeight: FontWeight.w700,
                           ),
                         ),
@@ -115,7 +115,7 @@ class ContainerCard extends StatelessWidget {
                           "vibe",
                           style: TextStyle(
                             color: Color.fromARGB(255, 3, 43, 76),
-                            fontSize: 24,
+                            fontSize: 20.sp,
                             fontWeight: FontWeight.w700,
                           ),
                         ),
@@ -127,7 +127,7 @@ class ContainerCard extends StatelessWidget {
                   text: " and don't judge",
                   style: TextStyle(
                     color: Colors.white,
-                    fontSize: 24,
+                    fontSize: 20.sp,
                     fontWeight: FontWeight.w700,
                   ),
                 )

@@ -153,7 +153,9 @@ class CustomNext extends StatelessWidget {
 }
 
 class CustomBack extends StatelessWidget {
-  const CustomBack({Key? key}) : super(key: key);
+  final $onTap;
+
+  const CustomBack({Key? key, this.$onTap}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -161,9 +163,7 @@ class CustomBack extends StatelessWidget {
       left: 16,
       top: 56,
       child: InkWell(
-        onTap: () {
-          Get.back();
-        },
+        onTap: $onTap,
         child: Container(
           decoration: BoxDecoration(
               color: Colors.white, borderRadius: BorderRadius.circular(10)),

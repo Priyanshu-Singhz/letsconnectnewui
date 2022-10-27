@@ -26,30 +26,29 @@ class _HomeScreenProfileState extends State<HomeScreenProfile> {
     return Sizer(
       builder: (BuildContext context, Orientation orientation,
           DeviceType deviceType) {
-        return Scaffold(
-          body: Stack(
-            children: [
-              GradientTop(),
-              SingleChildScrollView(
-                child: Column(
-                  children: [
-                    SizedBox(
-                      height: 4.h,
-                    ),
-                    Container(
-                      height: 96.h,
-                      child: CarouselSlider(
-                        options: CarouselOptions(
-                          scrollDirection: Axis.vertical,
-                          enlargeCenterPage: true,
+        return SafeArea(
+          child: Scaffold(
+            body: Stack(
+              children: [
+                GradientTop(),
+                SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      Container(
+                        height: 100.h,
+                        child: CarouselSlider(
+                          options: CarouselOptions(
+                            scrollDirection: Axis.vertical,
+                            enlargeCenterPage: true,
+                          ),
+                          items: imageSliders,
                         ),
-                        items: imageSliders,
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
-              ),
-            ],
+              ],
+            ),
           ),
         );
       },
@@ -68,10 +67,10 @@ class CustomCard extends StatelessWidget {
       children: [
         Center(
           child: Container(
-            decoration: BoxDecoration(
+            decoration: const BoxDecoration(
               color: Colors.transparent,
             ),
-            height: 76.h,
+            height: 80.h,
             width: 85.w,
             child: Stack(
               children: [
@@ -116,10 +115,9 @@ class CustomCard extends StatelessWidget {
                       borderRadius: BorderRadius.circular(15),
                     ),
                     child: Padding(
-                      padding: const EdgeInsets.fromLTRB(16, 0, 16, 22),
+                      padding: EdgeInsets.fromLTRB(5.w, 3.h, 5.w, 0),
                       child: Column(
                         children: [
-                          Spacer(),
                           Container(
                             child: Column(
                               children: [
@@ -129,7 +127,7 @@ class CustomCard extends StatelessWidget {
                                       "$name",
                                       style: MyTextStyle.headerTheme,
                                     ),
-                                    Spacer(),
+                                    SizedBox(width: 35.w),
                                     Icon(Icons.location_on),
                                     Text("5 km",
                                         style: MyTextStyle.littlesmaller),
@@ -283,7 +281,7 @@ class CustomCard extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    Spacer(),
+                                    SizedBox(width: 22.w),
                                     InkWell(
                                       onTap: () {
                                         showDialog(
@@ -353,7 +351,7 @@ class GradientTop extends StatelessWidget {
       child: Column(
         children: [
           Padding(
-            padding: const EdgeInsets.fromLTRB(16, 64, 16, 64),
+            padding: EdgeInsets.fromLTRB(5.w, 3.h, 5.w, 0),
             child: Row(
               children: [
                 Container(
@@ -363,7 +361,7 @@ class GradientTop extends StatelessWidget {
                     image: AssetImage("assets/profile/letconnect.png"),
                   ),
                 ),
-                Spacer(),
+                SizedBox(width: 37.w),
                 Transform.rotate(
                     angle: 89.5,
                     child:

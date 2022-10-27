@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:grouped_buttons_ns/grouped_buttons_ns.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
+import 'package:letsconnectnewui/screens/createaccount/age.dart';
 import 'package:letsconnectnewui/screens/createaccount/image.dart';
 import 'package:sizer/sizer.dart';
 
@@ -34,7 +35,11 @@ class Gender extends StatelessWidget {
                   bottom: 0,
                   child: ContainerCard(),
                 ),
-                CustomBack(),
+                CustomBack(
+                  $onTap: () {
+                    Get.to(Age());
+                  },
+                ),
               ],
             ),
           ),

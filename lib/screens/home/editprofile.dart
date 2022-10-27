@@ -3,86 +3,125 @@ import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/screens/home/editinterest.dart';
 import 'package:letsconnectnewui/screens/home/editlookingfor.dart';
+import 'package:sizer/sizer.dart';
 
 class EditProfile extends StatelessWidget {
   const EditProfile({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-        leading: const BackButton(
-          color: Colors.black,
-        ),
-        backgroundColor: Colors.white,
-        title: Text(
-          "Edit Profile",
-          style: MyTextStyle.smallheaderTheme,
-        ),
-      ),
-      body: Padding(
-        padding: const EdgeInsets.all(24),
-        child: SingleChildScrollView(
-          child: Column(
-            children: [
-              InkWell(
-                onTap: () {
-                  showModalBottomSheet(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(20)),
-                    context: context,
-                    builder: (context) {
-                      return Column(
-                        mainAxisSize: MainAxisSize.min,
-                        children: <Widget>[
-                          ListTile(
-                            leading: new Icon(
-                              Icons.camera_alt,
-                              color: Color(0xff3086EB),
-                            ),
-                            title: new Text(
-                              'Take Photo',
-                              style: MyTextStyle.regularTheme,
-                            ),
-                            onTap: () {},
-                          ),
-                          Container(
-                            padding: EdgeInsets.fromLTRB(24, 0, 24, 0),
-                            child: Image.asset(
-                                "assets/createaccount/divideline.png"),
-                          ),
-                          ListTile(
-                            leading: new Icon(
-                              Icons.photo,
-                              color: Color(0xff3086EB),
-                            ),
-                            title: new Text(
-                              'Choose from gallary',
-                              style: MyTextStyle.regularTheme,
-                            ),
-                            onTap: () {},
-                          ),
-                        ],
+    return Sizer(
+      builder: (BuildContext context, Orientation orientation,
+          DeviceType deviceType) {
+        return Scaffold(
+          appBar: AppBar(
+            leading: const BackButton(
+              color: Colors.black,
+            ),
+            backgroundColor: Colors.white,
+            title: Text(
+              "Edit Profile",
+              style: MyTextStyle.smallheaderTheme,
+            ),
+          ),
+          body: Padding(
+            padding: EdgeInsets.all(3.h),
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  InkWell(
+                    onTap: () {
+                      showModalBottomSheet(
+                        shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(20)),
+                        context: context,
+                        builder: (context) {
+                          return Column(
+                            mainAxisSize: MainAxisSize.min,
+                            children: <Widget>[
+                              ListTile(
+                                leading: new Icon(
+                                  Icons.camera_alt,
+                                  color: Color(0xff3086EB),
+                                ),
+                                title: new Text(
+                                  'Take Photo',
+                                  style: MyTextStyle.regularTheme,
+                                ),
+                                onTap: () {},
+                              ),
+                              Container(
+                                padding: EdgeInsets.fromLTRB(3.h, 0, 3.h, 0),
+                                child: Image.asset(
+                                    "assets/createaccount/divideline.png"),
+                              ),
+                              ListTile(
+                                leading: new Icon(
+                                  Icons.photo,
+                                  color: Color(0xff3086EB),
+                                ),
+                                title: new Text(
+                                  'Choose from gallary',
+                                  style: MyTextStyle.regularTheme,
+                                ),
+                                onTap: () {},
+                              ),
+                            ],
+                          );
+                        },
                       );
                     },
-                  );
-                },
-                child: Container(
-                  height: 312,
-                  width: 312,
-                  child: Column(
-                    children: [
-                      Row(
+                    child: Container(
+                      height: 312,
+                      width: 312,
+                      child: Column(
                         children: [
-                          Container(
-                            height: 204,
-                            width: 204,
-                            child: Image(
-                              image: AssetImage("assets/homepage/picker1.png"),
-                            ),
+                          Row(
+                            children: [
+                              Container(
+                                height: 204,
+                                width: 204,
+                                child: Image(
+                                  image:
+                                      AssetImage("assets/homepage/picker1.png"),
+                                ),
+                              ),
+                              SizedBox(width: 2.5.w),
+                              Column(
+                                children: [
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color: Color(0xffEFF3F6),
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    height: 96,
+                                    width: 96,
+                                    child: Center(
+                                      child: Icon(Icons.add),
+                                    ),
+                                  ),
+                                  SizedBox(
+                                    height: 1.h,
+                                  ),
+                                  Container(
+                                    decoration: BoxDecoration(
+                                        color: Color(0xffEFF3F6),
+                                        borderRadius:
+                                            BorderRadius.circular(10)),
+                                    height: 96,
+                                    width: 96,
+                                    child: Center(
+                                      child: Icon(Icons.add),
+                                    ),
+                                  ),
+                                ],
+                              ),
+                            ],
                           ),
-                          Spacer(),
-                          Column(
+                          SizedBox(
+                            height: 1.h,
+                          ),
+                          Row(
                             children: [
                               Container(
                                 decoration: BoxDecoration(
@@ -95,7 +134,20 @@ class EditProfile extends StatelessWidget {
                                 ),
                               ),
                               SizedBox(
-                                height: 12,
+                                width: 12,
+                              ),
+                              Container(
+                                decoration: BoxDecoration(
+                                    color: Color(0xffEFF3F6),
+                                    borderRadius: BorderRadius.circular(10)),
+                                height: 96,
+                                width: 96,
+                                child: Center(
+                                  child: Icon(Icons.add),
+                                ),
+                              ),
+                              SizedBox(
+                                width: 12,
                               ),
                               Container(
                                 decoration: BoxDecoration(
@@ -111,152 +163,105 @@ class EditProfile extends StatelessWidget {
                           ),
                         ],
                       ),
-                      SizedBox(
-                        height: 12,
-                      ),
-                      Row(
-                        children: [
-                          Container(
-                            decoration: BoxDecoration(
-                                color: Color(0xffEFF3F6),
-                                borderRadius: BorderRadius.circular(10)),
-                            height: 96,
-                            width: 96,
-                            child: Center(
-                              child: Icon(Icons.add),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 12,
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                                color: Color(0xffEFF3F6),
-                                borderRadius: BorderRadius.circular(10)),
-                            height: 96,
-                            width: 96,
-                            child: Center(
-                              child: Icon(Icons.add),
-                            ),
-                          ),
-                          SizedBox(
-                            width: 12,
-                          ),
-                          Container(
-                            decoration: BoxDecoration(
-                                color: Color(0xffEFF3F6),
-                                borderRadius: BorderRadius.circular(10)),
-                            height: 96,
-                            width: 96,
-                            child: Center(
-                              child: Icon(Icons.add),
-                            ),
-                          ),
-                        ],
+                    ),
+                  ),
+                  SizedBox(
+                    height: 3.h,
+                  ),
+                  CustomLabel(label: "Name"),
+                  Customfield(hinttext: "Eg: Cody Fisher"),
+                  SizedBox(
+                    height: 5.h,
+                  ),
+                  CustomLabel(label: "Bio"),
+                  TextField(
+                    keyboardType: TextInputType.multiline,
+                    maxLines: 4,
+                    maxLength: 50,
+                    decoration: InputDecoration(
+                      hintText:
+                          "Please tell us more more about your experience",
+                    ),
+                  ),
+                  SizedBox(
+                    height: 2.h,
+                  ),
+                  CustomLabel(label: "Interests"),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Row(
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Get.to(EditInterest());
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Color(0xffEFF3F6),
+                              borderRadius: BorderRadius.circular(15)),
+                          height: 4.h,
+                          width: 48,
+                          child: Icon(Icons.add),
+                        ),
                       ),
                     ],
                   ),
-                ),
-              ),
-              SizedBox(
-                height: 24,
-              ),
-              CustomLabel(label: "Name"),
-              Customfield(hinttext: "Eg: Cody Fisher"),
-              SizedBox(
-                height: 40,
-              ),
-              CustomLabel(label: "Bio"),
-              TextField(
-                keyboardType: TextInputType.multiline,
-                maxLines: 4,
-                decoration: InputDecoration(
-                  hintText: "Please tell us more more about your experience",
-                ),
-              ),
-              SizedBox(
-                height: 5,
-              ),
-              Row(
-                children: [Spacer(), Text("0/500")],
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              CustomLabel(label: "Interests"),
-              SizedBox(
-                height: 8,
-              ),
-              Row(
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Get.to(EditInterest());
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Color(0xffEFF3F6),
-                          borderRadius: BorderRadius.circular(15)),
-                      height: 32,
-                      width: 48,
-                      child: Icon(Icons.add),
-                    ),
+                  SizedBox(
+                    height: 2.h,
                   ),
+                  CustomLabel(label: "Looking for"),
+                  SizedBox(
+                    height: 8,
+                  ),
+                  Row(
+                    children: [
+                      InkWell(
+                        onTap: () {
+                          Get.to(EditLookingfor());
+                        },
+                        child: Container(
+                          decoration: BoxDecoration(
+                              color: Color(0xffEFF3F6),
+                              borderRadius: BorderRadius.circular(15)),
+                          height: 4.h,
+                          width: 48,
+                          child: Icon(Icons.add),
+                        ),
+                      ),
+                    ],
+                  ),
+                  SizedBox(
+                    height: 2.h,
+                  ),
+                  CustomLabel(label: "Living In"),
+                  Customfield(hinttext: "Eg: New York"),
+                  SizedBox(
+                    height: 3.h,
+                  ),
+                  CustomLabel(label: "Education"),
+                  Customfield(hinttext: "Eg: Bachelor of Engineering, Harvard"),
+                  SizedBox(
+                    height: 3.h,
+                  ),
+                  CustomLabel(label: "Job Title & Company"),
+                  Customfield(hinttext: "Eg: Product Designer, Google"),
+                  SizedBox(
+                    height: 3.h,
+                  ),
+                  CustomLabel(label: "Industry"),
+                  Customfield(hinttext: "Eg: Tech"),
+                  SizedBox(
+                    height: 3.h,
+                  ),
+                  CustomLabel(label: "Total Work Experience"),
+                  Customfield(hinttext: "Eg: 5 Years & 4 Months"),
                 ],
               ),
-              SizedBox(
-                height: 16,
-              ),
-              CustomLabel(label: "Looking for"),
-              SizedBox(
-                height: 8,
-              ),
-              Row(
-                children: [
-                  InkWell(
-                    onTap: () {
-                      Get.to(EditLookingfor());
-                    },
-                    child: Container(
-                      decoration: BoxDecoration(
-                          color: Color(0xffEFF3F6),
-                          borderRadius: BorderRadius.circular(15)),
-                      height: 32,
-                      width: 48,
-                      child: Icon(Icons.add),
-                    ),
-                  ),
-                ],
-              ),
-              SizedBox(
-                height: 16,
-              ),
-              CustomLabel(label: "Living In"),
-              Customfield(hinttext: "Eg: New York"),
-              SizedBox(
-                height: 24,
-              ),
-              CustomLabel(label: "Education"),
-              Customfield(hinttext: "Eg: Bachelor of Engineering, Harvard"),
-              SizedBox(
-                height: 24,
-              ),
-              CustomLabel(label: "Job Title & Company"),
-              Customfield(hinttext: "Eg: Product Designer, Google"),
-              SizedBox(
-                height: 24,
-              ),
-              CustomLabel(label: "Industry"),
-              Customfield(hinttext: "Eg: Tech"),
-              SizedBox(
-                height: 24,
-              ),
-              CustomLabel(label: "Total Work Experience"),
-              Customfield(hinttext: "Eg: 5 Years & 4 Months"),
-            ],
+            ),
           ),
-        ),
-      ),
+        );
+      },
     );
   }
 }

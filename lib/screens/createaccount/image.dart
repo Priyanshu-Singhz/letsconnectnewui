@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/constants/text_style.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
+import 'package:letsconnectnewui/screens/createaccount/gender.dart';
 import 'package:letsconnectnewui/screens/createaccount/interest_view.dart';
 import 'package:sizer/sizer.dart';
 
@@ -37,7 +38,11 @@ class ProfileImage extends StatelessWidget {
                   bottom: 0,
                   child: ContainerCard(),
                 ),
-                CustomBack(),
+                CustomBack(
+                  $onTap: () {
+                    Get.to(Gender());
+                  },
+                ),
               ],
             ),
           ),

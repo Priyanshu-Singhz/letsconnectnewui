@@ -23,60 +23,20 @@ class _LoginscreenState extends State<Loginscreen> {
             decoration: BoxDecoration(color: Colors.lightBlue),
             child: Stack(
               children: [
-                Column(
-                  children: [
-                    Container(
-                        height: 55.h,
-                        width: 100.h,
-                        decoration: BoxDecoration(color: Colors.lightBlue),
-                        child: Image(
-                          image: AssetImage("assets/doodlee.png"),
-                          fit: BoxFit.fill,
-                        )),
-                  ],
+                Positioned(
+                  top: 0,
+                  child: Container(
+                      height: 55.h,
+                      width: 100.w,
+                      decoration: BoxDecoration(color: Colors.lightBlue),
+                      child: Image(
+                        image: AssetImage("assets/doodlee.png"),
+                        fit: BoxFit.fill,
+                      )),
                 ),
                 Positioned(
                   bottom: 0,
                   child: ContainerCard(),
-                ),
-                Spacer(),
-                Positioned(
-                  top: 87.h,
-                  child: Container(
-                    height: 9.h,
-                    width: 100.w,
-                    decoration: BoxDecoration(
-                      color: Colors.white,
-                    ),
-                    child: Column(
-                      children: [
-                        Text(
-                          "OR SIGN IN WITH",
-                          style: TextStyle(
-                            color: Color.fromARGB(255, 3, 43, 76),
-                            letterSpacing: 2,
-                            fontSize: 14,
-                          ),
-                        ),
-                        Spacer(),
-                        Container(
-                          height: 4.h,
-                          width: 176,
-                          child: Row(
-                            mainAxisAlignment: MainAxisAlignment.center,
-                            children: [
-                              Image.asset("assets/loginpage/google.png"),
-                              Spacer(),
-                              Image.asset("assets/loginpage/facebook.png"),
-                              Spacer(),
-                              Image.asset("assets/loginpage/apple.png"),
-                            ],
-                          ),
-                        ),
-                        Spacer(),
-                      ],
-                    ),
-                  ),
                 ),
               ],
             ),
@@ -102,7 +62,6 @@ class _ContainerCardState extends State<ContainerCard> {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 7.w),
       width: MediaQuery.of(context).size.width,
-      height: 65.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -131,7 +90,7 @@ class _ContainerCardState extends State<ContainerCard> {
                     "Get Started",
                     style: TextStyle(
                       color: Color.fromARGB(255, 3, 43, 76),
-                      fontSize: 24,
+                      fontSize: 20.sp,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
@@ -144,7 +103,7 @@ class _ContainerCardState extends State<ContainerCard> {
                 AutoSizeText(
                   "We'll send you a six digit one time verification ",
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 12.sp,
                   ),
                 ),
               ],
@@ -154,7 +113,7 @@ class _ContainerCardState extends State<ContainerCard> {
                 AutoSizeText(
                   "code",
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 12.sp,
                   ),
                 ),
               ],
@@ -168,7 +127,7 @@ class _ContainerCardState extends State<ContainerCard> {
                   "Phone Number",
                   style: TextStyle(
                       color: Color(0xff2D4379),
-                      fontSize: 14,
+                      fontSize: 12.sp,
                       fontWeight: FontWeight.bold),
                 ),
               ],
@@ -197,14 +156,53 @@ class _ContainerCardState extends State<ContainerCard> {
                   hintText: 'Ex: 12345 67890',
                 ),
                 keyboardType: TextInputType.number),
-            Spacer(),
+            SizedBox(
+              height: 3.h,
+            ),
             CustomButton1(
                 $height: 7.5.h,
                 label: "Send OTP",
                 onTap: () {
                   Get.to(VefifyOtp());
                 }),
-            Spacer(),
+            SizedBox(
+              height: 3.h,
+            ),
+            Container(
+              height: 9.h,
+              width: 100.w,
+              decoration: BoxDecoration(
+                color: Colors.white,
+              ),
+              child: Column(
+                children: [
+                  Text(
+                    "OR SIGN IN WITH",
+                    style: TextStyle(
+                      color: Color.fromARGB(255, 3, 43, 76),
+                      letterSpacing: 2,
+                      fontSize: 14,
+                    ),
+                  ),
+                  Spacer(),
+                  Container(
+                    height: 4.h,
+                    width: 176,
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image.asset("assets/loginpage/google.png"),
+                        Spacer(),
+                        Image.asset("assets/loginpage/facebook.png"),
+                        Spacer(),
+                        Image.asset("assets/loginpage/apple.png"),
+                      ],
+                    ),
+                  ),
+                  Spacer(),
+                ],
+              ),
+            ),
           ],
         ),
       ),

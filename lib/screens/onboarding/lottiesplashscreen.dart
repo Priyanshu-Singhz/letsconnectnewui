@@ -1,6 +1,7 @@
 import 'dart:async';
 
 import 'package:flutter/material.dart';
+import 'package:letsconnectnewui/screens/onboarding/onboardings.dart';
 import 'package:letsconnectnewui/screens/onboarding/onborading1.dart';
 import 'package:lottie/lottie.dart';
 
@@ -17,8 +18,8 @@ class _SplashscreenState extends State<Splashscreen> {
     super.initState();
     Timer(
         Duration(milliseconds: 2300),
-        () => Navigator.pushReplacement(
-            context, MaterialPageRoute(builder: (context) => OnBoardone())));
+        () => Navigator.pushReplacement(context,
+            MaterialPageRoute(builder: (context) => OnBoardingScreen())));
   }
 
   @override

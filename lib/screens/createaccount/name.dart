@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'package:letsconnectnewui/screens/createaccount/age.dart';
+import 'package:letsconnectnewui/screens/loginscreen/verifyotp.dart';
 import 'package:sizer/sizer.dart';
 
 class Name extends StatelessWidget {
@@ -34,7 +35,11 @@ class Name extends StatelessWidget {
                   bottom: 0,
                   child: ContainerCard(),
                 ),
-                CustomBack(),
+                CustomBack(
+                  $onTap: () {
+                    Get.to(VefifyOtp());
+                  },
+                ),
               ],
             ),
           ),
@@ -54,7 +59,7 @@ class ContainerCard extends StatelessWidget {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 5.w),
       width: MediaQuery.of(context).size.width,
-      height: 62.h,
+      // height: 62.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -82,12 +87,15 @@ class ContainerCard extends StatelessWidget {
                     "Welcome !",
                     style: TextStyle(
                       color: Color.fromARGB(255, 3, 43, 76),
-                      fontSize: 24,
+                      fontSize: 20.sp,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
                 ),
               ],
+            ),
+            SizedBox(
+              height: 1.h,
             ),
             Row(
               children: [
@@ -95,23 +103,27 @@ class ContainerCard extends StatelessWidget {
                   "What should we call you ?",
                   style: TextStyle(
                     color: Color.fromARGB(255, 3, 43, 76),
-                    fontSize: 24,
+                    fontSize: 20.sp,
                     fontWeight: FontWeight.w700,
                   ),
                 ),
               ],
             ),
-            Spacer(),
+            SizedBox(
+              height: 2.h,
+            ),
             Row(
               children: [
                 Text(
                   "Full Name",
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  style:
+                      TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
             // SizedBox(height: 8),
             TextField(
+              maxLength: 50,
               decoration: InputDecoration(
                 hintText: 'Ex : Priyanshu Singh',
               ),
@@ -122,15 +134,17 @@ class ContainerCard extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "*Please use your real name                             0/50",
+                  "*Please use your real name",
                   style: TextStyle(
                     color: Colors.grey,
-                    fontSize: 14,
+                    fontSize: 12.sp,
                   ),
                 ),
               ],
             ),
-            Spacer(),
+            SizedBox(
+              height: 3.h,
+            ),
             CustomButton1(
               $height: 7.5.h,
               label: "Next",

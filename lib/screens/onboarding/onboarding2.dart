@@ -71,7 +71,7 @@ class ContainerCard extends StatelessWidget {
               text: "Meet new people that ",
               style: TextStyle(
                 color: Colors.white,
-                fontSize: 24,
+                fontSize: 20.sp,
                 fontWeight: FontWeight.w700,
               ),
               children: [
@@ -91,7 +91,7 @@ class ContainerCard extends StatelessWidget {
                           "share",
                           style: TextStyle(
                             color: Color.fromARGB(255, 3, 43, 76),
-                            fontSize: 24,
+                            fontSize: 20.sp,
                             fontWeight: FontWeight.w700,
                           ),
                         ),
@@ -114,7 +114,7 @@ class ContainerCard extends StatelessWidget {
                           "your interests",
                           style: TextStyle(
                             color: Color.fromARGB(255, 3, 43, 76),
-                            fontSize: 24,
+                            fontSize: 20.sp,
                             fontWeight: FontWeight.w700,
                           ),
                         ),
@@ -134,7 +134,7 @@ class ContainerCard extends StatelessWidget {
                   return Container(
                     margin: EdgeInsets.only(left: 10),
                     height: 0.7.h,
-                    width: currentIndex == index ? 24 : 12,
+                    width: currentIndex == index ? 20 : 12,
                     decoration: BoxDecoration(
                       borderRadius: BorderRadius.circular(4),
                       color: currentIndex == index

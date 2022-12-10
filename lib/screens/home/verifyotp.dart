@@ -1,8 +1,10 @@
-import 'package:auto_size_text/auto_size_text.dart';
+// import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
+import 'package:letsconnectnewui/screens/createaccount/name.dart';
 import 'package:letsconnectnewui/screens/home/success.dart';
+import 'package:letsconnectnewui/screens/home/update_phone.dart';
 import 'package:letsconnectnewui/screens/loginscreen/loginscreen.dart';
 import 'package:sizer/sizer.dart';
 
@@ -43,7 +45,7 @@ class _ConfirmOtpState extends State<ConfirmOtp> {
                 ),
                 CustomBack(
                   $onTap: () {
-                    Get.to(Loginscreen());
+                    Get.to(UpdatePhone());
                   },
                 ),
               ],
@@ -55,17 +57,21 @@ class _ConfirmOtpState extends State<ConfirmOtp> {
   }
 }
 
-class ContainerCard extends StatelessWidget {
+class ContainerCard extends StatefulWidget {
   const ContainerCard({
     Key? key,
   }) : super(key: key);
 
   @override
+  State<ContainerCard> createState() => _ContainerCardState();
+}
+
+class _ContainerCardState extends State<ContainerCard> {
+  @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 6.w),
       width: MediaQuery.of(context).size.width,
-      height: 55.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -89,11 +95,11 @@ class ContainerCard extends StatelessWidget {
                       alignment: Alignment.bottomCenter,
                     ),
                   ),
-                  child: AutoSizeText(
+                  child: Text(
                     "Verify OTP",
                     style: TextStyle(
                       color: Color.fromARGB(255, 3, 43, 76),
-                      fontSize: 24,
+                      fontSize: 20.sp,
                       fontWeight: FontWeight.w700,
                     ),
                     maxLines: 1,
@@ -106,27 +112,33 @@ class ContainerCard extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    AutoSizeText(
+                    Text(
                       "OTP was sent to ",
                       maxLines: 1,
+                      style: TextStyle(fontSize: 12.sp),
                     ),
-                    AutoSizeText(
+                    Text(
                       "+91 12345 67890",
                       maxLines: 1,
                       style: TextStyle(
-                          color: Colors.blue, fontWeight: FontWeight.bold),
+                          color: Colors.blue,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 12.sp),
                     ),
                   ],
                 )
               ],
             ),
-            Spacer(),
+            SizedBox(
+              height: 2.h,
+            ),
             Row(
               children: [
-                AutoSizeText(
+                Text(
                   "Enter OTP",
                   maxLines: 1,
-                  style: TextStyle(fontSize: 14, fontWeight: FontWeight.bold),
+                  style:
+                      TextStyle(fontSize: 12.sp, fontWeight: FontWeight.bold),
                 ),
               ],
             ),
@@ -140,22 +152,24 @@ class ContainerCard extends StatelessWidget {
             ),
             Row(
               children: [
-                AutoSizeText(
+                Text(
                   "Resend OTP in 98s",
                   maxLines: 1,
                   style: TextStyle(
                     color: Colors.grey,
-                    fontSize: 14,
+                    fontSize: 12.sp,
                   ),
                 ),
               ],
             ),
-            Spacer(),
+            SizedBox(
+              height: 3.h,
+            ),
             CustomButton1(
               $height: 7.5.h,
               label: "Verify OTP",
               onTap: () {
-                Get.to(Success());
+                Get.to(const Success());
               },
             ),
           ],

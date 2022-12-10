@@ -16,11 +16,11 @@ class _HomeScreenProfileState extends State<HomeScreenProfile> {
   @override
   Widget build(BuildContext context) {
     final List<Widget> imageSliders = [
-      CustomCard(name: "Person A"),
-      CustomCard(name: "Person B"),
-      CustomCard(name: "Person C"),
-      CustomCard(name: "Person D"),
-      CustomCard(name: "Person E")
+      const CustomCard(name: "Person A"),
+      const CustomCard(name: "Person B"),
+      const CustomCard(name: "Person C"),
+      const CustomCard(name: "Person D"),
+      const CustomCard(name: "Person E")
     ];
 
     return Sizer(
@@ -30,7 +30,7 @@ class _HomeScreenProfileState extends State<HomeScreenProfile> {
           child: Scaffold(
             body: Stack(
               children: [
-                GradientTop(),
+                const GradientTop(),
                 SingleChildScrollView(
                   child: Column(
                     children: [
@@ -76,10 +76,10 @@ class CustomCard extends StatelessWidget {
               children: [
                 InkWell(
                   onTap: () {
-                    Get.to(PersonDetail());
+                    Get.to(const PersonDetail());
                   },
                   child: Container(
-                    decoration: BoxDecoration(
+                    decoration: const BoxDecoration(
                       color: Colors.transparent,
                     ),
                     height: 50.h,
@@ -89,7 +89,7 @@ class CustomCard extends StatelessWidget {
                       highlightColor: Colors.grey,
                       child: ClipRRect(
                         borderRadius: BorderRadius.circular(20),
-                        child: Image(
+                        child: const Image(
                           image: AssetImage("assets/profile/hars.png"),
                           fit: BoxFit.fill,
                         ),
@@ -109,7 +109,7 @@ class CustomCard extends StatelessWidget {
                                 Colors.grey.withOpacity(0.2), //color of shadow
                             spreadRadius: 2,
                             blurRadius: 2,
-                            offset: Offset(0, 1)),
+                            offset: const Offset(0, 1)),
                       ],
                       color: Colors.white,
                       borderRadius: BorderRadius.circular(15),
@@ -127,8 +127,8 @@ class CustomCard extends StatelessWidget {
                                       "$name",
                                       style: MyTextStyle.headerTheme,
                                     ),
-                                    SizedBox(width: 35.w),
-                                    Icon(Icons.location_on),
+                                    SizedBox(width: 28.w),
+                                    const Icon(Icons.location_on),
                                     Text("5 km",
                                         style: MyTextStyle.littlesmaller),
                                   ],
@@ -281,30 +281,31 @@ class CustomCard extends StatelessWidget {
                                         ),
                                       ],
                                     ),
-                                    SizedBox(width: 22.w),
+                                    SizedBox(width: 15.w),
                                     InkWell(
                                       onTap: () {
                                         showDialog(
                                             context: context,
                                             builder: (context) =>
-                                                CustomPopup());
+                                                const CustomPopup());
                                       },
                                       child: Container(
                                         height: 7.h,
                                         width: 10.w,
-                                        decoration: BoxDecoration(
+                                        decoration: const BoxDecoration(
                                           shape: BoxShape.circle,
-                                          gradient: LinearGradient(
+                                          gradient: const LinearGradient(
                                             begin: Alignment.topCenter,
                                             end: Alignment.bottomCenter,
                                             stops: [0.1, 1.3],
                                             colors: [
-                                              Color(0xff53C9F6),
+                                              const Color(0xff53C9F6),
                                               Colors.blue,
                                             ],
                                           ),
                                         ),
-                                        child: Icon(Icons.person_add_alt_1,
+                                        child: const Icon(
+                                            Icons.person_add_alt_1,
                                             color: Colors.white),
                                       ),
                                     )
@@ -334,7 +335,7 @@ class GradientTop extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       height: 61.h,
-      decoration: BoxDecoration(
+      decoration: const BoxDecoration(
         gradient: LinearGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
@@ -357,17 +358,17 @@ class GradientTop extends StatelessWidget {
                 Container(
                   height: 38,
                   width: 143,
-                  child: Image(
+                  child: const Image(
                     image: AssetImage("assets/profile/letconnect.png"),
                   ),
                 ),
-                SizedBox(width: 37.w),
+                SizedBox(width: 28.w),
                 Transform.rotate(
                     angle: 89.5,
-                    child:
-                        Icon(Icons.u_turn_left_rounded, color: Colors.white)),
+                    child: const Icon(Icons.u_turn_left_rounded,
+                        color: Colors.white)),
                 SizedBox(
-                  width: 10,
+                  width: 2.w,
                 ),
                 Container(
                     height: 20,

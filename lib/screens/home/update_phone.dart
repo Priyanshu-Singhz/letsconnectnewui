@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:letsconnectnewui/common/widgets/custom_button.dart';
 import 'package:letsconnectnewui/screens/home/verifyotp.dart';
+import 'package:letsconnectnewui/screens/loginscreen/verifyotp.dart';
 import 'package:sizer/sizer.dart';
 
 class UpdatePhone extends StatefulWidget {
@@ -23,23 +24,21 @@ class _UpdatePhoneState extends State<UpdatePhone> {
             decoration: BoxDecoration(color: Colors.lightBlue),
             child: Stack(
               children: [
-                Column(
-                  children: [
-                    Container(
-                        height: 55.h,
-                        width: 100.h,
-                        decoration: BoxDecoration(color: Colors.lightBlue),
-                        child: Image(
-                          image: AssetImage("assets/doodlee.png"),
-                          fit: BoxFit.fill,
-                        )),
-                  ],
+                Positioned(
+                  top: 0,
+                  child: Container(
+                      height: 55.h,
+                      width: 100.w,
+                      decoration: BoxDecoration(color: Colors.lightBlue),
+                      child: Image(
+                        image: AssetImage("assets/doodlee.png"),
+                        fit: BoxFit.fill,
+                      )),
                 ),
                 Positioned(
                   bottom: 0,
                   child: ContainerCard(),
                 ),
-                Spacer(),
               ],
             ),
           ),
@@ -49,17 +48,21 @@ class _UpdatePhoneState extends State<UpdatePhone> {
   }
 }
 
-class ContainerCard extends StatelessWidget {
+class ContainerCard extends StatefulWidget {
   const ContainerCard({
     Key? key,
   }) : super(key: key);
 
   @override
+  State<ContainerCard> createState() => _ContainerCardState();
+}
+
+class _ContainerCardState extends State<ContainerCard> {
+  @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.symmetric(vertical: 4.h, horizontal: 7.w),
       width: MediaQuery.of(context).size.width,
-      height: 50.h,
       decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
@@ -85,10 +88,10 @@ class ContainerCard extends StatelessWidget {
                   ),
                   child: AutoSizeText(
                     maxLines: 1,
-                    "Get Started",
+                    "Update Phone",
                     style: TextStyle(
                       color: Color.fromARGB(255, 3, 43, 76),
-                      fontSize: 24,
+                      fontSize: 20.sp,
                       fontWeight: FontWeight.w700,
                     ),
                   ),
@@ -101,7 +104,7 @@ class ContainerCard extends StatelessWidget {
                 AutoSizeText(
                   "We'll send you a six digit one time verification ",
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 12.sp,
                   ),
                 ),
               ],
@@ -111,7 +114,7 @@ class ContainerCard extends StatelessWidget {
                 AutoSizeText(
                   "code",
                   style: TextStyle(
-                    fontSize: 14,
+                    fontSize: 12.sp,
                   ),
                 ),
               ],
@@ -125,7 +128,7 @@ class ContainerCard extends StatelessWidget {
                   "Phone Number",
                   style: TextStyle(
                       color: Color(0xff2D4379),
-                      fontSize: 14,
+                      fontSize: 12.sp,
                       fontWeight: FontWeight.bold),
                 ),
               ],
@@ -154,14 +157,18 @@ class ContainerCard extends StatelessWidget {
                   hintText: 'Ex: 12345 67890',
                 ),
                 keyboardType: TextInputType.number),
-            Spacer(),
+            SizedBox(
+              height: 3.h,
+            ),
             CustomButton1(
                 $height: 7.5.h,
                 label: "Send OTP",
                 onTap: () {
                   Get.to(ConfirmOtp());
                 }),
-            Spacer(),
+            SizedBox(
+              height: 3.h,
+            ),
           ],
         ),
       ),

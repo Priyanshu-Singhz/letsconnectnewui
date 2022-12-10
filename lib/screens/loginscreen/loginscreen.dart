@@ -157,7 +157,7 @@ class _ContainerCardState extends State<ContainerCard> {
                 ),
                 keyboardType: TextInputType.number),
             SizedBox(
-              height: 3.h,
+              height: 1.5.h,
             ),
             CustomButton1(
                 $height: 7.5.h,
@@ -166,11 +166,9 @@ class _ContainerCardState extends State<ContainerCard> {
                   Get.to(VefifyOtp());
                 }),
             SizedBox(
-              height: 3.h,
+              height: 1.5.h,
             ),
             Container(
-              height: 9.h,
-              width: 100.w,
               decoration: BoxDecoration(
                 color: Colors.white,
               ),
@@ -181,13 +179,15 @@ class _ContainerCardState extends State<ContainerCard> {
                     style: TextStyle(
                       color: Color.fromARGB(255, 3, 43, 76),
                       letterSpacing: 2,
-                      fontSize: 14,
+                      fontSize: 12.sp,
                     ),
                   ),
-                  Spacer(),
+                  SizedBox(
+                    height: 2.h,
+                  ),
                   Container(
                     height: 4.h,
-                    width: 176,
+                    width: 50.w,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.center,
                       children: [
@@ -199,7 +199,6 @@ class _ContainerCardState extends State<ContainerCard> {
                       ],
                     ),
                   ),
-                  Spacer(),
                 ],
               ),
             ),
